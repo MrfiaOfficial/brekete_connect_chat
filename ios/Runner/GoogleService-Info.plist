@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>781308584265-t0rnu5v7qhlfr9mn5loqepamu6fl9jum.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.781308584265-t0rnu5v7qhlfr9mn5loqepamu6fl9jum</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>781308584265-0vnc171ra34p8hfc84ugdg384uhgovg3.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBXU2qCmaV03vKqcsb4nEUuLViXk7jg3lo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>781308584265</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.savadub.bereketeconnectapp</string>
+	<key>PROJECT_ID</key>
+	<string>berekete-connect-23507</string>
+	<key>STORAGE_BUCKET</key>
+	<string>berekete-connect-23507.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:781308584265:ios:0d19aad73b69c07b17ba98</string>
+</dict>
+</plist>
