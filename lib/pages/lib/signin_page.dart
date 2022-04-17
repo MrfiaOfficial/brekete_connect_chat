@@ -330,16 +330,16 @@ class _SignInPageState extends State<SignInPage> {
                                         SizedBox(
                                           height: height * 0.03,
                                         ),
-                                        Text(
+                                        /* Text(
                                           "OR",
                                           style: TextStyle(
                                               color: Colors.black12,
                                               fontSize: 28),
-                                        ),
+                                        ), */
                                         SizedBox(
                                           height: height * 0.02,
                                         ),
-                                        Row(
+                                        /* Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
@@ -384,7 +384,7 @@ class _SignInPageState extends State<SignInPage> {
                                                   width: 45,
                                                 )),
                                           ],
-                                        )
+                                        ) */
                                       ],
                                     ),
                                   ),
