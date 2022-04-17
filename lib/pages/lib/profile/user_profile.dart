@@ -17,6 +17,7 @@ class _MyProfileState extends State<MyProfile> {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
         backgroundColor: Colors.white,
