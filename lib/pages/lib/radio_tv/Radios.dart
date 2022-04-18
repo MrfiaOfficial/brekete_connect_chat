@@ -47,6 +47,7 @@ class _MyAppState extends State<Radios> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return new MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: new Scaffold(
         body: isLoading
             ? Center(

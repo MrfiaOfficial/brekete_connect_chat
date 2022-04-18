@@ -282,7 +282,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                           ),
                                         ),
                                       ),
-                                      Row(
+                                      /* Row(
                                         children: [
                                           Padding(
                                             padding: const EdgeInsets.symmetric(
@@ -371,8 +371,8 @@ class _RegisterPageState extends State<RegisterPage> {
                                             ),
                                           ),
                                         ],
-                                      ),
-                                      Row(
+                                      ), */
+                                      /* Row(
                                         children: [
                                           Padding(
                                             padding: const EdgeInsets.symmetric(
@@ -461,7 +461,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                             ),
                                           ),
                                         ],
-                                      ),
+                                      ), */
 
                                       // Padding(
                                       //   padding: const EdgeInsets.symmetric(horizontal: 25),
