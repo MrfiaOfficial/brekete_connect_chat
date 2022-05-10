@@ -141,31 +141,36 @@ class _RegisterPageState extends State<RegisterPage> {
                                       ),
                                     ),
                                     ElevatedButton(
-                                        child: Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 20),
-                                          child: Text("Signup",
-                                              style: TextStyle(fontSize: 14)),
+                                      child: Padding(
+                                        padding: const EdgeInsets.symmetric(
+                                            horizontal: 20),
+                                        child: Text("Signup",
+                                            style: TextStyle(fontSize: 14)),
+                                      ),
+                                      style: ButtonStyle(
+                                        foregroundColor:
+                                            MaterialStateProperty.all<Color>(
+                                                Colors.white),
+                                        backgroundColor:
+                                            MaterialStateProperty.all<Color>(
+                                                Colors.red),
+                                        shape: MaterialStateProperty.all<
+                                            RoundedRectangleBorder>(
+                                          RoundedRectangleBorder(
+                                            borderRadius:
+                                                BorderRadius.circular(18.0),
+                                            side: BorderSide(
+                                              color: Colors.red,
+                                            ),
+                                          ),
                                         ),
-                                        style: ButtonStyle(
-                                            foregroundColor:
-                                                MaterialStateProperty.all<Color>(
-                                                    Colors.white),
-                                            backgroundColor:
-                                                MaterialStateProperty.all<Color>(
-                                                    Colors.red),
-                                            shape: MaterialStateProperty.all<
-                                                    RoundedRectangleBorder>(
-                                                RoundedRectangleBorder(
-                                                    borderRadius: BorderRadius.circular(
-                                                        18.0),
-                                                    side: BorderSide(
-                                                        color: Colors.red)))),
-                                        onPressed: () => null),
+                                      ),
+                                      onPressed: () => null,
+                                    ),
                                   ],
                                 ),
                                 Container(
-                                  height: height * 0.5,
+                                  height: height * 0.4,
                                   child: ListView(
                                     children: [
                                       Padding(
@@ -208,7 +213,6 @@ class _RegisterPageState extends State<RegisterPage> {
                                           ),
                                         ),
                                       ),
-
                                       Padding(
                                         padding: const EdgeInsets.symmetric(
                                             horizontal: 25),
@@ -256,7 +260,6 @@ class _RegisterPageState extends State<RegisterPage> {
                                           ),
                                         ),
                                       ),
-
                                       Padding(
                                         padding: const EdgeInsets.symmetric(
                                             horizontal: 25),
@@ -297,221 +300,6 @@ class _RegisterPageState extends State<RegisterPage> {
                                           ),
                                         ),
                                       ),
-                                      /* Row(
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 25),
-                                            child: SizedBox(
-                                              // height :height*0.05,
-                                              width: width * 0.2,
-                                              child: TextFormField(
-                                                style: TextStyle(
-                                                    color: Colors.black),
-                                                decoration: new InputDecoration(
-                                                    enabledBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                          color: Colors.grey),
-                                                    ),
-                                                    focusedBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                          color: Colors.grey),
-                                                    ),
-                                                    border:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                          color: Colors.grey),
-                                                    ),
-                                                    hintStyle: TextStyle(
-                                                      color: Colors.red,
-                                                    ),
-                                                    contentPadding:
-                                                        EdgeInsets.only(
-                                                            left: 0,
-                                                            bottom: 2,
-                                                            top: 11,
-                                                            right: 15),
-                                                    hintText: "State"),
-                                                onChanged: (val) {
-                                                  setState(() {
-                                                    state = val;
-                                                  });
-                                                },
-                                              ),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 1),
-                                            child: SizedBox(
-                                              // height :height*0.05,
-                                              width: width * 0.34,
-                                              child: TextFormField(
-                                                style: TextStyle(
-                                                    color: Colors.black),
-                                                decoration: new InputDecoration(
-                                                    enabledBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                          color: Colors.grey),
-                                                    ),
-                                                    focusedBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                          color: Colors.grey),
-                                                    ),
-                                                    border:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                          color: Colors.grey),
-                                                    ),
-                                                    hintStyle: TextStyle(
-                                                      color: Colors.red,
-                                                    ),
-                                                    contentPadding:
-                                                        EdgeInsets.only(
-                                                            left: 0,
-                                                            bottom: 2,
-                                                            top: 11,
-                                                            right: 15),
-                                                    hintText: "LGA"),
-                                                onChanged: (val) {
-                                                  setState(() {
-                                                    lga = val;
-                                                  });
-                                                },
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ), */
-                                      /* Row(
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 25),
-                                            child: SizedBox(
-                                              // height :height*0.05,
-                                              width: width * 0.15,
-                                              child: TextFormField(
-                                                style: TextStyle(
-                                                    color: Colors.black),
-                                                decoration: new InputDecoration(
-                                                    enabledBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                          color: Colors.grey),
-                                                    ),
-                                                    focusedBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                          color: Colors.grey),
-                                                    ),
-                                                    border:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                          color: Colors.grey),
-                                                    ),
-                                                    hintStyle: TextStyle(
-                                                      color: Colors.red,
-                                                    ),
-                                                    contentPadding:
-                                                        EdgeInsets.only(
-                                                            left: 0,
-                                                            bottom: 2,
-                                                            top: 11,
-                                                            right: 15),
-                                                    hintText: "Sex"),
-                                                onChanged: (val) {
-                                                  setState(() {
-                                                    sex = val;
-                                                  });
-                                                },
-                                              ),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 20),
-                                            child: SizedBox(
-                                              // height :height*0.05,
-                                              width: width * 0.34,
-                                              child: TextFormField(
-                                                style: TextStyle(
-                                                    color: Colors.black),
-                                                decoration: new InputDecoration(
-                                                    enabledBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                          color: Colors.grey),
-                                                    ),
-                                                    focusedBorder:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                          color: Colors.grey),
-                                                    ),
-                                                    border:
-                                                        UnderlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                          color: Colors.grey),
-                                                    ),
-                                                    hintStyle: TextStyle(
-                                                      color: Colors.red,
-                                                    ),
-                                                    contentPadding:
-                                                        EdgeInsets.only(
-                                                            left: 0,
-                                                            bottom: 2,
-                                                            top: 11,
-                                                            right: 15),
-                                                    hintText: "Phone"),
-                                                onChanged: (val) {
-                                                  setState(() {
-                                                    phone = val;
-                                                  });
-                                                },
-                                              ),
-                                            ),
-                                          ),
-                                        ],
-                                      ), */
-
-                                      // Padding(
-                                      //   padding: const EdgeInsets.symmetric(horizontal: 25),
-                                      //   child: SizedBox(
-                                      //     // height :height*0.05,
-                                      //     child: TextFormField(
-                                      //       style: TextStyle(
-                                      //           color: Colors.black
-                                      //       ),
-                                      //       decoration: new InputDecoration(
-                                      //           enabledBorder: UnderlineInputBorder(
-                                      //             borderSide: BorderSide(color:  Colors.grey),
-                                      //           ),
-                                      //           focusedBorder: UnderlineInputBorder(
-                                      //             borderSide: BorderSide(color: Colors.grey),
-                                      //           ),
-                                      //           border: UnderlineInputBorder(
-                                      //             borderSide: BorderSide(color: Colors.grey),
-                                      //           ),
-
-                                      //           hintStyle: TextStyle(
-                                      //             color: Colors.red,
-
-                                      //           ),
-                                      //           contentPadding:
-                                      //           EdgeInsets.only(left: 0, bottom: 2, top: 11, right: 15),
-                                      //           hintText: "Phone"),
-                                      //       onChanged: (val) {
-                                      //         setState(() {
-                                      //           phone = val;
-                                      //         });
-                                      //       },
-                                      //     ),
-                                      //   ),
-                                      // ),
                                       Padding(
                                         padding: const EdgeInsets.symmetric(
                                             horizontal: 25),
@@ -646,9 +434,9 @@ class _RegisterPageState extends State<RegisterPage> {
                                   ),
                                 ),
 
-                                SizedBox(
+                                /* SizedBox(
                                   height: height * 0.01,
-                                ),
+                                ), */
                                 Container(
                                   height: height * 0.05,
                                   width: width * 0.4,

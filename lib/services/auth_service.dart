@@ -12,6 +12,7 @@ class AuthService {
   // create user object based on FA.User
   User _userFromFirebaseUser(FA.User user) {
     CurrentAppUser.currentUserData.userId = user.uid;
+    var currentUserUid = user.uid;
     return (user != null) ? User(uid: user.uid) : null;
   }
 

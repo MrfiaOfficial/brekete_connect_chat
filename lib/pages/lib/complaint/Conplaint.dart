@@ -78,21 +78,6 @@ class _ChatsState extends State<Conplaint> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Row(
-                    children: [
-                      Text(
-                        'COMPLAINT',
-                        style: TextStyle(
-                          color: Color.fromARGB(255, 49, 76, 190),
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: height * 0.02,
-                  ),
-                  Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       Text(

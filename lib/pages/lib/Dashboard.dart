@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:group_chat_app/helper/helper_functions.dart';
+import 'package:group_chat_app/just_added/login_register_page.dart';
 import 'package:group_chat_app/models/user.dart';
 import 'package:group_chat_app/pages/lib/News.dart';
 import 'package:group_chat_app/pages/lib/appointment/appointment_screen.dart';
@@ -29,11 +31,15 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   //var user = CurrentAppUser.currentUserData;
   //String! userUid = user.userId;
+  //var currentUserUid = '';
+  bool _userLoggedIn = false;
 
   @override
   void initState() {
     CurrentAppUser.currentUserData.getUserData().then((value) {
-      setState(() {});
+      setState(() {
+        _userLoggedIn = value;
+      });
     });
     super.initState();
   }
@@ -136,12 +142,25 @@ class _DashboardState extends State<Dashboard> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Chats()));
-                            },
+                            //onTap: CurrentAppUser.currentUserData.userId == ""
+                            onTap: _userLoggedIn
+                                ? () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => UnAuthScreen(),
+                                      ),
+                                    );
+                                  }
+                                : () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => Chats(),
+                                        //builder: (context) => Chats(),
+                                      ),
+                                    );
+                                  },
                             child: NeumorphicContainer(
                               child: Column(
                                 children: [
@@ -294,12 +313,22 @@ class _DashboardState extends State<Dashboard> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => Meditation()));
-                            },
+                            onTap: _userLoggedIn
+                                ? () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => UnAuthScreen(),
+                                      ),
+                                    );
+                                  }
+                                : () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                Meditation()));
+                                  },
                             child: NeumorphicContainer(
                               child: Column(
                                 children: [
@@ -387,14 +416,11 @@ class _DashboardState extends State<Dashboard> {
                           InkWell(
                             onTap: () {
                               Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          AppointmentScreen()));
-                              //   Navigator.push(context, MaterialPageRoute(
-                              //       builder: (context) =>
-                              //           Book()
-                              //   ));
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AppointmentScreen(),
+                                ),
+                              );
                             },
                             child: NeumorphicContainer(
                               child: Column(
@@ -434,10 +460,6 @@ class _DashboardState extends State<Dashboard> {
                             ),
                           ),
                           InkWell(
-                            // onTap: () {
-                            //   Fluttertoast.showToast(
-                            //       msg: 'Feature under development!');
-                            // },
                             onTap: () {
                               Navigator.push(
                                   context,
