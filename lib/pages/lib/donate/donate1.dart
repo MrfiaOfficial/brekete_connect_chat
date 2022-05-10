@@ -62,39 +62,14 @@ class _ChatsState extends State<Donate1> {
                   textAlign: TextAlign.start,
                   style: TextStyle(
                     color: Colors.black87,
-                    fontSize: 17,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 SizedBox(
                   height: height * 0.1,
                 ),
-//                 Row(
-//                   children: [
-//                     Text(
-//                       '''Brekete Family.
-// Gtbank
-// Naira Account - 0051543571
 
-// Dollar - 0136015865
-
-// Pound - 0136015779
-
-// Euro - 0136015982
-
-// Swift Code- GTBINGLA''',
-//                       textAlign: TextAlign.start,
-//                       style: TextStyle(
-//                         color: Colors.black87,
-//                         fontSize: 17,
-//                         fontWeight: FontWeight.bold,
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-                SizedBox(
-                  height: height * 0.25,
-                ),
                 Container(
                   height: height * 0.08,
                   width: width * 0.6,

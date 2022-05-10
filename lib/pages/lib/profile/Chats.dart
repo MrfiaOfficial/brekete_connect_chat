@@ -99,7 +99,7 @@ class _ChatsState extends State<Chats> {
                       borderRadius: BorderRadius.circular(15.0),
                     ),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Column(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -91,10 +91,19 @@ class _DashboardState extends State<Dashboard> {
                         ],
                       ),
                       GestureDetector(
-                        onTap: () {
-                          //AppRoutes.push(context, MyProfile());
-                          AppRoutes.push(context, Chats());
-                        },
+                        onTap: _userLoggedIn
+                            ? () {
+                                //AppRoutes.push(context, MyProfile());
+                                AppRoutes.push(context, Chats());
+                              }
+                            : () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => UnAuthScreen(),
+                                  ),
+                                );
+                              },
                         child: Column(
                           children: [
                             SizedBox(
@@ -148,7 +157,7 @@ class _DashboardState extends State<Dashboard> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => UnAuthScreen(),
+                                        builder: (context) => Chats(),
                                       ),
                                     );
                                   }
@@ -156,7 +165,7 @@ class _DashboardState extends State<Dashboard> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => Chats(),
+                                        builder: (context) => UnAuthScreen(),
                                         //builder: (context) => Chats(),
                                       ),
                                     );

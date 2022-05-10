@@ -32,7 +32,7 @@ class _RadioTVState extends State<RadioTV> {
             },
             child: Icon(Icons.arrow_back_ios, color: Colors.black)),
         title: Text(
-          'TV',
+          'Radio/TV',
           style: TextStyle(
             color: Color.fromARGB(255, 49, 76, 190),
           ),
@@ -52,21 +52,13 @@ class _RadioTVState extends State<RadioTV> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'RADIO/TV',
-                      style: TextStyle(
-                        fontSize: 19,
-                        fontWeight: FontWeight.w600,
-                        color: Color.fromARGB(255, 49, 76, 190),
-                      ),
-                    ),
                     SizedBox(
-                      height: 20,
+                      height: 30,
                     ),
                     Text(
                       'Click stream below to watch us live.',
                       style:
-                          TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w300),
                     ),
                     SizedBox(
                       height: 20,

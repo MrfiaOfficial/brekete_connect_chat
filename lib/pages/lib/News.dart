@@ -25,7 +25,7 @@ class _ChatsState extends State<News> {
         dialogBackgroundColor: Colors.blueGrey.shade200,
       ),
       home: Scaffold(
-        appBar: AppBar(
+        /* appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
           leading: GestureDetector(
@@ -39,7 +39,7 @@ class _ChatsState extends State<News> {
               color: Color.fromARGB(255, 49, 76, 190),
             ),
           ),
-        ),
+        ), */
         body: Stack(
           children: [
             Container(
