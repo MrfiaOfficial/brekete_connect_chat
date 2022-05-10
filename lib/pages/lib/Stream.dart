@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:group_chat_app/utils/routes.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class Streams extends StatefulWidget {
@@ -12,14 +13,8 @@ class Streams extends StatefulWidget {
 class _ChatsState extends State<Streams> {
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery
-        .of(context)
-        .size
-        .height;
-    final width = MediaQuery
-        .of(context)
-        .size
-        .width;
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return MaterialApp(
       theme: ThemeData(
         primarySwatch: Colors.blue,
@@ -28,8 +23,24 @@ class _ChatsState extends State<Streams> {
         dialogBackgroundColor: Colors.blueGrey.shade200,
       ),
       home: Scaffold(
-        body:WebView(
-          initialUrl: 'https://player.castr.com/live_26505020d44d11eba40b63345f8bbc51',
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          leading: GestureDetector(
+              onTap: () {
+                AppRoutes.pop(context);
+              },
+              child: Icon(Icons.arrow_back_ios, color: Colors.black)),
+          title: Text(
+            'Streams',
+            style: TextStyle(
+              color: Color.fromARGB(255, 49, 76, 190),
+            ),
+          ),
+        ),
+        body: WebView(
+          initialUrl:
+              'https://player.castr.com/live_26505020d44d11eba40b63345f8bbc51',
         ),
 
         /*Container(

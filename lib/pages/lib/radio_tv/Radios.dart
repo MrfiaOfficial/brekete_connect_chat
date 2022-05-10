@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:group_chat_app/utils/routes.dart';
 import 'dart:async';
 
 // import 'package:flutter_radio_player/flutter_radio_player.dart';
@@ -49,6 +50,21 @@ class _MyAppState extends State<Radios> {
     return new MaterialApp(
       debugShowCheckedModeBanner: false,
       home: new Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          leading: GestureDetector(
+              onTap: () {
+                AppRoutes.pop(context);
+              },
+              child: Icon(Icons.arrow_back_ios, color: Colors.black)),
+          title: Text(
+            'New Complaint',
+            style: TextStyle(
+              color: Color.fromARGB(255, 49, 76, 190),
+            ),
+          ),
+        ),
         body: isLoading
             ? Center(
                 child: CircularProgressIndicator(),

@@ -36,7 +36,7 @@ class _ChatsState extends State<ComplaintScreen> {
               },
               child: Icon(Icons.arrow_back_ios, color: Colors.black)),
           title: Text(
-            'COMPLAINTS',
+            'Complaints',
             style: TextStyle(
               color: Color.fromARGB(255, 49, 76, 190),
             ),

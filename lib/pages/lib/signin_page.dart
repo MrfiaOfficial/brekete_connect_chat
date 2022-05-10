@@ -100,246 +100,265 @@ class _SignInPageState extends State<SignInPage> {
     return _isLoading
         ? Loading()
         : Scaffold(
-            body: Form(
-            key: _formKey,
-            child: SingleChildScrollView(
-              child: Container(
-                height: height,
-                width: width,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/backg.png"),
-                    fit: BoxFit.fill,
-                  ),
+            appBar: AppBar(
+              backgroundColor: Colors.white,
+              elevation: 0,
+              leading: GestureDetector(
+                  onTap: () {
+                    AppRoutes.pop(context);
+                  },
+                  child: Icon(Icons.arrow_back_ios, color: Colors.black)),
+              title: Text(
+                'Login',
+                style: TextStyle(
+                  color: Color.fromARGB(255, 49, 76, 190),
                 ),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    SingleChildScrollView(
-                      child: Container(
-                        height: height,
-                        width: width,
-                        child: Column(
-                          children: [
-                            Container(height: height * 0.15),
-                            SingleChildScrollView(
-                              child: Padding(
-                                padding:
-                                    const EdgeInsets.fromLTRB(40, 0, 40, 0),
-                                child: Container(
-                                  height: height * 0.65,
-                                  child: Card(
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(15.0),
-                                    ),
-                                    child: Column(
-                                      children: [
-                                        SizedBox(
-                                          height: height * 0.03,
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: [
-                                            ElevatedButton(
+              ),
+            ),
+            body: Form(
+              key: _formKey,
+              child: SingleChildScrollView(
+                child: Container(
+                  height: height,
+                  width: width,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/backg.png"),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      SingleChildScrollView(
+                        child: Container(
+                          height: height,
+                          width: width,
+                          child: Column(
+                            children: [
+                              Container(height: height * 0.15),
+                              SingleChildScrollView(
+                                child: Padding(
+                                  padding:
+                                      const EdgeInsets.fromLTRB(40, 0, 40, 0),
+                                  child: Container(
+                                    height: height * 0.65,
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(15.0),
+                                      ),
+                                      child: Column(
+                                        children: [
+                                          SizedBox(
+                                            height: height * 0.03,
+                                          ),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              ElevatedButton(
+                                                  child: Padding(
+                                                    padding: const EdgeInsets
+                                                            .symmetric(
+                                                        horizontal: 20),
+                                                    child: Text("Login",
+                                                        style: TextStyle(
+                                                            fontSize: 14)),
+                                                  ),
+                                                  style: ButtonStyle(
+                                                      foregroundColor:
+                                                          MaterialStateProperty.all<Color>(
+                                                              Colors.white),
+                                                      backgroundColor:
+                                                          MaterialStateProperty
+                                                              .all<Color>(
+                                                                  Colors.red),
+                                                      shape: MaterialStateProperty.all<
+                                                              RoundedRectangleBorder>(
+                                                          RoundedRectangleBorder(
+                                                              borderRadius:
+                                                                  BorderRadius.circular(18.0),
+                                                              side: BorderSide(color: Colors.red)))),
+                                                  onPressed: () => null),
+                                              InkWell(
+                                                onTap: () {
+                                                  Navigator.of(context).pushReplacement(
+                                                      MaterialPageRoute(
+                                                          builder: (BuildContext
+                                                                  context) =>
+                                                              RegisterPage()));
+                                                },
                                                 child: Padding(
                                                   padding: const EdgeInsets
                                                           .symmetric(
-                                                      horizontal: 20),
-                                                  child: Text("Login",
-                                                      style: TextStyle(
-                                                          fontSize: 14)),
+                                                      horizontal: 30),
+                                                  child: Text(
+                                                    "Signup",
+                                                    style: TextStyle(
+                                                        color: Colors.red),
+                                                  ),
                                                 ),
-                                                style: ButtonStyle(
-                                                    foregroundColor:
-                                                        MaterialStateProperty.all<Color>(
-                                                            Colors.white),
-                                                    backgroundColor:
-                                                        MaterialStateProperty
-                                                            .all<Color>(
-                                                                Colors.red),
-                                                    shape: MaterialStateProperty.all<
-                                                            RoundedRectangleBorder>(
-                                                        RoundedRectangleBorder(
-                                                            borderRadius:
-                                                                BorderRadius.circular(18.0),
-                                                            side: BorderSide(color: Colors.red)))),
-                                                onPressed: () => null),
-                                            InkWell(
-                                              onTap: () {
-                                                Navigator.of(context)
-                                                    .pushReplacement(
-                                                        MaterialPageRoute(
-                                                            builder: (BuildContext
-                                                                    context) =>
-                                                                RegisterPage()));
-                                              },
-                                              child: Padding(
-                                                padding:
-                                                    const EdgeInsets.symmetric(
-                                                        horizontal: 30),
-                                                child: Text(
-                                                  "Signup",
-                                                  style: TextStyle(
-                                                      color: Colors.red),
-                                                ),
+                                              )
+                                            ],
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.fromLTRB(
+                                                20, 0, 20, 0),
+                                            child: Theme(
+                                              data: new ThemeData(
+                                                // primaryColor: Colors.red,
+                                                primaryColorDark:
+                                                    Colors.black54,
                                               ),
-                                            )
-                                          ],
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.fromLTRB(
-                                              20, 0, 20, 0),
-                                          child: Theme(
-                                            data: new ThemeData(
-                                              // primaryColor: Colors.red,
-                                              primaryColorDark: Colors.black54,
-                                            ),
-                                            child: TextFormField(
-                                              style: TextStyle(
-                                                  color: Colors.black),
-                                              controller: emailController,
-                                              decoration: new InputDecoration(
-                                                  enabledBorder:
-                                                      UnderlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                        color: Colors.grey),
-                                                  ),
-                                                  focusedBorder:
-                                                      UnderlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                        color: Colors.grey),
-                                                  ),
-                                                  border: UnderlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                        color: Colors.grey),
-                                                  ),
-                                                  hintStyle: TextStyle(
-                                                    color: Colors.red,
-                                                  ),
-                                                  contentPadding:
-                                                      EdgeInsets.only(
-                                                          left: 0,
-                                                          bottom: 2,
-                                                          top: 11,
-                                                          right: 15),
-                                                  hintText:
-                                                      "Enter Username Or Email"),
-                                              validator: (val) {
-                                                return RegExp(
-                                                            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                                        .hasMatch(val)
-                                                    ? null
-                                                    : "Please enter a valid email";
-                                              },
-                                              onChanged: (val) {
-                                                setState(() {
-                                                  email = val;
-                                                });
-                                              },
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.fromLTRB(
-                                              20, 0, 20, 0),
-                                          child: Theme(
-                                            data: new ThemeData(
-                                              // primaryColor: Colors.red,
-                                              primaryColorDark: Colors.black,
-                                            ),
-                                            child: TextFormField(
-                                              style: TextStyle(
-                                                  color: Colors.black),
-                                              controller: passwordController,
-                                              decoration: new InputDecoration(
-                                                  enabledBorder:
-                                                      UnderlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                        color: Colors.grey),
-                                                  ),
-                                                  focusedBorder:
-                                                      UnderlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                        color: Colors.grey),
-                                                  ),
-                                                  border: UnderlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                        color: Colors.grey),
-                                                  ),
-                                                  hintStyle: TextStyle(
-                                                    color: Colors.red,
-                                                  ),
-                                                  contentPadding:
-                                                      EdgeInsets.only(
-                                                          left: 0,
-                                                          bottom: 2,
-                                                          top: 11,
-                                                          right: 15),
-                                                  hintText: "Password"),
-                                              validator: (val) => val.length < 6
-                                                  ? 'Password not strong enough'
-                                                  : null,
-                                              obscureText: true,
-                                              onChanged: (val) {
-                                                setState(() {
-                                                  password = val;
-                                                });
-                                              },
-                                            ),
-                                          ),
-                                        ),
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.end,
-                                          children: [
-                                            Padding(
-                                              padding: const EdgeInsets.only(
-                                                  right: 20, top: 20),
-                                              child: Text(
-                                                "Forgot Password",
+                                              child: TextFormField(
                                                 style: TextStyle(
-                                                  color: Colors.red,
-                                                ),
+                                                    color: Colors.black),
+                                                controller: emailController,
+                                                decoration: new InputDecoration(
+                                                    enabledBorder:
+                                                        UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                          color: Colors.grey),
+                                                    ),
+                                                    focusedBorder:
+                                                        UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                          color: Colors.grey),
+                                                    ),
+                                                    border:
+                                                        UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                          color: Colors.grey),
+                                                    ),
+                                                    hintStyle: TextStyle(
+                                                      color: Colors.red,
+                                                    ),
+                                                    contentPadding:
+                                                        EdgeInsets.only(
+                                                            left: 0,
+                                                            bottom: 2,
+                                                            top: 11,
+                                                            right: 15),
+                                                    hintText:
+                                                        "Enter Username Or Email"),
+                                                validator: (val) {
+                                                  return RegExp(
+                                                              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                                                          .hasMatch(val)
+                                                      ? null
+                                                      : "Please enter a valid email";
+                                                },
+                                                onChanged: (val) {
+                                                  setState(() {
+                                                    email = val;
+                                                  });
+                                                },
                                               ),
-                                            )
-                                          ],
-                                        ),
-                                        SizedBox(
-                                          height: height * 0.06,
-                                        ),
-                                        Container(
-                                          height: height * 0.06,
-                                          width: width * 0.4,
-                                          child: RaisedButton(
-                                              elevation: 0.0,
-                                              color: Colors.red,
-                                              shape: RoundedRectangleBorder(
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          16.0)),
-                                              child: Text('Login',
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.fromLTRB(
+                                                20, 0, 20, 0),
+                                            child: Theme(
+                                              data: new ThemeData(
+                                                // primaryColor: Colors.red,
+                                                primaryColorDark: Colors.black,
+                                              ),
+                                              child: TextFormField(
+                                                style: TextStyle(
+                                                    color: Colors.black),
+                                                controller: passwordController,
+                                                decoration: new InputDecoration(
+                                                    enabledBorder:
+                                                        UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                          color: Colors.grey),
+                                                    ),
+                                                    focusedBorder:
+                                                        UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                          color: Colors.grey),
+                                                    ),
+                                                    border:
+                                                        UnderlineInputBorder(
+                                                      borderSide: BorderSide(
+                                                          color: Colors.grey),
+                                                    ),
+                                                    hintStyle: TextStyle(
+                                                      color: Colors.red,
+                                                    ),
+                                                    contentPadding:
+                                                        EdgeInsets.only(
+                                                            left: 0,
+                                                            bottom: 2,
+                                                            top: 11,
+                                                            right: 15),
+                                                    hintText: "Password"),
+                                                validator: (val) => val.length <
+                                                        6
+                                                    ? 'Password not strong enough'
+                                                    : null,
+                                                obscureText: true,
+                                                onChanged: (val) {
+                                                  setState(() {
+                                                    password = val;
+                                                  });
+                                                },
+                                              ),
+                                            ),
+                                          ),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.end,
+                                            children: [
+                                              Padding(
+                                                padding: const EdgeInsets.only(
+                                                    right: 20, top: 20),
+                                                child: Text(
+                                                  "Forgot Password",
                                                   style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 16.0)),
-                                              onPressed: () {
-                                                _onSignIn();
-                                              }),
-                                        ),
-                                        SizedBox(
-                                          height: height * 0.03,
-                                        ),
-                                        /* Text(
+                                                    color: Colors.red,
+                                                  ),
+                                                ),
+                                              )
+                                            ],
+                                          ),
+                                          SizedBox(
+                                            height: height * 0.06,
+                                          ),
+                                          Container(
+                                            height: height * 0.06,
+                                            width: width * 0.4,
+                                            child: RaisedButton(
+                                                elevation: 0.0,
+                                                color: Colors.red,
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            16.0)),
+                                                child: Text('Login',
+                                                    style: TextStyle(
+                                                        color: Colors.white,
+                                                        fontSize: 16.0)),
+                                                onPressed: () {
+                                                  _onSignIn();
+                                                }),
+                                          ),
+                                          SizedBox(
+                                            height: height * 0.03,
+                                          ),
+                                          /* Text(
                                           "OR",
                                           style: TextStyle(
                                               color: Colors.black12,
                                               fontSize: 28),
                                         ), */
-                                        SizedBox(
-                                          height: height * 0.02,
-                                        ),
-                                        /* Row(
+                                          SizedBox(
+                                            height: height * 0.02,
+                                          ),
+                                          /* Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
@@ -385,20 +404,20 @@ class _SignInPageState extends State<SignInPage> {
                                                 )),
                                           ],
                                         ) */
-                                      ],
+                                        ],
+                                      ),
                                     ),
                                   ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ));
+            ));
   }
 }

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:group_chat_app/shop/utils/CustomTextStyle.dart';
-
-
+import 'package:group_chat_app/utils/routes.dart';
 
 import 'CheckOutPage.dart';
 
@@ -16,6 +15,21 @@ class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: GestureDetector(
+            onTap: () {
+              AppRoutes.pop(context);
+            },
+            child: Icon(Icons.arrow_back_ios, color: Colors.black)),
+        title: Text(
+          'Cart',
+          style: TextStyle(
+            color: Color.fromARGB(255, 49, 76, 190),
+          ),
+        ),
+      ),
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.grey.shade100,
       body: Builder(

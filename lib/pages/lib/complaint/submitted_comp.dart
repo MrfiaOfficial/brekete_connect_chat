@@ -109,11 +109,10 @@ class _ViewFileState extends State<ViewFile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Image.file(
-        File(
-            '/data/user/0/com.ittechnologix.bereketeconnect/cache/image_picker866478834184422166.jpg')
-        // loadingWidget: CircularProgressIndicator(),
-      ),
+      body: Image.file(File(
+              '/data/user/0/com.ittechnologix.bereketeconnect/cache/image_picker866478834184422166.jpg')
+          // loadingWidget: CircularProgressIndicator(),
+          ),
     );
   }
 }

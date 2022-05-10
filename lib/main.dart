@@ -89,7 +89,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   /// To navigate layout change
   void NavigatorPage() {
-    Navigator.of(context).pushReplacementNamed("login");
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(builder: (context) => Dashboard()),
+    );
   }
 
   /// Declare startTime to InitState

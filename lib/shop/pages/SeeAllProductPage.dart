@@ -3,7 +3,6 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:group_chat_app/shop/utils/CustomTextStyle.dart';
 import 'package:group_chat_app/shop/utils/CustomUtils.dart';
 
-
 class SeeAllProductPage extends StatefulWidget {
   @override
   _SeeAllProductPageState createState() => _SeeAllProductPageState();
@@ -42,7 +41,7 @@ class _SeeAllProductPageState extends State<SeeAllProductPage> {
             child: filterSortListOption(),
             preferredSize: Size(double.infinity, 44)),
         title: Text(
-          "GROUP BY",
+          "All Products",
           style: CustomTextStyle.textFormFieldBold.copyWith(fontSize: 16),
         ),
         elevation: 1,

@@ -25,6 +25,21 @@ class _ChatsState extends State<News> {
         dialogBackgroundColor: Colors.blueGrey.shade200,
       ),
       home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          leading: GestureDetector(
+              onTap: () {
+                AppRoutes.pop(context);
+              },
+              child: Icon(Icons.arrow_back_ios, color: Colors.black)),
+          title: Text(
+            'News',
+            style: TextStyle(
+              color: Color.fromARGB(255, 49, 76, 190),
+            ),
+          ),
+        ),
         body: Stack(
           children: [
             Container(

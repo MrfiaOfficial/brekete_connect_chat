@@ -27,6 +27,9 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  //var user = CurrentAppUser.currentUserData;
+  //String! userUid = user.userId;
+
   @override
   void initState() {
     CurrentAppUser.currentUserData.getUserData().then((value) {
@@ -71,7 +74,7 @@ class _DashboardState extends State<Dashboard> {
                           Padding(
                             padding: const EdgeInsets.only(left: 20),
                             child: Text(
-                              'Dashboard',
+                              'Home',
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 22,
@@ -92,52 +95,32 @@ class _DashboardState extends State<Dashboard> {
                               height: height * 0.05,
                             ),
                             Padding(
-                                padding: const EdgeInsets.only(right: 20),
-                                child:
-                                    CurrentAppUser.currentUserData.photo == ""
-                                        ? Icon(
-                                            Icons.account_circle_rounded,
-                                            color: Colors.white,
-                                            size: 60.0,
-                                          )
-                                        : Container(
-                                            height: 50,
-                                            width: 50,
-                                            child: ClipRRect(
-                                              borderRadius:
-                                                  BorderRadius.circular(25),
-                                              child: CachedNetworkImage(
-                                                imageUrl: CurrentAppUser
-                                                    .currentUserData.photo,
-                                                fit: BoxFit.cover,
-                                              ),
-                                            ),
-                                          )
-                                // new IconButton(
-                                //   icon: new Icon(
-                                //     Icons.account_circle_rounded,
-                                //     color: Colors.white,
-                                //     size: 60.0,
-                                //   ),
-                                //   onPressed: () {
-                                //     AppRoutes.push(context, MyProfile());
-                                //   },
-                                // ),
-                                ),
-                            SizedBox(
-                              height: height * 0.01,
-                            ),
-                            Padding(
                               padding: const EdgeInsets.only(right: 20),
-                              child: Text(
-                                '${CurrentAppUser.currentUserData.name}',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.bold,
-                                ),
+                              child: Icon(
+                                Icons.account_circle_rounded,
+                                color: Colors.white,
+                                size: 60.0,
                               ),
+                              /* child: CurrentAppUser.currentUserData.photo == ""
+                                  ? Icon(
+                                      Icons.account_circle_rounded,
+                                      color: Colors.white,
+                                      size: 60.0,
+                                    )
+                                  : Container(
+                                      height: 50,
+                                      width: 50,
+                                      child: ClipRRect(
+                                        borderRadius: BorderRadius.circular(25),
+                                        child: CachedNetworkImage(
+                                          imageUrl: CurrentAppUser
+                                              .currentUserData.photo,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
+                                    ), */
                             ),
+                            SizedBox(height: height * 0.01),
                           ],
                         ),
                       ),

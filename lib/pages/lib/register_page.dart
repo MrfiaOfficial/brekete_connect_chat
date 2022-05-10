@@ -79,6 +79,21 @@ class _RegisterPageState extends State<RegisterPage> {
     return _isLoading
         ? Loading()
         : Scaffold(
+            appBar: AppBar(
+              backgroundColor: Colors.white,
+              elevation: 0,
+              leading: GestureDetector(
+                  onTap: () {
+                    AppRoutes.pop(context);
+                  },
+                  child: Icon(Icons.arrow_back_ios, color: Colors.black)),
+              title: Text(
+                'Register',
+                style: TextStyle(
+                  color: Color.fromARGB(255, 49, 76, 190),
+                ),
+              ),
+            ),
             body: Form(
               key: _formKey,
               child: SingleChildScrollView(

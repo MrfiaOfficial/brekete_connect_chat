@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:group_chat_app/shop/model/list_profile_section.dart';
 import 'package:group_chat_app/shop/utils/CustomTextStyle.dart';
+import 'package:group_chat_app/utils/routes.dart';
 
 import 'AboutUsPage.dart';
 import 'EditProfilePage.dart';
@@ -45,6 +46,21 @@ class _ProfilePage1State extends State<ProfilePage1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: GestureDetector(
+            onTap: () {
+              AppRoutes.pop(context);
+            },
+            child: Icon(Icons.arrow_back_ios, color: Colors.black)),
+        title: Text(
+          'Profile',
+          style: TextStyle(
+            color: Color.fromARGB(255, 49, 76, 190),
+          ),
+        ),
+      ),
       backgroundColor: Colors.grey.shade200,
       resizeToAvoidBottomInset: true,
       body: Builder(builder: (context) {
@@ -190,12 +206,13 @@ class _ProfilePage1State extends State<ProfilePage1> {
                             alignment: Alignment.topCenter,
                             child: Container(
                               decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: Colors.grey.shade400, width: 2),
-                                  shape: BoxShape.circle,
+                                border: Border.all(
+                                    color: Colors.grey.shade400, width: 2),
+                                shape: BoxShape.circle,
                               ),
-                              child:  Icon(Icons.account_circle_rounded,
-                              size: 100,
+                              child: Icon(
+                                Icons.account_circle_rounded,
+                                size: 100,
                                 color: Colors.grey,
                               ),
                               width: 100,

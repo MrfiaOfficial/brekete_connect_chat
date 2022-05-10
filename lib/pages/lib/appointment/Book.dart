@@ -128,6 +128,21 @@ class _ChatsState extends State<Book> {
       home: ModalProgressHUD(
         inAsyncCall: isLoading,
         child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.white,
+            elevation: 0,
+            leading: GestureDetector(
+                onTap: () {
+                  AppRoutes.pop(context);
+                },
+                child: Icon(Icons.arrow_back_ios, color: Colors.black)),
+            title: Text(
+              'Book Appointment',
+              style: TextStyle(
+                color: Color.fromARGB(255, 49, 76, 190),
+              ),
+            ),
+          ),
           body: Container(
             height: height,
             width: width,

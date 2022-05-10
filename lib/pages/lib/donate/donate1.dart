@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:group_chat_app/utils/routes.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'Donate.dart';
 
@@ -24,6 +25,21 @@ class _ChatsState extends State<Donate1> {
         dialogBackgroundColor: Colors.blueGrey.shade200,
       ),
       home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          elevation: 0,
+          leading: GestureDetector(
+              onTap: () {
+                AppRoutes.pop(context);
+              },
+              child: Icon(Icons.arrow_back_ios, color: Colors.black)),
+          title: Text(
+            'Donate',
+            style: TextStyle(
+              color: Color.fromARGB(255, 49, 76, 190),
+            ),
+          ),
+        ),
         body: Container(
           height: height,
           width: width,
@@ -38,18 +54,6 @@ class _ChatsState extends State<Donate1> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Row(
-                  children: [
-                    Text(
-                      'Donate',
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 49, 76, 190),
-                        fontSize: 24,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
                 SizedBox(
                   height: height * 0.1,
                 ),

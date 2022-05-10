@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:group_chat_app/shop/utils/CustomTextStyle.dart';
 import 'package:group_chat_app/shop/utils/CustomUtils.dart';
+import 'package:group_chat_app/utils/routes.dart';
 
 class Searchs extends StatefulWidget {
   @override
@@ -39,6 +40,21 @@ class _SearchPageState extends State<Searchs> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: GestureDetector(
+            onTap: () {
+              AppRoutes.pop(context);
+            },
+            child: Icon(Icons.arrow_back_ios, color: Colors.black)),
+        title: Text(
+          'Search',
+          style: TextStyle(
+            color: Color.fromARGB(255, 49, 76, 190),
+          ),
+        ),
+      ),
       backgroundColor: Colors.grey.shade50,
       body: ListView(
         children: <Widget>[

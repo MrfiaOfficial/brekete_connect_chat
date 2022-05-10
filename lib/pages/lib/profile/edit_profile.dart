@@ -50,6 +50,21 @@ class _EditProfileState extends State<EditProfile> {
       home: ModalProgressHUD(
         inAsyncCall: isLoading,
         child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.white,
+            elevation: 0,
+            leading: GestureDetector(
+                onTap: () {
+                  AppRoutes.pop(context);
+                },
+                child: Icon(Icons.arrow_back_ios, color: Colors.black)),
+            title: Text(
+              'Edit Profile',
+              style: TextStyle(
+                color: Color.fromARGB(255, 49, 76, 190),
+              ),
+            ),
+          ),
           body: Stack(
             children: [
               Container(

@@ -5,6 +5,7 @@ import 'package:group_chat_app/shop/my_products.dart';
 import 'package:group_chat_app/shop/pages/CartPage.dart';
 import 'package:group_chat_app/shop/pages/ProfilePage1.dart';
 import 'package:group_chat_app/shop/pages/SearchPage.dart';
+import 'package:group_chat_app/utils/routes.dart';
 
 class Homes extends StatefulWidget {
   @override
@@ -25,6 +26,21 @@ class _HomeState extends State<Homes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      /* appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: GestureDetector(
+            onTap: () {
+              AppRoutes.pop(context);
+            },
+            child: Icon(Icons.arrow_back_ios, color: Colors.black)),
+        title: Text(
+          'Shop',
+          style: TextStyle(
+            color: Color.fromARGB(255, 49, 76, 190),
+          ),
+        ),
+      ), */
       backgroundColor: Colors.grey.shade100,
       bottomNavigationBar: BottomNavigationBar(
         items: [

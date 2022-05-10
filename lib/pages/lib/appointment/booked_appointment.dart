@@ -31,7 +31,7 @@ class _BookedAppointmentsState extends State<BookedAppointments> {
               },
               child: Icon(Icons.arrow_back_ios, color: Colors.black)),
           title: Text(
-            'Appointments',
+            'Booked Appointments',
             style: TextStyle(
               color: Color.fromARGB(255, 49, 76, 190),
             ),

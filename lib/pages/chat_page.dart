@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:group_chat_app/services/database_service.dart';
+import 'package:group_chat_app/utils/routes.dart';
 import 'package:group_chat_app/widgets/message_tile.dart';
 
 class ChatPage extends StatefulWidget {
@@ -70,6 +71,21 @@ class _ChatPageState extends State<ChatPage> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: GestureDetector(
+            onTap: () {
+              AppRoutes.pop(context);
+            },
+            child: Icon(Icons.arrow_back_ios, color: Colors.black)),
+        title: Text(
+          'Chats',
+          style: TextStyle(
+            color: Color.fromARGB(255, 49, 76, 190),
+          ),
+        ),
+      ),
       /*   appBar: AppBar(
         title: Text(widget.groupName, style: TextStyle(color: Colors.black)),
         centerTitle: true,

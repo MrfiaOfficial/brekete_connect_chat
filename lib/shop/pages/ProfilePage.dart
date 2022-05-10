@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:group_chat_app/shop/model/list_profile_section.dart';
 import 'package:group_chat_app/shop/utils/CustomTextStyle.dart';
 import 'package:group_chat_app/shop/utils/CustomUtils.dart';
-
+import 'package:group_chat_app/utils/routes.dart';
 
 import 'AboutUsPage.dart';
 import 'InviteFriendsPage.dart';
@@ -48,6 +48,21 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: GestureDetector(
+            onTap: () {
+              AppRoutes.pop(context);
+            },
+            child: Icon(Icons.arrow_back_ios, color: Colors.black)),
+        title: Text(
+          'Profile',
+          style: TextStyle(
+            color: Color.fromARGB(255, 49, 76, 190),
+          ),
+        ),
+      ),
       body: ListView(
         children: <Widget>[
           Utils.getSizedBox(height: 24),

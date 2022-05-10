@@ -22,7 +22,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                 Navigator.pop(context);
               }),
           title: Text(
-            "ADDRESS",
+            "Checkout",
             style: TextStyle(color: Colors.white, fontSize: 14),
           ),
         ),
