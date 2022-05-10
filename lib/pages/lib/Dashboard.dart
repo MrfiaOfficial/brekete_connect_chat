@@ -32,14 +32,12 @@ class _DashboardState extends State<Dashboard> {
   //var user = CurrentAppUser.currentUserData;
   //String! userUid = user.userId;
   //var currentUserUid = '';
-  bool _userLoggedIn = false;
+  //bool _userLoggedIn = false;
 
   @override
   void initState() {
     CurrentAppUser.currentUserData.getUserData().then((value) {
-      setState(() {
-        _userLoggedIn = value;
-      });
+      setState(() {});
     });
     super.initState();
   }
@@ -48,6 +46,7 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+    String _userLoggedIn = CurrentAppUser.currentUserData.userId;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -91,7 +90,9 @@ class _DashboardState extends State<Dashboard> {
                         ],
                       ),
                       GestureDetector(
-                        onTap: _userLoggedIn
+                        //onTap: _userLoggedIn
+                        //onTap: CurrentAppUser.currentUserData.userId != null
+                        onTap: _userLoggedIn != null
                             ? () {
                                 //AppRoutes.push(context, MyProfile());
                                 AppRoutes.push(context, Chats());
@@ -152,7 +153,9 @@ class _DashboardState extends State<Dashboard> {
                         children: [
                           InkWell(
                             //onTap: CurrentAppUser.currentUserData.userId == ""
-                            onTap: _userLoggedIn
+                            //onTap: _userLoggedIn
+                            //onTap: CurrentAppUser.currentUserData.userId != null
+                            onTap: _userLoggedIn != null
                                 ? () {
                                     Navigator.push(
                                       context,
@@ -322,7 +325,7 @@ class _DashboardState extends State<Dashboard> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           InkWell(
-                            onTap: _userLoggedIn
+                            onTap: _userLoggedIn != null
                                 ? () {
                                     Navigator.push(
                                       context,
