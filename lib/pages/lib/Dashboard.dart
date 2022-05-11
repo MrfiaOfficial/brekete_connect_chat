@@ -29,11 +29,6 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
-  //var user = CurrentAppUser.currentUserData;
-  //String! userUid = user.userId;
-  //var currentUserUid = '';
-  //bool _userLoggedIn = false;
-
   @override
   void initState() {
     CurrentAppUser.currentUserData.getUserData().then((value) {
@@ -66,8 +61,9 @@ class _DashboardState extends State<Dashboard> {
           child: SingleChildScrollView(
             child: Column(
               children: [
+                SizedBox(height: 40),
                 Container(
-                  height: height * .18,
+                  height: height * .20,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -136,7 +132,7 @@ class _DashboardState extends State<Dashboard> {
                                       ),
                                     ), */
                             ),
-                            SizedBox(height: height * 0.01),
+                            // SizedBox(height: height * 0.01),
                           ],
                         ),
                       ),
@@ -144,9 +140,9 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ),
                 Container(
-                  height: height * .82,
+                  height: height * .80,
                   child: Column(
-                    //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -302,7 +298,7 @@ class _DashboardState extends State<Dashboard> {
                                     width: 70,
                                   ),
                                   Text(
-                                    '       TV/Radio          ',
+                                    '       TV/RADIO          ',
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 49, 76, 190),
                                       fontSize: 18,
@@ -321,7 +317,7 @@ class _DashboardState extends State<Dashboard> {
                       SizedBox(
                         height: height * 0.04,
                       ),
-                      Row(
+                      /* Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           InkWell(
@@ -356,7 +352,7 @@ class _DashboardState extends State<Dashboard> {
                                     height: height * 0.01,
                                   ),
                                   Text(
-                                    '      Request for      ',
+                                    '      REQUEST FOR      ',
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 49, 76, 190),
                                       fontSize: 18,
@@ -364,7 +360,7 @@ class _DashboardState extends State<Dashboard> {
                                     ),
                                   ),
                                   Text(
-                                    'Meditation',
+                                    'MEDITATION',
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 49, 76, 190),
                                       fontSize: 18,
@@ -421,7 +417,7 @@ class _DashboardState extends State<Dashboard> {
                       ),
                       SizedBox(
                         height: height * 0.04,
-                      ),
+                      ), */
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [

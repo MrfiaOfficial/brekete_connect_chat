@@ -57,18 +57,19 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Berekete Connect',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData.light(),
+      title: 'Berekete Connect',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.light(),
 
-        //home: _isLoggedIn != null ? _isLoggedIn ? HomePage() : AuthenticatePage() : Center(child: CircularProgressIndicator()),
+      //home: _isLoggedIn != null ? _isLoggedIn ? HomePage() : AuthenticatePage() : Center(child: CircularProgressIndicator()),
 
-        home: SplashScreen(),
-        routes: <String, WidgetBuilder>{
-          "login": (BuildContext context) =>
-              _isLoggedIn ? Dashboard() : AuthenticatePage(),
-          //home: HomePage(),
-        });
+      home: SplashScreen(),
+      /* routes: <String, WidgetBuilder>{
+        "login": (BuildContext context) =>
+            _isLoggedIn ? Dashboard() : AuthenticatePage(),
+        //home: HomePage(),
+      }, */
+    );
   }
 }
 

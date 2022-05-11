@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:group_chat_app/just_added/login_register_page.dart';
+import 'package:group_chat_app/models/user.dart';
 import 'package:group_chat_app/pages/lib/appointment/booked_appointment.dart';
 import 'package:group_chat_app/utils/routes.dart';
 
@@ -18,6 +20,7 @@ class _ChatsState extends State<AppointmentScreen> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+    String _userLoggedIn = CurrentAppUser.currentUserData.userId;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -66,19 +69,33 @@ class _ChatsState extends State<AppointmentScreen> {
                       child: Text("BOOK NEW APPOINTMENT",
                           style: TextStyle(fontSize: 20)),
                       style: ButtonStyle(
-                          foregroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.red),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(12.0),
-                                      side: BorderSide(color: Colors.red)))),
-                      onPressed: () {
-                        Navigator.push(context,
-                            MaterialPageRoute(builder: (context) => Book()));
-                      },
+                        foregroundColor:
+                            MaterialStateProperty.all<Color>(Colors.white),
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Colors.red),
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(12.0),
+                            side: BorderSide(color: Colors.red),
+                          ),
+                        ),
+                      ),
+                      onPressed: _userLoggedIn != null
+                          ? () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Book()));
+                            }
+                          : () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => UnAuthScreen(),
+                                ),
+                              );
+                            },
                     ),
                   ),
                   SizedBox(
@@ -99,12 +116,22 @@ class _ChatsState extends State<AppointmentScreen> {
                                   RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(12.0),
                                       side: BorderSide(color: Colors.red)))),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => BookedAppointments()));
-                      },
+                      onPressed: _userLoggedIn != null
+                          ? () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          BookedAppointments()));
+                            }
+                          : () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => UnAuthScreen(),
+                                ),
+                              );
+                            },
                     ),
                   ),
                   SizedBox(

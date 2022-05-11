@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:group_chat_app/just_added/login_register_page.dart';
+import 'package:group_chat_app/models/user.dart';
 import 'package:group_chat_app/pages/lib/complaint/submitted_comp.dart';
 import 'package:group_chat_app/utils/routes.dart';
 
@@ -18,6 +20,7 @@ class _ChatsState extends State<ComplaintScreen> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
+    String _userLoggedIn = CurrentAppUser.currentUserData.userId;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -75,12 +78,21 @@ class _ChatsState extends State<ComplaintScreen> {
                                   RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(12.0),
                                       side: BorderSide(color: Colors.red)))),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Conplaint()));
-                      },
+                      onPressed: _userLoggedIn != null
+                          ? () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Conplaint()));
+                            }
+                          : () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => UnAuthScreen(),
+                                ),
+                              );
+                            },
                     ),
                   ),
                   SizedBox(
@@ -101,12 +113,22 @@ class _ChatsState extends State<ComplaintScreen> {
                                   RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(12.0),
                                       side: BorderSide(color: Colors.red)))),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SubmittedComplaint()));
-                      },
+                      onPressed: _userLoggedIn != null
+                          ? () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          SubmittedComplaint()));
+                            }
+                          : () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => UnAuthScreen(),
+                                ),
+                              );
+                            },
                     ),
                   ),
                   SizedBox(
