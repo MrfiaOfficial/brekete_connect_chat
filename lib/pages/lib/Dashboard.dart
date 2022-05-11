@@ -14,6 +14,7 @@ import 'package:group_chat_app/pages/lib/radio_tv/radio_tv.dart';
 import 'package:group_chat_app/shop/home.dart';
 import 'package:group_chat_app/shop/pages/HomePage.dart';
 import 'package:group_chat_app/utils/routes.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'Meditation.dart';
 import 'complaint/Conplaint.dart';
@@ -181,7 +182,7 @@ class _DashboardState extends State<Dashboard> {
                                     width: 60,
                                   ),
                                   Text(
-                                    '           CHAT           ',
+                                    '        ACCOUNT       ',
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 49, 76, 190),
                                       fontSize: 18,
@@ -247,11 +248,12 @@ class _DashboardState extends State<Dashboard> {
                         children: [
                           InkWell(
                             onTap: () {
-                              Navigator.push(
+                              _launchURL();
+                              /*  Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) => News(),
-                                  ));
+                                  )); */
                             },
                             child: NeumorphicContainer(
                               child: Column(
@@ -511,6 +513,11 @@ class _DashboardState extends State<Dashboard> {
         ),
       ),
     );
+  }
+
+  void _launchURL() async {
+    if (!await launch('https://breketeconnect.com.ng'))
+      throw 'Could not launch https://breketeconnect.com.ng';
   }
 }
 

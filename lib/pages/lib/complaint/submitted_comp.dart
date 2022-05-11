@@ -78,14 +78,19 @@ class _SubmittedComplaintState extends State<SubmittedComplaint> {
                                 style: TextStyle(color: Colors.blue)),
                             // subtitle: Icon(Icons.download, color: Colors.blue,),
 
-                            trailing: GestureDetector(
-                                onTap: () {
-                                  AppRoutes.push(context, ViewFile());
-                                },
-                                child: Icon(
-                                  Icons.view_agenda,
-                                  color: Colors.blue,
-                                )),
+                            trailing: Icon(
+                              Icons.view_agenda,
+                              color: Colors.blue,
+                            ),
+                            /* trailing: GestureDetector(
+                              onTap: () {
+                                AppRoutes.push(context, ViewFile());
+                              },
+                              child: Icon(
+                                Icons.view_agenda,
+                                color: Colors.blue,
+                              ),
+                            ), */
                           ),
                         );
                       }).toList(),
@@ -109,10 +114,14 @@ class _ViewFileState extends State<ViewFile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Image.file(File(
-              '/data/user/0/com.ittechnologix.bereketeconnect/cache/image_picker866478834184422166.jpg')
-          // loadingWidget: CircularProgressIndicator(),
+      body: Stack(
+        children: [
+          Image.file(
+            File(
+                'https://firebasestorage.googleapis.com/v0/b/berekete-connect-23507.appspot.com/o/1652212769042?alt=media&token=194dc327-07ad-4de8-bfcd-e2ee63dab38f'),
           ),
+        ],
+      ),
     );
   }
 }

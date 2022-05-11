@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:group_chat_app/helper/helper_functions.dart';
 import 'package:group_chat_app/models/user.dart';
 import 'package:group_chat_app/pages/lib/Dashboard.dart';
-import 'package:group_chat_app/pages/lib/News.dart';
+import 'package:group_chat_app/pages/lib/News-old.dart';
 import 'package:group_chat_app/pages/lib/authenticate_page.dart';
 
 //void main() => runApp(MyApp());
@@ -57,7 +57,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Berekete Connect',
+      title: 'Brekete Connect',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.light(),
 

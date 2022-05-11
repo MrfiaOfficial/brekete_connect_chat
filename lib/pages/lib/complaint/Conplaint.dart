@@ -212,7 +212,7 @@ class _ChatsState extends State<Conplaint> {
                   SizedBox(
                     height: 20.0,
                   ),
-                  Text(
+                  /* Text(
                     'OR',
                     style: TextStyle(
                       color: Colors.redAccent,
@@ -246,7 +246,7 @@ class _ChatsState extends State<Conplaint> {
                                 builder: (context) => Meditation()));
                       },
                     ),
-                  ),
+                  ), */
                 ],
               ),
             ),

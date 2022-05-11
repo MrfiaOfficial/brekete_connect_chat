@@ -13,6 +13,14 @@ class MyProfile extends StatefulWidget {
 
 class _MyProfileState extends State<MyProfile> {
   @override
+  void initState() {
+    CurrentAppUser.currentUserData.getUserData().then((value) {
+      setState(() {});
+    });
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
@@ -25,7 +33,7 @@ class _MyProfileState extends State<MyProfile> {
         dialogBackgroundColor: Colors.blueGrey.shade200,
       ),
       home: Scaffold(
-        appBar: AppBar(
+        /* appBar: AppBar(
           backgroundColor: Colors.white,
           elevation: 0,
           leading: GestureDetector(
@@ -39,7 +47,7 @@ class _MyProfileState extends State<MyProfile> {
               color: Color.fromARGB(255, 49, 76, 190),
             ),
           ),
-        ),
+        ), */
         body: Stack(
           children: [
             Container(

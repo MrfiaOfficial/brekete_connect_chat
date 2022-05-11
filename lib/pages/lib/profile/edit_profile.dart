@@ -50,7 +50,7 @@ class _EditProfileState extends State<EditProfile> {
       home: ModalProgressHUD(
         inAsyncCall: isLoading,
         child: Scaffold(
-          appBar: AppBar(
+          /* appBar: AppBar(
             backgroundColor: Colors.white,
             elevation: 0,
             leading: GestureDetector(
@@ -64,7 +64,7 @@ class _EditProfileState extends State<EditProfile> {
                 color: Color.fromARGB(255, 49, 76, 190),
               ),
             ),
-          ),
+          ), */
           body: Stack(
             children: [
               Container(
