@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
     <key>NSPhotoLibraryUsageDescription</key>
-    <string>This app requires access to photo library</string>
+    <string>This app requires access to photo library so that you can easily upload either a photo evidence of your complaint or a screenshot of a file related to your complaint, this will help you substantiate your complaint. The uploaded photo is sent securely to our complaint resolution team to help you resolve your complaint. All your data are kept safe and confidential, we do not share your data with any third-party. </string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
