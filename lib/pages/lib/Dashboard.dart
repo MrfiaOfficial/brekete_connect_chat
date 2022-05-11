@@ -248,34 +248,45 @@ class _DashboardState extends State<Dashboard> {
                         children: [
                           InkWell(
                             onTap: () {
-                              _launchURL();
-                              /*  Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => News(),
-                                  )); */
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => AppointmentScreen(),
+                                ),
+                              );
                             },
                             child: NeumorphicContainer(
                               child: Column(
                                 children: [
                                   SizedBox(
-                                    height: height * 0.02,
+                                    height: height * 0.01,
                                   ),
                                   Image.asset(
-                                    'assets/news.png',
+                                    'assets/book.png',
                                     height: 60,
                                     width: 60,
                                   ),
+                                  SizedBox(
+                                    height: height * 0.005,
+                                  ),
                                   Text(
-                                    '           NEWS           ',
+                                    '             BOOK             ',
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 49, 76, 190),
-                                      fontSize: 18,
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  Text(
+                                    '     APPOINTMENT    ',
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 49, 76, 190),
+                                      fontSize: 16,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
                                   SizedBox(
-                                    height: height * 0.02,
+                                    height: height * 0.005,
                                   ),
                                 ],
                               ),
@@ -423,52 +434,6 @@ class _DashboardState extends State<Dashboard> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => AppointmentScreen(),
-                                ),
-                              );
-                            },
-                            child: NeumorphicContainer(
-                              child: Column(
-                                children: [
-                                  SizedBox(
-                                    height: height * 0.01,
-                                  ),
-                                  Image.asset(
-                                    'assets/book.png',
-                                    height: 60,
-                                    width: 60,
-                                  ),
-                                  SizedBox(
-                                    height: height * 0.005,
-                                  ),
-                                  Text(
-                                    '             BOOK             ',
-                                    style: TextStyle(
-                                      color: Color.fromARGB(255, 49, 76, 190),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Text(
-                                    '     APPOINTMENT    ',
-                                    style: TextStyle(
-                                      color: Color.fromARGB(255, 49, 76, 190),
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  SizedBox(
-                                    height: height * 0.005,
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
                           InkWell(
                             onTap: () {
                               Navigator.push(
