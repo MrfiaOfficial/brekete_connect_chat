@@ -125,7 +125,7 @@ class AuthService {
   }
 
   //sign out
-  Future signOut() async {
+  /* Future signOut() async {
     try {
       await HelperFunctions.saveUserLoggedInSharedPreference(false);
       await HelperFunctions.saveUserEmailSharedPreference('');
@@ -145,6 +145,17 @@ class AuthService {
       });
     } catch (e) {
       print(e.toString());
+      return null;
+    }
+  } */
+
+  Future signOut() async {
+    try {
+      return await _auth.signOut().whenComplete(() async {
+        print("Logged out");
+      });
+    } catch (error) {
+      print(error.toString());
       return null;
     }
   }

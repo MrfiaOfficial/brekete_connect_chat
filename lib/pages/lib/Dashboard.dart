@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:group_chat_app/helper/helper_functions.dart';
@@ -30,6 +31,7 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  var nowUser = FirebaseAuth.instance.currentUser;
   @override
   void initState() {
     CurrentAppUser.currentUserData.getUserData().then((value) {
@@ -89,7 +91,7 @@ class _DashboardState extends State<Dashboard> {
                       GestureDetector(
                         //onTap: _userLoggedIn
                         //onTap: CurrentAppUser.currentUserData.userId != null
-                        onTap: _userLoggedIn != null
+                        onTap: nowUser != null
                             ? () {
                                 //AppRoutes.push(context, MyProfile());
                                 AppRoutes.push(context, Chats());
@@ -152,7 +154,7 @@ class _DashboardState extends State<Dashboard> {
                             //onTap: CurrentAppUser.currentUserData.userId == ""
                             //onTap: _userLoggedIn
                             //onTap: CurrentAppUser.currentUserData.userId != null
-                            onTap: _userLoggedIn != null
+                            onTap: nowUser != null
                                 ? () {
                                     Navigator.push(
                                       context,

@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:group_chat_app/just_added/login_register_page.dart';
@@ -16,6 +17,8 @@ class ComplaintScreen extends StatefulWidget {
 }
 
 class _ChatsState extends State<ComplaintScreen> {
+  var nowUser = FirebaseAuth.instance.currentUser;
+
   @override
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
@@ -78,7 +81,7 @@ class _ChatsState extends State<ComplaintScreen> {
                                   RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(12.0),
                                       side: BorderSide(color: Colors.red)))),
-                      onPressed: _userLoggedIn != null
+                      onPressed: nowUser != null
                           ? () {
                               Navigator.push(
                                   context,
@@ -113,7 +116,7 @@ class _ChatsState extends State<ComplaintScreen> {
                                   RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(12.0),
                                       side: BorderSide(color: Colors.red)))),
-                      onPressed: _userLoggedIn != null
+                      onPressed: nowUser != null
                           ? () {
                               Navigator.push(
                                   context,
