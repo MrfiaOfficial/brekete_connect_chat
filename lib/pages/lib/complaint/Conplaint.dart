@@ -179,7 +179,8 @@ class _ChatsState extends State<Conplaint> {
                     height: height * 0.06,
                     width: width * 0.6,
                     child: ElevatedButton(
-                      child: Text("Complaint", style: TextStyle(fontSize: 20)),
+                      child: Text("Send Complaint",
+                          style: TextStyle(fontSize: 20)),
                       style: ButtonStyle(
                           foregroundColor:
                               MaterialStateProperty.all<Color>(Colors.white),
