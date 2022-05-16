@@ -1,10 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:group_chat_app/models/user.dart';
-import 'package:group_chat_app/models/user_model.dart';
-import 'package:group_chat_app/pages/lib/chat/groupchat/add_members.dart';
-import 'package:group_chat_app/pages/lib/chat/groupchat/gchat_screen.dart';
+import 'package:brekete_connect/models/user.dart';
+import 'package:brekete_connect/models/user_model.dart';
+import 'package:brekete_connect/pages/lib/chat/groupchat/add_members.dart';
+import 'package:brekete_connect/pages/lib/chat/groupchat/gchat_screen.dart';
 
 class CreateGroup extends StatefulWidget {
   const CreateGroup({Key key}) : super(key: key);

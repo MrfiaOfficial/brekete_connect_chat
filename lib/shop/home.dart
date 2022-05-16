@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:group_chat_app/newshop/shope_home.dart';
-import 'package:group_chat_app/pages/lib/main.dart';
-import 'package:group_chat_app/shop/my_products.dart';
-import 'package:group_chat_app/shop/pages/CartPage.dart';
-import 'package:group_chat_app/shop/pages/ProfilePage1.dart';
-import 'package:group_chat_app/shop/pages/SearchPage.dart';
-import 'package:group_chat_app/utils/routes.dart';
+import 'package:brekete_connect/newshop/shope_home.dart';
+import 'package:brekete_connect/pages/lib/main.dart';
+import 'package:brekete_connect/shop/my_products.dart';
+import 'package:brekete_connect/shop/pages/CartPage.dart';
+import 'package:brekete_connect/shop/pages/ProfilePage1.dart';
+import 'package:brekete_connect/shop/pages/SearchPage.dart';
+import 'package:brekete_connect/utils/routes.dart';
 
 class Homes extends StatefulWidget {
   @override

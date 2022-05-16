@@ -2,10 +2,10 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:group_chat_app/models/group_chat.dart';
-import 'package:group_chat_app/models/user.dart';
-import 'package:group_chat_app/models/user_model.dart';
-import 'package:group_chat_app/pages/lib/chat/message.dart';
+import 'package:brekete_connect/models/group_chat.dart';
+import 'package:brekete_connect/models/user.dart';
+import 'package:brekete_connect/models/user_model.dart';
+import 'package:brekete_connect/pages/lib/chat/message.dart';
 import 'package:intl/intl.dart';
 
 class GroupChattingScreen extends StatelessWidget {

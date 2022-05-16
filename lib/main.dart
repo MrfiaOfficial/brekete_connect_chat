@@ -3,11 +3,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:group_chat_app/helper/helper_functions.dart';
-import 'package:group_chat_app/models/user.dart';
-import 'package:group_chat_app/pages/lib/Dashboard.dart';
-import 'package:group_chat_app/pages/lib/News-old.dart';
-import 'package:group_chat_app/pages/lib/authenticate_page.dart';
+import 'package:brekete_connect/helper/helper_functions.dart';
+import 'package:brekete_connect/models/user.dart';
+import 'package:brekete_connect/pages/lib/Dashboard.dart';
+import 'package:brekete_connect/pages/lib/News-old.dart';
+import 'package:brekete_connect/pages/lib/authenticate_page.dart';
 
 //void main() => runApp(MyApp());
 

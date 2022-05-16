@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:group_chat_app/utils/routes.dart';
+import 'package:brekete_connect/utils/routes.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class News extends StatefulWidget {

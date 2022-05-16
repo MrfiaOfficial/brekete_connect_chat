@@ -2,12 +2,12 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:group_chat_app/shop/add_new_product.dart';
-import 'package:group_chat_app/shop/constants/app_color.dart';
-import 'package:group_chat_app/shop/constants/text_styles.dart';
-import 'package:group_chat_app/shop/model/product.dart';
-import 'package:group_chat_app/shop/product_detail.dart';
-import 'package:group_chat_app/shop/utils/app_navigator.dart';
+import 'package:brekete_connect/shop/add_new_product.dart';
+import 'package:brekete_connect/shop/constants/app_color.dart';
+import 'package:brekete_connect/shop/constants/text_styles.dart';
+import 'package:brekete_connect/shop/model/product.dart';
+import 'package:brekete_connect/shop/product_detail.dart';
+import 'package:brekete_connect/shop/utils/app_navigator.dart';
 
 class ShopsHomeScreen extends StatefulWidget {
   const ShopsHomeScreen({Key key}) : super(key: key);

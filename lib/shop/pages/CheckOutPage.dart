@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:group_chat_app/shop/utils/CustomTextStyle.dart';
+import 'package:brekete_connect/shop/utils/CustomTextStyle.dart';
 
 class CheckOutPage extends StatefulWidget {
   @override

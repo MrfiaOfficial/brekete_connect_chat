@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:group_chat_app/shop/utils/CustomColors.dart';
-import 'package:group_chat_app/shop/utils/CustomTextStyle.dart';
-
+import 'package:brekete_connect/shop/utils/CustomColors.dart';
+import 'package:brekete_connect/shop/utils/CustomTextStyle.dart';
 
 class EditProfilePage extends StatefulWidget {
   @override

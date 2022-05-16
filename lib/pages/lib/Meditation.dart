@@ -6,11 +6,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:group_chat_app/models/user.dart';
-import 'package:group_chat_app/shop/constants/app_color.dart';
-import 'package:group_chat_app/shop/constants/text_styles.dart';
-import 'package:group_chat_app/shop/utils/custom_button.dart';
-import 'package:group_chat_app/utils/routes.dart';
+import 'package:brekete_connect/models/user.dart';
+import 'package:brekete_connect/shop/constants/app_color.dart';
+import 'package:brekete_connect/shop/constants/text_styles.dart';
+import 'package:brekete_connect/shop/utils/custom_button.dart';
+import 'package:brekete_connect/utils/routes.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:path_provider/path_provider.dart';
@@ -269,7 +269,7 @@ class _ChatsState extends State<Meditation> {
             break;
           }
         }
-        newPath = newPath + "/Brekete Family";
+        newPath = newPath + "/BreketeFamily";
         directory = Directory(newPath);
       } else {
         Fluttertoast.showToast(msg: 'Permission denied!');

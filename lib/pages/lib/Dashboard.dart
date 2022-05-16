@@ -1,20 +1,21 @@
+import 'package:brekete_connect/pages/lib/social_screen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:group_chat_app/helper/helper_functions.dart';
-import 'package:group_chat_app/just_added/login_register_page.dart';
-import 'package:group_chat_app/models/user.dart';
-import 'package:group_chat_app/pages/lib/News.dart';
-import 'package:group_chat_app/pages/lib/appointment/appointment_screen.dart';
-import 'package:group_chat_app/pages/lib/complaint/complaint_screen.dart';
-import 'package:group_chat_app/pages/lib/donate/donate1.dart';
-import 'package:group_chat_app/pages/lib/profile/Chats.dart';
-import 'package:group_chat_app/pages/lib/profile/user_profile.dart';
-import 'package:group_chat_app/pages/lib/radio_tv/radio_tv.dart';
-import 'package:group_chat_app/shop/home.dart';
-import 'package:group_chat_app/shop/pages/HomePage.dart';
-import 'package:group_chat_app/utils/routes.dart';
+import 'package:brekete_connect/helper/helper_functions.dart';
+import 'package:brekete_connect/just_added/login_register_page.dart';
+import 'package:brekete_connect/models/user.dart';
+import 'package:brekete_connect/pages/lib/News.dart';
+import 'package:brekete_connect/pages/lib/appointment/appointment_screen.dart';
+import 'package:brekete_connect/pages/lib/complaint/complaint_screen.dart';
+import 'package:brekete_connect/pages/lib/donate/donate1.dart';
+import 'package:brekete_connect/pages/lib/profile/Chats.dart';
+import 'package:brekete_connect/pages/lib/profile/user_profile.dart';
+import 'package:brekete_connect/pages/lib/radio_tv/radio_tv.dart';
+import 'package:brekete_connect/shop/home.dart';
+import 'package:brekete_connect/shop/pages/HomePage.dart';
+import 'package:brekete_connect/utils/routes.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import 'Meditation.dart';
@@ -332,7 +333,7 @@ class _DashboardState extends State<Dashboard> {
                       SizedBox(
                         height: height * 0.04,
                       ),
-                      /* Row(
+                      Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           InkWell(
@@ -394,6 +395,45 @@ class _DashboardState extends State<Dashboard> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
+                                      builder: (context) => SocialScreen()));
+
+                              // Fluttertoast.showToast(
+                              //     msg: 'Feature under development!');
+                            },
+                            child: NeumorphicContainer(
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    height: height * 0.02,
+                                  ),
+                                  Image.asset(
+                                    'assets/friends.png',
+                                    height: 60,
+                                    width: 60,
+                                  ),
+                                  SizedBox(
+                                    height: height * 0.01,
+                                  ),
+                                  Text(
+                                    '           SOCIAL            ',
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 49, 76, 190),
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: height * 0.01,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          /* InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
                                       builder: (context) => Homes()));
 
                               // Fluttertoast.showToast(
@@ -427,12 +467,12 @@ class _DashboardState extends State<Dashboard> {
                                 ],
                               ),
                             ),
-                          ),
+                          ), */
                         ],
                       ),
                       SizedBox(
                         height: height * 0.04,
-                      ), */
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [

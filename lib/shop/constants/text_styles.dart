@@ -1,6 +1,5 @@
-
 import 'package:flutter/material.dart';
-import 'package:group_chat_app/shop/constants/app_color.dart';
+import 'package:brekete_connect/shop/constants/app_color.dart';
 
 class AppTextStyles {
   static TextStyle underlineText = const TextStyle(

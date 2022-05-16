@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as FA;
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:group_chat_app/helper/helper_functions.dart';
-import 'package:group_chat_app/models/user.dart';
-import 'package:group_chat_app/services/database_service.dart';
+import 'package:brekete_connect/helper/helper_functions.dart';
+import 'package:brekete_connect/models/user.dart';
+import 'package:brekete_connect/services/database_service.dart';
 
 class AuthService {
   final FA.FirebaseAuth _auth = FA.FirebaseAuth.instance;

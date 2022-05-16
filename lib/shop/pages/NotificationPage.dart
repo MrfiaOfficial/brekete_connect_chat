@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:group_chat_app/shop/utils/CustomTextStyle.dart';
-import 'package:group_chat_app/shop/utils/CustomUtils.dart';
-
+import 'package:brekete_connect/shop/utils/CustomTextStyle.dart';
+import 'package:brekete_connect/shop/utils/CustomUtils.dart';
 
 class NotificationPage extends StatefulWidget {
   @override

@@ -1,14 +1,14 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:group_chat_app/helper/helper_functions.dart';
-import 'package:group_chat_app/utils/routes.dart';
+import 'package:brekete_connect/helper/helper_functions.dart';
+import 'package:brekete_connect/utils/routes.dart';
 import 'Dashboard.dart';
 import 'signin_page.dart';
 
-import 'package:group_chat_app/services/auth_service.dart';
-import 'package:group_chat_app/shared/constants.dart';
-import 'package:group_chat_app/shared/loading.dart';
+import 'package:brekete_connect/services/auth_service.dart';
+import 'package:brekete_connect/shared/constants.dart';
+import 'package:brekete_connect/shared/loading.dart';
 
 class RegisterPage extends StatefulWidget {
   final Function toggleView;

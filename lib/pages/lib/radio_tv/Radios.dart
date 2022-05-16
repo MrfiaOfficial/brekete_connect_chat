@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
-import 'package:group_chat_app/utils/routes.dart';
+import 'package:brekete_connect/utils/routes.dart';
 import 'dart:async';
 
 // import 'package:flutter_radio_player/flutter_radio_player.dart';
-// import 'package:group_chat_app/utils/routes.dart';
+// import 'package:brekete_connect/utils/routes.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // import 'package:flutter_radio/flutter_radio.dart';

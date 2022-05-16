@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:group_chat_app/shop/model/list_profile_section.dart';
-import 'package:group_chat_app/shop/utils/CustomTextStyle.dart';
-import 'package:group_chat_app/shop/utils/CustomUtils.dart';
-import 'package:group_chat_app/utils/routes.dart';
+import 'package:brekete_connect/shop/model/list_profile_section.dart';
+import 'package:brekete_connect/shop/utils/CustomTextStyle.dart';
+import 'package:brekete_connect/shop/utils/CustomUtils.dart';
+import 'package:brekete_connect/utils/routes.dart';
 
 import 'AboutUsPage.dart';
 import 'InviteFriendsPage.dart';

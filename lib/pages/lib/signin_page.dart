@@ -1,14 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:group_chat_app/helper/helper_functions.dart';
-import 'package:group_chat_app/models/user.dart';
-import 'package:group_chat_app/utils/routes.dart';
+import 'package:brekete_connect/helper/helper_functions.dart';
+import 'package:brekete_connect/models/user.dart';
+import 'package:brekete_connect/utils/routes.dart';
 import 'register_page.dart';
 
-import 'package:group_chat_app/services/auth_service.dart';
-import 'package:group_chat_app/services/database_service.dart';
-import 'package:group_chat_app/shared/loading.dart';
+import 'package:brekete_connect/services/auth_service.dart';
+import 'package:brekete_connect/services/database_service.dart';
+import 'package:brekete_connect/shared/loading.dart';
 
 import 'Dashboard.dart';
 

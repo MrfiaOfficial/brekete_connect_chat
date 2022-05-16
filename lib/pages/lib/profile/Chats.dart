@@ -1,17 +1,17 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:group_chat_app/helper/helper_functions.dart';
-import 'package:group_chat_app/models/user.dart';
-import 'package:group_chat_app/pages/chat_page.dart';
-import 'package:group_chat_app/pages/lib/Dashboard.dart';
-import 'package:group_chat_app/pages/lib/chat/chat_screen.dart';
-import 'package:group_chat_app/pages/lib/chat/friends.dart';
-import 'package:group_chat_app/pages/lib/chat/groupchat/gchat_screen.dart';
-import 'package:group_chat_app/pages/lib/profile/edit_profile.dart';
-import 'package:group_chat_app/pages/lib/profile/user_profile.dart';
-import 'package:group_chat_app/pages/lib/signin_page.dart';
-import 'package:group_chat_app/utils/routes.dart';
+import 'package:brekete_connect/helper/helper_functions.dart';
+import 'package:brekete_connect/models/user.dart';
+import 'package:brekete_connect/pages/chat_page.dart';
+import 'package:brekete_connect/pages/lib/Dashboard.dart';
+import 'package:brekete_connect/pages/lib/chat/chat_screen.dart';
+import 'package:brekete_connect/pages/lib/chat/friends.dart';
+import 'package:brekete_connect/pages/lib/chat/groupchat/gchat_screen.dart';
+import 'package:brekete_connect/pages/lib/profile/edit_profile.dart';
+import 'package:brekete_connect/pages/lib/profile/user_profile.dart';
+import 'package:brekete_connect/pages/lib/signin_page.dart';
+import 'package:brekete_connect/utils/routes.dart';
 import '../GroupChat.dart';
 
 class Chats extends StatefulWidget {

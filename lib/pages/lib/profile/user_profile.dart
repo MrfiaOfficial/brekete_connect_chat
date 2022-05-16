@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:group_chat_app/models/user.dart';
-import 'package:group_chat_app/utils/routes.dart';
+import 'package:brekete_connect/models/user.dart';
+import 'package:brekete_connect/utils/routes.dart';
 
 class MyProfile extends StatefulWidget {
   const MyProfile({Key key}) : super(key: key);

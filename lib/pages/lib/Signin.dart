@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:group_chat_app/utils/routes.dart';
+import 'package:brekete_connect/utils/routes.dart';
 
 import 'Dashboard.dart';
 import 'SignUp.dart';

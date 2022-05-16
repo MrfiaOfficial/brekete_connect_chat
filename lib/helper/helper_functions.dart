@@ -1,5 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:group_chat_app/models/user.dart';
+import 'package:brekete_connect/models/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HelperFunctions {

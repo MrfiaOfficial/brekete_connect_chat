@@ -1,10 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart' as FA;
 import 'package:flutter/material.dart';
-import 'package:group_chat_app/helper/helper_functions.dart';
+import 'package:brekete_connect/helper/helper_functions.dart';
 import 'SearchGroup.dart';
-import 'package:group_chat_app/services/auth_service.dart';
-import 'package:group_chat_app/services/database_service.dart';
-import 'package:group_chat_app/widgets/group_tile.dart';
+import 'package:brekete_connect/services/auth_service.dart';
+import 'package:brekete_connect/services/database_service.dart';
+import 'package:brekete_connect/widgets/group_tile.dart';
 
 class GroupChat extends StatefulWidget {
   @override

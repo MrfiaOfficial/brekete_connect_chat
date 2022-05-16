@@ -7,7 +7,7 @@ import 'package:brekete_connect/models/user.dart';
 import 'package:brekete_connect/pages/lib/appointment/booked_appointment.dart';
 import 'package:brekete_connect/utils/routes.dart';
 
-import 'Book.dart';
+import 'submit.dart';
 
 class AppointmentScreen extends StatefulWidget {
   const AppointmentScreen({Key key}) : super(key: key);

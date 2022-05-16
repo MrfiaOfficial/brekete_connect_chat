@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:group_chat_app/utils/routes.dart';
-import 'package:group_chat_app/pages/lib/register_page.dart';
-import 'package:group_chat_app/pages/lib/signin_page.dart';
+import 'package:brekete_connect/utils/routes.dart';
+import 'package:brekete_connect/pages/lib/register_page.dart';
+import 'package:brekete_connect/pages/lib/signin_page.dart';
 
 class UnAuthScreen extends StatefulWidget {
   const UnAuthScreen({Key key}) : super(key: key);

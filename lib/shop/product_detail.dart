@@ -4,15 +4,15 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:group_chat_app/models/user.dart';
-import 'package:group_chat_app/models/user_model.dart';
-import 'package:group_chat_app/pages/lib/chat/chatting_screen.dart';
-import 'package:group_chat_app/shop/constants/app_color.dart';
-import 'package:group_chat_app/shop/edit_product.dart';
-import 'package:group_chat_app/shop/model/product.dart';
-import 'package:group_chat_app/shop/utils/app_navigator.dart';
-import 'package:group_chat_app/shop/utils/custom_button.dart';
-import 'package:group_chat_app/utils/routes.dart';
+import 'package:brekete_connect/models/user.dart';
+import 'package:brekete_connect/models/user_model.dart';
+import 'package:brekete_connect/pages/lib/chat/chatting_screen.dart';
+import 'package:brekete_connect/shop/constants/app_color.dart';
+import 'package:brekete_connect/shop/edit_product.dart';
+import 'package:brekete_connect/shop/model/product.dart';
+import 'package:brekete_connect/shop/utils/app_navigator.dart';
+import 'package:brekete_connect/shop/utils/custom_button.dart';
+import 'package:brekete_connect/utils/routes.dart';
 
 import 'package:intl/intl.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';

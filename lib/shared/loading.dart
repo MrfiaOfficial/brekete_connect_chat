@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:group_chat_app/utils/routes.dart';
+import 'package:brekete_connect/utils/routes.dart';
 
 class Loading extends StatelessWidget {
   @override

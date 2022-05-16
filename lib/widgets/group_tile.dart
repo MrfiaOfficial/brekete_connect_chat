@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:group_chat_app/pages/chat_page.dart';
+import 'package:brekete_connect/pages/chat_page.dart';
 
 class GroupTile extends StatelessWidget {
   final String userName;

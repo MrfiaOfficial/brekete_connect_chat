@@ -3,11 +3,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import 'package:badges/badges.dart';
-import 'package:group_chat_app/models/user.dart';
-import 'package:group_chat_app/models/user_model.dart';
-import 'package:group_chat_app/pages/lib/chat/chatting_screen.dart';
-import 'package:group_chat_app/pages/lib/chat/message.dart';
-import 'package:group_chat_app/pages/lib/chat/new_chat.dart';
+import 'package:brekete_connect/models/user.dart';
+import 'package:brekete_connect/models/user_model.dart';
+import 'package:brekete_connect/pages/lib/chat/chatting_screen.dart';
+import 'package:brekete_connect/pages/lib/chat/message.dart';
+import 'package:brekete_connect/pages/lib/chat/new_chat.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class FriendsScreen extends StatelessWidget {
