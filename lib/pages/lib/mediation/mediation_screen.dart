@@ -9,14 +9,14 @@ import 'package:brekete_connect/utils/routes.dart';
 
 import 'submit.dart';
 
-class AppointmentScreen extends StatefulWidget {
-  const AppointmentScreen({Key key}) : super(key: key);
+class MediationScreen extends StatefulWidget {
+  const MediationScreen({Key key}) : super(key: key);
 
   @override
-  _ChatsState createState() => _ChatsState();
+  _MediationState createState() => _MediationState();
 }
 
-class _ChatsState extends State<AppointmentScreen> {
+class _MediationState extends State<MediationScreen> {
   var nowUser = FirebaseAuth.instance.currentUser;
 
   @override

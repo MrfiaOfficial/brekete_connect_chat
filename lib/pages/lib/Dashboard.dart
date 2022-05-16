@@ -1,3 +1,4 @@
+import 'package:brekete_connect/pages/lib/mediation/mediation_screen.dart';
 import 'package:brekete_connect/pages/lib/social_screen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -8,7 +9,7 @@ import 'package:brekete_connect/just_added/login_register_page.dart';
 import 'package:brekete_connect/models/user.dart';
 import 'package:brekete_connect/pages/lib/News.dart';
 import 'package:brekete_connect/pages/lib/appointment/appointment_screen.dart';
-import 'package:brekete_connect/pages/lib/complaint/complaint_screen.dart';
+import 'package:brekete_connect/pages/lib/complaints/complaint_screen.dart';
 import 'package:brekete_connect/pages/lib/donate/donate1.dart';
 import 'package:brekete_connect/pages/lib/profile/Chats.dart';
 import 'package:brekete_connect/pages/lib/profile/user_profile.dart';
@@ -351,7 +352,7 @@ class _DashboardState extends State<Dashboard> {
                                         context,
                                         MaterialPageRoute(
                                             builder: (context) =>
-                                                Meditation()));
+                                                MediationScreen()));
                                   },
                             child: NeumorphicContainer(
                               child: Column(
@@ -407,7 +408,7 @@ class _DashboardState extends State<Dashboard> {
                                     height: height * 0.02,
                                   ),
                                   Image.asset(
-                                    'assets/friends.png',
+                                    'assets/logicon.png',
                                     height: 60,
                                     width: 60,
                                   ),

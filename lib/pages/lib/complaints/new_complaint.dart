@@ -6,19 +6,33 @@ import 'package:brekete_connect/models/user.dart';
 import 'package:brekete_connect/utils/routes.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
-class Book extends StatefulWidget {
-  const Book({Key key}) : super(key: key);
+class NewComplaintScreen extends StatefulWidget {
+  const NewComplaintScreen({Key key}) : super(key: key);
 
   @override
-  _ChatsState createState() => _ChatsState();
+  _NewComplaintScreenState createState() => _NewComplaintScreenState();
 }
 
-class _ChatsState extends State<Book> {
+class _NewComplaintScreenState extends State<NewComplaintScreen> {
+  List<String> _case = [
+    'Family',
+    'Government',
+    'Corporate',
+    'Business',
+    'School',
+    'Religion',
+    'Individual',
+    'Community',
+    'Property Estate',
+    'Others'
+  ];
+  String _selectedcase = 'Family';
   String timef;
   String vot = "Time";
   final name = TextEditingController();
   final phone = TextEditingController();
   final time = TextEditingController();
+  final subject = TextEditingController();
   final description = TextEditingController();
 
   GlobalKey<FormState> fKey = GlobalKey<FormState>();
@@ -77,14 +91,14 @@ class _ChatsState extends State<Book> {
         'creater_id': CurrentAppUser.currentUserData.userId,
         "name": name.text,
         "phone": phone.text,
-        "date": selectedDate.toString(),
-        "time": vot,
+        "subject": subject.text,
         "description": description.text,
+        'case_type': _selectedcase
         // "sender": widget.userName,
         // 'time': DateTime.now().millisecondsSinceEpoch,
       };
       await FirebaseFirestore.instance
-          .collection('Booked_Appointment')
+          .collection('complaints')
           .doc()
           .set(chatMessageMap);
 
@@ -93,11 +107,12 @@ class _ChatsState extends State<Book> {
       setState(() {
         name.text = "";
         phone.text = "";
+        subject.text = "";
         description.text = "";
         // name.text = "";
       });
       Fluttertoast.showToast(
-          msg: 'Appointment Successfully Added!',
+          msg: 'Complaint Successfully Submitted!',
           timeInSecForIosWeb: 3,
           gravity: ToastGravity.TOP);
       AppRoutes.pop(context);
@@ -137,7 +152,7 @@ class _ChatsState extends State<Book> {
                 },
                 child: Icon(Icons.arrow_back_ios, color: Colors.black)),
             title: Text(
-              'Book Appointment',
+              'Submit Complaint',
               style: TextStyle(
                 color: Color.fromARGB(255, 49, 76, 190),
               ),
@@ -164,7 +179,7 @@ class _ChatsState extends State<Book> {
                         Row(
                           children: [
                             Text(
-                              'BOOK APPOINTMENT',
+                              'NEW COMPLAINT',
                               style: TextStyle(
                                 color: Color.fromARGB(255, 49, 76, 190),
                                 fontSize: 24,
@@ -177,7 +192,7 @@ class _ChatsState extends State<Book> {
                           height: height * 0.02,
                         ),
                         Text(
-                          'Fill the form below to Book an appointment  with the ordinary President before coming  to the office ',
+                          'Fill the form below to submit a complaint ',
                           style: TextStyle(
                             color: Colors.black87,
                             fontSize: 14,
@@ -186,6 +201,65 @@ class _ChatsState extends State<Book> {
                         ),
                         SizedBox(
                           height: height * 0.03,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            Text(
+                              'CASE TYPE',
+                              style: TextStyle(
+                                color: Colors.redAccent,
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Container(
+                              height: height * 0.05,
+                              width: width * 0.4,
+                              decoration: BoxDecoration(
+                                  color: Color(0XFFEFF3F6),
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: Color.fromRGBO(0, 0, 0, 0.1),
+                                        offset: Offset(6, 2),
+                                        blurRadius: 6.0,
+                                        spreadRadius: 3.0),
+                                    BoxShadow(
+                                        color:
+                                            Color.fromRGBO(255, 255, 255, 0.9),
+                                        offset: Offset(-6, -2),
+                                        blurRadius: 6.0,
+                                        spreadRadius: 3.0)
+                                  ]),
+                              // child: DropdownButtonHideUnderline(
+                              // child: ButtonTheme(
+                              // alignedDropdown: true,
+                              child: DropdownButtonHideUnderline(
+                                child: ButtonTheme(
+                                  alignedDropdown: true,
+                                  child: DropdownButton(
+                                    // hint: Text('Place                                                                          '), // Not necessary for Option 1
+                                    value: _selectedcase,
+                                    onChanged: (newValue) {
+                                      setState(() {
+                                        _selectedcase = newValue;
+                                      });
+                                    },
+                                    items: _case.map((location) {
+                                      return DropdownMenuItem(
+                                        child: new Text(location),
+                                        value: location,
+                                      );
+                                    }).toList(),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: height * 0.04,
                         ),
                         TextFormField(
                           validator: (v) => v.isEmpty ? 'Insert Name!' : null,
@@ -221,7 +295,45 @@ class _ChatsState extends State<Book> {
                         SizedBox(
                           height: height * 0.03,
                         ),
-                        GestureDetector(
+                        TextFormField(
+                          controller: subject,
+                          validator: (v) =>
+                              v.isEmpty ? 'Insert Subject!' : null,
+                          cursorColor: Colors.black,
+                          keyboardType: TextInputType.multiline,
+                          style: TextStyle(color: Colors.black),
+                          decoration: new InputDecoration(
+                              hintStyle: TextStyle(
+                                color: Colors.black54,
+                              ),
+                              contentPadding: EdgeInsets.only(
+                                  left: 0, bottom: 2, top: 11, right: 15),
+                              hintText: "Subject Of Complaint"),
+                        ),
+                        SizedBox(
+                          height: height * 0.03,
+                        ),
+                        TextFormField(
+                          controller: description,
+                          maxLines: 5,
+                          validator: (v) =>
+                              v.isEmpty ? 'Insert brief description!' : null,
+                          cursorColor: Colors.black,
+                          keyboardType: TextInputType.multiline,
+                          style: TextStyle(color: Colors.black),
+                          decoration: new InputDecoration(
+                              hintStyle: TextStyle(
+                                color: Colors.black54,
+                              ),
+                              contentPadding: EdgeInsets.only(
+                                  left: 0, bottom: 2, top: 11, right: 15),
+                              hintText: "Brief Description"),
+                        ),
+
+                        SizedBox(
+                          height: height * 0.03,
+                        ),
+                        /* GestureDetector(
                           onTap: () {
                             _selectDate(context);
                           },
@@ -263,7 +375,7 @@ class _ChatsState extends State<Book> {
                               ),
                             ),
                           ),
-                        ),
+                        ), */
                         // ElevatedButton(
                         //   child: Text(
                         //       "Select Time",
@@ -286,9 +398,41 @@ class _ChatsState extends State<Book> {
 
                         //   ],
                         // ),
-                        Divider(
+                        /*  Divider(
                           color: Colors.grey,
                           thickness: 1,
+                        ), */
+                        /* SizedBox(
+                          height: height * 0.03,
+                        ),
+
+                        SizedBox(
+                          child: Container(
+                            // width: width,
+                            padding: EdgeInsets.all(4),
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(15),
+                                    topRight: Radius.circular(15)),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey,
+                                      blurRadius: 4,
+                                      offset: Offset(1, 1))
+                                ]),
+                            child: TextFormField(
+                              controller: subject,
+                              // minLines: 5,
+                              //maxLines: 3,
+                              keyboardType: TextInputType.multiline,
+                              decoration: InputDecoration(
+                                hintText: 'Subject Of Complaint',
+                                hintStyle: TextStyle(color: Colors.grey),
+                                border: InputBorder.none,
+                              ),
+                            ),
+                          ),
                         ),
                         SizedBox(
                           height: height * 0.03,
@@ -312,7 +456,7 @@ class _ChatsState extends State<Book> {
                             child: TextFormField(
                               controller: description,
                               // minLines: 5,
-                              maxLines: 7,
+                              maxLines: 5,
                               keyboardType: TextInputType.multiline,
                               decoration: InputDecoration(
                                 hintText: 'Brief Description',
@@ -321,7 +465,7 @@ class _ChatsState extends State<Book> {
                               ),
                             ),
                           ),
-                        ),
+                        ), */
                         // ),
                         SizedBox(
                           height: height * 0.04,
@@ -329,7 +473,7 @@ class _ChatsState extends State<Book> {
                         Container(
                           height: height * 0.06,
                           child: ElevatedButton(
-                            child: Text("BOOK NOW",
+                            child: Text("SUBMIT COMPLAINT",
                                 style: TextStyle(fontSize: 20)),
                             style: ButtonStyle(
                                 foregroundColor:
@@ -347,25 +491,10 @@ class _ChatsState extends State<Book> {
                             onPressed: () async {
                               print("++++++++++++++++++++++++++++++++++++++++");
                               if (fKey.currentState.validate()) {
-                                if (selectedDate != null) {
-                                  if (selectedTime != null) {
-                                    setState(() {
-                                      isLoading = true;
-                                    });
-                                    await _quiz_firebase();
-                                    setState(() {
-                                      isLoading = false;
-                                    });
-                                  } else {
-                                    Fluttertoast.showToast(
-                                        msg: 'Add Time!',
-                                        gravity: ToastGravity.TOP);
-                                  }
-                                } else {
-                                  Fluttertoast.showToast(
-                                      msg: 'Add Date!',
-                                      gravity: ToastGravity.TOP);
-                                }
+                                await _quiz_firebase();
+                                setState(() {
+                                  isLoading = false;
+                                });
                               }
                             },
                           ),

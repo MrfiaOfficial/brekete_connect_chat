@@ -5,12 +5,13 @@ import 'package:brekete_connect/models/user.dart';
 import 'package:brekete_connect/utils/routes.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
-class BookedAppointments extends StatefulWidget {
+class SubmittedComplaintsScreen extends StatefulWidget {
   @override
-  _BookedAppointmentsState createState() => _BookedAppointmentsState();
+  _SubmittedComplaintsScreenState createState() =>
+      _SubmittedComplaintsScreenState();
 }
 
-class _BookedAppointmentsState extends State<BookedAppointments> {
+class _SubmittedComplaintsScreenState extends State<SubmittedComplaintsScreen> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
@@ -31,7 +32,7 @@ class _BookedAppointmentsState extends State<BookedAppointments> {
               },
               child: Icon(Icons.arrow_back_ios, color: Colors.black)),
           title: Text(
-            'Booked Appointments',
+            'Submitted Complaints',
             style: TextStyle(
               color: Color.fromARGB(255, 49, 76, 190),
             ),
@@ -51,7 +52,7 @@ class _BookedAppointmentsState extends State<BookedAppointments> {
                 padding: EdgeInsets.fromLTRB(15, 20, 15, 0),
                 child: StreamBuilder<QuerySnapshot>(
                   stream: FirebaseFirestore.instance
-                      .collection('Booked_Appointment')
+                      .collection('complaints')
                       .where('creater_id',
                           isEqualTo: CurrentAppUser.currentUserData.userId)
                       .snapshots(),
@@ -71,7 +72,7 @@ class _BookedAppointmentsState extends State<BookedAppointments> {
                             document.data() as Map<String, dynamic>;
                         return Card(
                           child: new ListTile(
-                            title: new Text(data['name'],
+                            title: new Text(data['subject'],
                                 style: TextStyle(color: Colors.blue)),
                             subtitle: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -79,7 +80,7 @@ class _BookedAppointmentsState extends State<BookedAppointments> {
                                 SizedBox(
                                   height: 3,
                                 ),
-                                new Text('' + data['phone']),
+                                //new Text('' + data['phone']),
                                 SizedBox(
                                   height: 5,
                                 ),
@@ -89,7 +90,7 @@ class _BookedAppointmentsState extends State<BookedAppointments> {
                                         fontWeight: FontWeight.w300)),
                               ],
                             ),
-                            trailing: Column(
+                            /* trailing: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
@@ -106,7 +107,7 @@ class _BookedAppointmentsState extends State<BookedAppointments> {
                                           fontWeight: FontWeight.w300)),
                                 ),
                               ],
-                            ),
+                            ), */
                           ),
                         );
                       }).toList(),

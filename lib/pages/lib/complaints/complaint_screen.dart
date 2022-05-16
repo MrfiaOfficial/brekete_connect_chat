@@ -1,3 +1,4 @@
+import 'package:brekete_connect/pages/lib/complaints/submitted_complaints.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -7,16 +8,16 @@ import 'package:brekete_connect/models/user.dart';
 import 'package:brekete_connect/pages/lib/appointment/booked_appointment.dart';
 import 'package:brekete_connect/utils/routes.dart';
 
-import 'submit.dart';
+import 'new_complaint.dart';
 
-class AppointmentScreen extends StatefulWidget {
-  const AppointmentScreen({Key key}) : super(key: key);
+class ComplaintScreen extends StatefulWidget {
+  const ComplaintScreen({Key key}) : super(key: key);
 
   @override
-  _ChatsState createState() => _ChatsState();
+  _ComplaintState createState() => _ComplaintState();
 }
 
-class _ChatsState extends State<AppointmentScreen> {
+class _ComplaintState extends State<ComplaintScreen> {
   var nowUser = FirebaseAuth.instance.currentUser;
 
   @override
@@ -42,7 +43,7 @@ class _ChatsState extends State<AppointmentScreen> {
               },
               child: Icon(Icons.arrow_back_ios, color: Colors.black)),
           title: Text(
-            'Appointments',
+            'Complaints',
             style: TextStyle(
               color: Color.fromARGB(255, 49, 76, 190),
             ),
@@ -69,7 +70,7 @@ class _ChatsState extends State<AppointmentScreen> {
                   Container(
                     height: 45,
                     child: ElevatedButton(
-                      child: Text("BOOK NEW APPOINTMENT",
+                      child: Text("  SUBMIT NEW COMPLAINT  ",
                           style: TextStyle(fontSize: 20)),
                       style: ButtonStyle(
                         foregroundColor:
@@ -89,7 +90,8 @@ class _ChatsState extends State<AppointmentScreen> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Book()));
+                                      builder: (context) =>
+                                          NewComplaintScreen()));
                             }
                           : () {
                               Navigator.push(
@@ -107,7 +109,7 @@ class _ChatsState extends State<AppointmentScreen> {
                   Container(
                     height: 45,
                     child: ElevatedButton(
-                      child: Text(" BOOKED  APPOINTMENTS ",
+                      child: Text("  SUBMITTED COMPLAINTS  ",
                           style: TextStyle(fontSize: 20)),
                       style: ButtonStyle(
                           foregroundColor:
@@ -125,7 +127,7 @@ class _ChatsState extends State<AppointmentScreen> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          BookedAppointments()));
+                                          SubmittedComplaintsScreen()));
                             }
                           : () {
                               Navigator.push(

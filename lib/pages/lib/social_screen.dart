@@ -68,7 +68,7 @@ class _SocialScreenState extends State<SocialScreen> {
                   Container(
                     height: 45,
                     child: ElevatedButton(
-                        child: Text("      Facebook     ",
+                        child: Text("       Facebook      ",
                             style: TextStyle(fontSize: 20)),
                         style: ButtonStyle(
                           foregroundColor:
@@ -93,7 +93,7 @@ class _SocialScreenState extends State<SocialScreen> {
                   Container(
                     height: 45,
                     child: ElevatedButton(
-                        child: Text("       Instagram         ",
+                        child: Text("      Instagram        ",
                             style: TextStyle(fontSize: 20)),
                         style: ButtonStyle(
                             foregroundColor:
@@ -111,6 +111,56 @@ class _SocialScreenState extends State<SocialScreen> {
                   ),
                   SizedBox(
                     height: 20.0,
+                  ),
+                  Container(
+                    height: 45,
+                    child: ElevatedButton(
+                        child: Text("         Twitter        ",
+                            style: TextStyle(fontSize: 20)),
+                        style: ButtonStyle(
+                          foregroundColor:
+                              MaterialStateProperty.all<Color>(Colors.white),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.red),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                              side: BorderSide(color: Colors.red),
+                            ),
+                          ),
+                        ),
+                        onPressed: () {
+                          _launchTwitter();
+                        }),
+                  ),
+                  SizedBox(
+                    height: height * 0.04,
+                  ),
+                  Container(
+                    height: 45,
+                    child: ElevatedButton(
+                        child: Text("        YouTube       ",
+                            style: TextStyle(fontSize: 20)),
+                        style: ButtonStyle(
+                          foregroundColor:
+                              MaterialStateProperty.all<Color>(Colors.white),
+                          backgroundColor:
+                              MaterialStateProperty.all<Color>(Colors.red),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.0),
+                              side: BorderSide(color: Colors.red),
+                            ),
+                          ),
+                        ),
+                        onPressed: () {
+                          _launchYoutube();
+                        }),
+                  ),
+                  SizedBox(
+                    height: height * 0.04,
                   ),
                 ],
               ),
