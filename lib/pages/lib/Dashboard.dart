@@ -338,21 +338,21 @@ class _DashboardState extends State<Dashboard> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           InkWell(
-                            onTap: _userLoggedIn != null
+                            onTap: nowUser != null
                                 ? () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                MediationScreen()));
+                                  }
+                                : () {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) => UnAuthScreen(),
                                       ),
                                     );
-                                  }
-                                : () {
-                                    Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                MediationScreen()));
                                   },
                             child: NeumorphicContainer(
                               child: Column(

@@ -1,3 +1,4 @@
+import 'package:brekete_connect/pages/lib/complaints/submitted_complaints.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -7,7 +8,7 @@ import 'package:brekete_connect/models/user.dart';
 import 'package:brekete_connect/pages/lib/appointment/booked_appointment.dart';
 import 'package:brekete_connect/utils/routes.dart';
 
-import 'submit.dart';
+import 'new_mediation.dart';
 
 class MediationScreen extends StatefulWidget {
   const MediationScreen({Key key}) : super(key: key);
@@ -42,7 +43,7 @@ class _MediationState extends State<MediationScreen> {
               },
               child: Icon(Icons.arrow_back_ios, color: Colors.black)),
           title: Text(
-            'Appointments',
+            'Complaints',
             style: TextStyle(
               color: Color.fromARGB(255, 49, 76, 190),
             ),
@@ -69,7 +70,7 @@ class _MediationState extends State<MediationScreen> {
                   Container(
                     height: 45,
                     child: ElevatedButton(
-                      child: Text("BOOK NEW APPOINTMENT",
+                      child: Text("  SUBMIT NEW COMPLAINT  ",
                           style: TextStyle(fontSize: 20)),
                       style: ButtonStyle(
                         foregroundColor:
@@ -89,7 +90,8 @@ class _MediationState extends State<MediationScreen> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Book()));
+                                      builder: (context) =>
+                                          NewComplaintScreen()));
                             }
                           : () {
                               Navigator.push(
@@ -107,7 +109,7 @@ class _MediationState extends State<MediationScreen> {
                   Container(
                     height: 45,
                     child: ElevatedButton(
-                      child: Text(" BOOKED  APPOINTMENTS ",
+                      child: Text("  SUBMITTED COMPLAINTS  ",
                           style: TextStyle(fontSize: 20)),
                       style: ButtonStyle(
                           foregroundColor:
@@ -125,7 +127,7 @@ class _MediationState extends State<MediationScreen> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          BookedAppointments()));
+                                          SubmittedComplaintsScreen()));
                             }
                           : () {
                               Navigator.push(
