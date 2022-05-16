@@ -1,4 +1,5 @@
 import 'package:brekete_connect/pages/lib/complaints/submitted_complaints.dart';
+import 'package:brekete_connect/pages/lib/mediation/submitted_mediation.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -43,7 +44,7 @@ class _MediationState extends State<MediationScreen> {
               },
               child: Icon(Icons.arrow_back_ios, color: Colors.black)),
           title: Text(
-            'Complaints',
+            'Mediations',
             style: TextStyle(
               color: Color.fromARGB(255, 49, 76, 190),
             ),
@@ -70,7 +71,7 @@ class _MediationState extends State<MediationScreen> {
                   Container(
                     height: 45,
                     child: ElevatedButton(
-                      child: Text("  SUBMIT NEW COMPLAINT  ",
+                      child: Text("     REQUEST MEDIATION      ",
                           style: TextStyle(fontSize: 20)),
                       style: ButtonStyle(
                         foregroundColor:
@@ -91,7 +92,7 @@ class _MediationState extends State<MediationScreen> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          NewComplaintScreen()));
+                                          NewMediationScreen()));
                             }
                           : () {
                               Navigator.push(
@@ -109,7 +110,7 @@ class _MediationState extends State<MediationScreen> {
                   Container(
                     height: 45,
                     child: ElevatedButton(
-                      child: Text("  SUBMITTED COMPLAINTS  ",
+                      child: Text("  REQUESTED MEDIATIONS   ",
                           style: TextStyle(fontSize: 20)),
                       style: ButtonStyle(
                           foregroundColor:
@@ -127,7 +128,7 @@ class _MediationState extends State<MediationScreen> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          SubmittedComplaintsScreen()));
+                                          SubmittedMediationsScreen()));
                             }
                           : () {
                               Navigator.push(

@@ -57,7 +57,7 @@ class _SocialScreenState extends State<SocialScreen> {
             ),
           ),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
+            padding: const EdgeInsets.fromLTRB(20, 0, 30, 0),
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -93,7 +93,7 @@ class _SocialScreenState extends State<SocialScreen> {
                   Container(
                     height: 45,
                     child: ElevatedButton(
-                        child: Text("      Instagram        ",
+                        child: Text("      Instagram       ",
                             style: TextStyle(fontSize: 20)),
                         style: ButtonStyle(
                             foregroundColor:
@@ -115,7 +115,7 @@ class _SocialScreenState extends State<SocialScreen> {
                   Container(
                     height: 45,
                     child: ElevatedButton(
-                        child: Text("         Twitter        ",
+                        child: Text("        Twitter          ",
                             style: TextStyle(fontSize: 20)),
                         style: ButtonStyle(
                           foregroundColor:
@@ -140,7 +140,7 @@ class _SocialScreenState extends State<SocialScreen> {
                   Container(
                     height: 45,
                     child: ElevatedButton(
-                        child: Text("        YouTube       ",
+                        child: Text("        YouTube        ",
                             style: TextStyle(fontSize: 20)),
                         style: ButtonStyle(
                           foregroundColor:

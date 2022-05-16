@@ -6,14 +6,14 @@ import 'package:brekete_connect/models/user.dart';
 import 'package:brekete_connect/utils/routes.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
-class NewComplaintScreen extends StatefulWidget {
-  const NewComplaintScreen({Key key}) : super(key: key);
+class NewMediationScreen extends StatefulWidget {
+  const NewMediationScreen({Key key}) : super(key: key);
 
   @override
-  _NewComplaintScreenState createState() => _NewComplaintScreenState();
+  _NewMediationScreenState createState() => _NewMediationScreenState();
 }
 
-class _NewComplaintScreenState extends State<NewComplaintScreen> {
+class _NewMediationScreenState extends State<NewMediationScreen> {
   List<String> _case = [
     'Family',
     'Government',
@@ -26,13 +26,25 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
     'Property Estate',
     'Others'
   ];
+
+  List<String> _gender = ['Male', 'Female'];
   bool checked;
   String _selectedcase = 'Family';
+  String _fpgender = 'Male';
+  String _spgender = 'Male';
+
   String timef;
   String vot = "Time";
   final firstPersonName = TextEditingController();
-  final name = TextEditingController();
-  final phone = TextEditingController();
+  final firstPersonPhone = TextEditingController();
+  final firstPersonGender = TextEditingController();
+  final firstPersonAddress = TextEditingController();
+
+  final secondPersonName = TextEditingController();
+  final secondPersonPhone = TextEditingController();
+  final secondPersonGender = TextEditingController();
+  final secondPersonAddress = TextEditingController();
+
   final time = TextEditingController();
   final subject = TextEditingController();
   final description = TextEditingController();
@@ -88,11 +100,20 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
 
   Future<bool> _quiz_firebase() async {
     try {
-      Map<String, dynamic> chatMessageMap = {
+      Map<String, dynamic> formDataMap = {
         'created_at': Timestamp.now(),
         'creater_id': CurrentAppUser.currentUserData.userId,
-        "name": name.text,
-        "phone": phone.text,
+
+        "firstPersonName": firstPersonName.text,
+        "firstPersonPhone": firstPersonPhone.text,
+        "firstPersonGender": _fpgender,
+        "firstPersonAddress": firstPersonAddress.text,
+
+        "secondPersonName": secondPersonName.text,
+        "secondPersonPhone": secondPersonPhone.text,
+        "secondPersonGender": _spgender,
+        "secondPersonAddress": secondPersonAddress.text,
+
         "subject": subject.text,
         "description": description.text,
         'case_type': _selectedcase
@@ -102,16 +123,23 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
       await FirebaseFirestore.instance
           .collection('mediations')
           .doc()
-          .set(chatMessageMap);
+          .set(formDataMap);
 
       //DatabaseService().sendMessage(widget.groupId, chatMessageMap);
 
       setState(() {
-        name.text = "";
-        phone.text = "";
+        firstPersonName.text = "";
+        firstPersonPhone.text = "";
+        //firstPersonGender.text = "";
+        firstPersonAddress.text = "";
+
+        secondPersonName.text = "";
+        secondPersonPhone.text = "";
+        //secondPersonGender.text = "";
+        secondPersonAddress.text = "";
+
         subject.text = "";
         description.text = "";
-        // name.text = "";
       });
       Fluttertoast.showToast(
           msg: 'Mediation Successfully Requested!',
@@ -137,6 +165,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.red,
         backgroundColor: Colors.white,
@@ -314,78 +343,345 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                         SizedBox(
                           height: height * 0.04,
                         ),
-                        TextFormField(
-                          validator: (v) => v.isEmpty ? 'Insert Name!' : null,
-                          cursorColor: Colors.black,
-                          keyboardType: TextInputType.text,
-                          controller: name,
-                          style: TextStyle(color: Colors.black),
-                          decoration: new InputDecoration(
-                              hintStyle: TextStyle(
-                                color: Colors.black54,
+
+                        // First participant Fields
+                        Container(
+                          padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'FIRST PARTICIPANT',
+                                textAlign: TextAlign.left,
+                                style: TextStyle(
+                                  color: Colors.redAccent,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                              contentPadding: EdgeInsets.only(
-                                  left: 0, bottom: 2, top: 11, right: 15),
-                              hintText: "Name"),
-                        ),
-                        SizedBox(
-                          height: height * 0.03,
-                        ),
-                        TextFormField(
-                          controller: phone,
-                          validator: (v) => v.isEmpty ? 'Insert Phone!' : null,
-                          cursorColor: Colors.black,
-                          keyboardType: TextInputType.phone,
-                          style: TextStyle(color: Colors.black),
-                          decoration: new InputDecoration(
-                              hintStyle: TextStyle(
-                                color: Colors.black54,
+                              SizedBox(
+                                height: height * 0.03,
                               ),
-                              contentPadding: EdgeInsets.only(
-                                  left: 0, bottom: 2, top: 11, right: 15),
-                              hintText: "Phone"),
-                        ),
-                        SizedBox(
-                          height: height * 0.03,
-                        ),
-                        TextFormField(
-                          controller: subject,
-                          validator: (v) =>
-                              v.isEmpty ? 'Insert Subject!' : null,
-                          cursorColor: Colors.black,
-                          keyboardType: TextInputType.multiline,
-                          style: TextStyle(color: Colors.black),
-                          decoration: new InputDecoration(
-                              hintStyle: TextStyle(
-                                color: Colors.black54,
+                              TextFormField(
+                                validator: (v) =>
+                                    v.isEmpty ? 'Insert Full Name!' : null,
+                                cursorColor: Colors.black,
+                                keyboardType: TextInputType.text,
+                                controller: firstPersonName,
+                                style: TextStyle(color: Colors.black),
+                                decoration: new InputDecoration(
+                                    hintStyle: TextStyle(
+                                      color: Colors.black54,
+                                    ),
+                                    contentPadding: EdgeInsets.only(
+                                        left: 0, bottom: 2, top: 11, right: 15),
+                                    hintText: "Full Name"),
                               ),
-                              contentPadding: EdgeInsets.only(
-                                  left: 0, bottom: 2, top: 11, right: 15),
-                              hintText: "Subject Of Complaint"),
-                        ),
-                        SizedBox(
-                          height: height * 0.03,
-                        ),
-                        TextFormField(
-                          controller: description,
-                          maxLines: 5,
-                          validator: (v) =>
-                              v.isEmpty ? 'Insert brief description!' : null,
-                          cursorColor: Colors.black,
-                          keyboardType: TextInputType.multiline,
-                          style: TextStyle(color: Colors.black),
-                          decoration: new InputDecoration(
-                              hintStyle: TextStyle(
-                                color: Colors.black54,
+                              SizedBox(
+                                height: height * 0.03,
                               ),
-                              contentPadding: EdgeInsets.only(
-                                  left: 0, bottom: 2, top: 11, right: 15),
-                              hintText: "Brief Description"),
+                              TextFormField(
+                                controller: firstPersonPhone,
+                                validator: (v) =>
+                                    v.isEmpty ? 'Insert Phone!' : null,
+                                cursorColor: Colors.black,
+                                keyboardType: TextInputType.phone,
+                                style: TextStyle(color: Colors.black),
+                                decoration: new InputDecoration(
+                                    hintStyle: TextStyle(
+                                      color: Colors.black54,
+                                    ),
+                                    contentPadding: EdgeInsets.only(
+                                        left: 0, bottom: 2, top: 11, right: 15),
+                                    hintText: "Phone Number"),
+                              ),
+                              SizedBox(
+                                height: height * 0.03,
+                              ),
+                              TextFormField(
+                                validator: (v) =>
+                                    v.isEmpty ? 'Insert Address!' : null,
+                                cursorColor: Colors.black,
+                                keyboardType: TextInputType.text,
+                                controller: firstPersonAddress,
+                                style: TextStyle(color: Colors.black),
+                                decoration: new InputDecoration(
+                                    hintStyle: TextStyle(
+                                      color: Colors.black54,
+                                    ),
+                                    contentPadding: EdgeInsets.only(
+                                        left: 0, bottom: 2, top: 11, right: 15),
+                                    hintText: "Address"),
+                              ),
+                              SizedBox(
+                                height: height * 0.04,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Gender',
+                                    style: TextStyle(
+                                      color: Colors.redAccent,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  Container(
+                                    height: height * 0.05,
+                                    width: width * 0.4,
+                                    decoration: BoxDecoration(
+                                        color: Color(0XFFEFF3F6),
+                                        borderRadius:
+                                            BorderRadius.circular(20.0),
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color:
+                                                  Color.fromRGBO(0, 0, 0, 0.1),
+                                              offset: Offset(6, 2),
+                                              blurRadius: 6.0,
+                                              spreadRadius: 3.0),
+                                          BoxShadow(
+                                              color: Color.fromRGBO(
+                                                  255, 255, 255, 0.9),
+                                              offset: Offset(-6, -2),
+                                              blurRadius: 6.0,
+                                              spreadRadius: 3.0)
+                                        ]),
+                                    // child: DropdownButtonHideUnderline(
+                                    // child: ButtonTheme(
+                                    // alignedDropdown: true,
+                                    child: DropdownButtonHideUnderline(
+                                      child: ButtonTheme(
+                                        alignedDropdown: true,
+                                        child: DropdownButton(
+                                          // hint: Text('Place                                                                          '), // Not necessary for Option 1
+                                          value: _fpgender,
+                                          onChanged: (newValue) {
+                                            setState(() {
+                                              _fpgender = newValue;
+                                            });
+                                          },
+                                          items: _gender.map((location) {
+                                            return DropdownMenuItem(
+                                              child: new Text(location),
+                                              value: location,
+                                            );
+                                          }).toList(),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: height * 0.04,
+                              ),
+                            ],
+                          ),
                         ),
 
                         SizedBox(
                           height: height * 0.03,
                         ),
+
+                        // Second Participant Fields
+                        Container(
+                          padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'SECOND PARTICIPANT',
+                                style: TextStyle(
+                                  color: Colors.redAccent,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(
+                                height: height * 0.03,
+                              ),
+                              TextFormField(
+                                validator: (v) =>
+                                    v.isEmpty ? 'Insert Full Name!' : null,
+                                cursorColor: Colors.black,
+                                keyboardType: TextInputType.text,
+                                controller: secondPersonName,
+                                style: TextStyle(color: Colors.black),
+                                decoration: new InputDecoration(
+                                    hintStyle: TextStyle(
+                                      color: Colors.black54,
+                                    ),
+                                    contentPadding: EdgeInsets.only(
+                                        left: 0, bottom: 2, top: 11, right: 15),
+                                    hintText: "Full Name"),
+                              ),
+                              SizedBox(
+                                height: height * 0.03,
+                              ),
+                              TextFormField(
+                                controller: secondPersonPhone,
+                                validator: (v) =>
+                                    v.isEmpty ? 'Insert Phone!' : null,
+                                cursorColor: Colors.black,
+                                keyboardType: TextInputType.phone,
+                                style: TextStyle(color: Colors.black),
+                                decoration: new InputDecoration(
+                                    hintStyle: TextStyle(
+                                      color: Colors.black54,
+                                    ),
+                                    contentPadding: EdgeInsets.only(
+                                        left: 0, bottom: 2, top: 11, right: 15),
+                                    hintText: "Phone Number"),
+                              ),
+                              SizedBox(
+                                height: height * 0.03,
+                              ),
+                              TextFormField(
+                                validator: (v) =>
+                                    v.isEmpty ? 'Insert Address!' : null,
+                                cursorColor: Colors.black,
+                                keyboardType: TextInputType.text,
+                                controller: secondPersonAddress,
+                                style: TextStyle(color: Colors.black),
+                                decoration: new InputDecoration(
+                                    hintStyle: TextStyle(
+                                      color: Colors.black54,
+                                    ),
+                                    contentPadding: EdgeInsets.only(
+                                        left: 0, bottom: 2, top: 11, right: 15),
+                                    hintText: "Address"),
+                              ),
+                              SizedBox(
+                                height: height * 0.04,
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Gender',
+                                    style: TextStyle(
+                                      color: Colors.redAccent,
+                                      fontSize: 17,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(height: 20),
+                                  Container(
+                                    height: height * 0.05,
+                                    width: width * 0.4,
+                                    decoration: BoxDecoration(
+                                        color: Color(0XFFEFF3F6),
+                                        borderRadius:
+                                            BorderRadius.circular(20.0),
+                                        boxShadow: [
+                                          BoxShadow(
+                                              color:
+                                                  Color.fromRGBO(0, 0, 0, 0.1),
+                                              offset: Offset(6, 2),
+                                              blurRadius: 6.0,
+                                              spreadRadius: 3.0),
+                                          BoxShadow(
+                                              color: Color.fromRGBO(
+                                                  255, 255, 255, 0.9),
+                                              offset: Offset(-6, -2),
+                                              blurRadius: 6.0,
+                                              spreadRadius: 3.0)
+                                        ]),
+                                    // child: DropdownButtonHideUnderline(
+                                    // child: ButtonTheme(
+                                    // alignedDropdown: true,
+                                    child: DropdownButtonHideUnderline(
+                                      child: ButtonTheme(
+                                        alignedDropdown: true,
+                                        child: DropdownButton(
+                                          // hint: Text('Place                                                                          '), // Not necessary for Option 1
+                                          value: _spgender,
+                                          onChanged: (newValue) {
+                                            setState(() {
+                                              _spgender = newValue;
+                                            });
+                                          },
+                                          items: _gender.map((location) {
+                                            return DropdownMenuItem(
+                                              child: new Text(location),
+                                              value: location,
+                                            );
+                                          }).toList(),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: height * 0.04,
+                              ),
+                            ],
+                          ),
+                        ),
+
+                        // Mediation Details
+                        Container(
+                          padding: EdgeInsets.fromLTRB(15, 10, 15, 10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                'CASE DETAILS',
+                                style: TextStyle(
+                                  color: Colors.redAccent,
+                                  fontSize: 19,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              SizedBox(
+                                height: height * 0.03,
+                              ),
+                              TextFormField(
+                                controller: subject,
+                                validator: (v) =>
+                                    v.isEmpty ? 'Insert Subject!' : null,
+                                cursorColor: Colors.black,
+                                keyboardType: TextInputType.multiline,
+                                style: TextStyle(color: Colors.black),
+                                decoration: new InputDecoration(
+                                    hintStyle: TextStyle(
+                                      color: Colors.black54,
+                                    ),
+                                    contentPadding: EdgeInsets.only(
+                                        left: 0, bottom: 2, top: 11, right: 15),
+                                    hintText: "Subject Of Complaint"),
+                              ),
+                              SizedBox(
+                                height: height * 0.03,
+                              ),
+                              TextFormField(
+                                controller: description,
+                                maxLines: 5,
+                                validator: (v) => v.isEmpty
+                                    ? 'Insert brief description!'
+                                    : null,
+                                cursorColor: Colors.black,
+                                keyboardType: TextInputType.multiline,
+                                style: TextStyle(color: Colors.black),
+                                decoration: new InputDecoration(
+                                    hintStyle: TextStyle(
+                                      color: Colors.black54,
+                                    ),
+                                    contentPadding: EdgeInsets.only(
+                                        left: 0, bottom: 2, top: 11, right: 15),
+                                    hintText: "Brief Description"),
+                              ),
+                              SizedBox(
+                                height: height * 0.03,
+                              ),
+                            ],
+                          ),
+                        ),
+
                         /* GestureDetector(
                           onTap: () {
                             _selectDate(context);
@@ -520,9 +816,9 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                           ),
                         ), */
                         // ),
-                        SizedBox(
+                        /* SizedBox(
                           height: height * 0.04,
-                        ),
+                        ), */
                         Container(
                           height: height * 0.06,
                           child: ElevatedButton(
@@ -554,7 +850,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                         ),
 
                         SizedBox(
-                          height: 20.0,
+                          height: 25.0,
                         ),
                       ],
                     ),

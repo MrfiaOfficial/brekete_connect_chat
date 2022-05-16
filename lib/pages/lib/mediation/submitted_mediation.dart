@@ -5,17 +5,18 @@ import 'package:brekete_connect/models/user.dart';
 import 'package:brekete_connect/utils/routes.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
-class SubmittedComplaintsScreen extends StatefulWidget {
+class SubmittedMediationsScreen extends StatefulWidget {
   @override
-  _SubmittedComplaintsScreenState createState() =>
-      _SubmittedComplaintsScreenState();
+  _SubmittedMediationsScreenState createState() =>
+      _SubmittedMediationsScreenState();
 }
 
-class _SubmittedComplaintsScreenState extends State<SubmittedComplaintsScreen> {
+class _SubmittedMediationsScreenState extends State<SubmittedMediationsScreen> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.red,
         backgroundColor: Colors.white,
@@ -32,7 +33,7 @@ class _SubmittedComplaintsScreenState extends State<SubmittedComplaintsScreen> {
               },
               child: Icon(Icons.arrow_back_ios, color: Colors.black)),
           title: Text(
-            'Submitted Complaints',
+            'Requested Mediations',
             style: TextStyle(
               color: Color.fromARGB(255, 49, 76, 190),
             ),
@@ -52,7 +53,7 @@ class _SubmittedComplaintsScreenState extends State<SubmittedComplaintsScreen> {
                 padding: EdgeInsets.fromLTRB(15, 20, 15, 0),
                 child: StreamBuilder<QuerySnapshot>(
                   stream: FirebaseFirestore.instance
-                      .collection('complaints')
+                      .collection('mediations')
                       .where('creater_id',
                           isEqualTo: CurrentAppUser.currentUserData.userId)
                       .snapshots(),
@@ -72,22 +73,37 @@ class _SubmittedComplaintsScreenState extends State<SubmittedComplaintsScreen> {
                             document.data() as Map<String, dynamic>;
                         return Card(
                           child: new ListTile(
-                            title: new Text(data['subject'],
-                                style: TextStyle(color: Colors.blue)),
+                            title: new Text(
+                              data['subject'],
+                              style: TextStyle(color: Colors.blue),
+                            ),
                             subtitle: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 SizedBox(
                                   height: 3,
                                 ),
-                                //new Text('' + data['phone']),
+                                new Text('' + data['case_type']),
                                 SizedBox(
                                   height: 5,
                                 ),
-                                new Text(data['description'],
-                                    style: TextStyle(
-                                        color: Colors.blue,
-                                        fontWeight: FontWeight.w300)),
+                                new Text(
+                                  data['firstPersonName'] +
+                                      ' vs ' +
+                                      data['secondPersonName'],
+                                  style: TextStyle(
+                                      color: Colors.blue,
+                                      fontWeight: FontWeight.w300),
+                                ),
+                                /* SizedBox(
+                                  height: 5,
+                                ),
+                                new Text(
+                                  data['secondPersonName'],
+                                  style: TextStyle(
+                                      color: Colors.blue,
+                                      fontWeight: FontWeight.w300),
+                                ), */
                               ],
                             ),
                             /* trailing: Column(

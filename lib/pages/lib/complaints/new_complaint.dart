@@ -134,6 +134,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.red,
         backgroundColor: Colors.white,
