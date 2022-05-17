@@ -1,3 +1,4 @@
+import 'package:brekete_connect/just_added/custom_elevated_button.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -6,6 +7,7 @@ import 'package:brekete_connect/just_added/login_register_page.dart';
 import 'package:brekete_connect/models/user.dart';
 import 'package:brekete_connect/pages/lib/appointment/booked_appointment.dart';
 import 'package:brekete_connect/utils/routes.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SocialScreen extends StatefulWidget {
@@ -48,119 +50,120 @@ class _SocialScreenState extends State<SocialScreen> {
           ),
         ),
         body: Container(
-          height: height,
-          width: width,
+          //height: height,
+          //width: width,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage("assets/newsbg.png"),
               fit: BoxFit.cover,
             ),
           ),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(20, 0, 30, 0),
+          child: SafeArea(
             child: SingleChildScrollView(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    height: (height - height * 0.06 - 250) * 0.5,
+                  //FACEBOOK
+                  CustomElevatedButton(
+                    onPressed: () {
+                      _launchFacebookBF();
+                    },
+                    socialIcon: FontAwesomeIcons.facebook,
+                    text: 'Brekete Family',
+                    bgColor: Colors.blueAccent,
+                    textColor: Colors.white,
                   ),
-                  Container(
-                    height: 45,
-                    child: ElevatedButton(
-                        child: Text("       Facebook      ",
-                            style: TextStyle(fontSize: 20)),
-                        style: ButtonStyle(
-                          foregroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.red),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12.0),
-                              side: BorderSide(color: Colors.red),
-                            ),
-                          ),
-                        ),
-                        onPressed: () {
-                          _launchFacebook();
-                        }),
+                  CustomElevatedButton(
+                    onPressed: () {
+                      _launchFacebookHR();
+                    },
+                    socialIcon: FontAwesomeIcons.facebook,
+                    text: 'Human Rights Radio/TV',
+                    bgColor: Colors.blueAccent,
+                    textColor: Colors.white,
                   ),
-                  SizedBox(
-                    height: height * 0.04,
+
+                  //INSTAGRAM
+                  CustomElevatedButton(
+                    onPressed: () {
+                      _launchInstagramBF();
+                    },
+                    socialIcon: FontAwesomeIcons.instagram,
+                    text: 'Brekete Family',
+                    bgColor: Colors.deepPurple,
+                    textColor: Colors.white,
                   ),
-                  Container(
-                    height: 45,
-                    child: ElevatedButton(
-                        child: Text("      Instagram       ",
-                            style: TextStyle(fontSize: 20)),
-                        style: ButtonStyle(
-                            foregroundColor:
-                                MaterialStateProperty.all<Color>(Colors.white),
-                            backgroundColor:
-                                MaterialStateProperty.all<Color>(Colors.red),
-                            shape: MaterialStateProperty.all<
-                                    RoundedRectangleBorder>(
-                                RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12.0),
-                                    side: BorderSide(color: Colors.red)))),
-                        onPressed: () {
-                          _launchInstagram();
-                        }),
+
+                  //TWITTER
+                  CustomElevatedButton(
+                    onPressed: () {
+                      _launchTwitterBF();
+                    },
+                    socialIcon: FontAwesomeIcons.twitter,
+                    text: 'Brekete Family',
+                    bgColor: Colors.lightBlue,
+                    textColor: Colors.white,
                   ),
-                  SizedBox(
-                    height: 20.0,
+                  CustomElevatedButton(
+                    onPressed: () {
+                      _launchTwitterHR();
+                    },
+                    socialIcon: FontAwesomeIcons.twitter,
+                    text: 'Human Rights Radio/TV',
+                    bgColor: Colors.lightBlue,
+                    textColor: Colors.white,
                   ),
-                  Container(
-                    height: 45,
-                    child: ElevatedButton(
-                        child: Text("        Twitter          ",
-                            style: TextStyle(fontSize: 20)),
-                        style: ButtonStyle(
-                          foregroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.red),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12.0),
-                              side: BorderSide(color: Colors.red),
-                            ),
-                          ),
-                        ),
-                        onPressed: () {
-                          _launchTwitter();
-                        }),
+                  CustomElevatedButton(
+                    onPressed: () {
+                      _launchTwitterOP();
+                    },
+                    socialIcon: FontAwesomeIcons.twitter,
+                    text: 'Ordinary President',
+                    bgColor: Colors.lightBlue,
+                    textColor: Colors.white,
                   ),
-                  SizedBox(
-                    height: height * 0.04,
+
+                  //YOUTUBE
+                  CustomElevatedButton(
+                    onPressed: () {
+                      _launchYoutubeBF();
+                    },
+                    socialIcon: FontAwesomeIcons.youtube,
+                    text: 'Brekete Family',
+                    bgColor: Colors.red,
+                    textColor: Colors.white,
                   ),
-                  Container(
-                    height: 45,
-                    child: ElevatedButton(
-                        child: Text("        YouTube        ",
-                            style: TextStyle(fontSize: 20)),
-                        style: ButtonStyle(
-                          foregroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
-                          backgroundColor:
-                              MaterialStateProperty.all<Color>(Colors.red),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(12.0),
-                              side: BorderSide(color: Colors.red),
-                            ),
-                          ),
-                        ),
-                        onPressed: () {
-                          _launchYoutube();
-                        }),
+                  CustomElevatedButton(
+                    onPressed: () {
+                      _launchYoutubeHR();
+                    },
+                    socialIcon: FontAwesomeIcons.youtube,
+                    text: 'Human Rights Radio/TV',
+                    bgColor: Colors.red,
+                    textColor: Colors.white,
                   ),
-                  SizedBox(
-                    height: height * 0.04,
+
+                  //TELEGRAM
+                  CustomElevatedButton(
+                    onPressed: () {
+                      _launchTelegramBF();
+                    },
+                    socialIcon: FontAwesomeIcons.telegram,
+                    text: 'Brekete Family',
+                    bgColor: Colors.blue,
+                    textColor: Colors.white,
+                  ),
+
+                  //TIKTOK
+                  CustomElevatedButton(
+                    onPressed: () {
+                      _launchTiktokBF();
+                    },
+                    socialIcon: FontAwesomeIcons.tiktok,
+                    text: 'Brekete Family',
+                    bgColor: Colors.black,
+                    textColor: Colors.white,
                   ),
                 ],
               ),
@@ -171,38 +174,62 @@ class _SocialScreenState extends State<SocialScreen> {
     );
   }
 
-  void _launchFacebook() async {
-    if (!await launch('https://www.paystack.com/pay/mdonate'))
-      throw 'Could not launch https://www.paystack.com/pay/mdonate';
+  void _launchFacebookBF() async {
+    if (!await launch('https://www.facebook.com/BreketeFamily/'))
+      throw 'Could not launch the link';
   }
 
-  void _launchInstagram() async {
-    if (!await launch('https://www.paystack.com/pay/mdonate'))
-      throw 'Could not launch https://www.paystack.com/pay/mdonate';
+  void _launchFacebookHR() async {
+    if (!await launch('https://www.facebook.com/hrradiotv/'))
+      throw 'Could not launch the link';
   }
 
-  void _launchTwitter() async {
-    if (!await launch('https://www.paystack.com/pay/mdonate'))
-      throw 'Could not launch https://www.paystack.com/pay/mdonate';
+  //
+  void _launchTwitterBF() async {
+    if (!await launch(
+        'https://twitter.com/breketeConnect?t=4nNzOGcJ4gwEyxrXwLLVNg&s=09'))
+      throw 'Could not launch the link';
   }
 
-  void _launchYoutube() async {
-    if (!await launch('https://www.paystack.com/pay/mdonate'))
-      throw 'Could not launch https://www.paystack.com/pay/mdonate';
+  void _launchTwitterHR() async {
+    if (!await launch(
+        'https://twitter.com/hrightsradiotv?t=eCy_E4Xpl3RvkEKHECJSYw&s=09'))
+      throw 'Could not launch the link';
   }
 
-  void _launchTelegramGroup() async {
-    if (!await launch('https://www.paystack.com/pay/mdonate'))
-      throw 'Could not launch https://www.paystack.com/pay/mdonate';
+  void _launchTwitterOP() async {
+    if (!await launch(
+        'https://twitter.com/OrdinaryGcon?t=SIGV-uxdib7WFsYTSPZrXQ&s=09'))
+      throw 'Could not launch the link';
   }
 
-  void _launchfacebookGroup() async {
-    if (!await launch('https://www.paystack.com/pay/mdonate'))
-      throw 'Could not launch https://www.paystack.com/pay/mdonate';
+  //
+  void _launchYoutubeBF() async {
+    if (!await launch('https://youtube.com/c/BreketeFamily'))
+      throw 'Could not launch the link';
   }
 
-  void _launchWhatsAppGroup() async {
-    if (!await launch('https://www.paystack.com/pay/mdonate'))
-      throw 'Could not launch https://www.paystack.com/pay/mdonate';
+  void _launchYoutubeHR() async {
+    if (!await launch('https://youtube.com/c/HRRadioTV'))
+      throw 'Could not launch the link';
+  }
+
+  //
+  void _launchInstagramBF() async {
+    if (!await launch(
+        'https://instagram.com/breketefamily?igshid=YmMyMTA2M2Y='))
+      throw 'Could not launch the link';
+  }
+
+  //
+  void _launchTelegramBF() async {
+    if (!await launch('https://t.me/breketefamilyradio'))
+      throw 'Could not launch the link';
+  }
+
+  //
+  void _launchTiktokBF() async {
+    if (!await launch('https://vm.tiktok.com/ZML3UErAU/'))
+      throw 'Could not launch the link';
   }
 }

@@ -39,6 +39,7 @@ dependencies:
   flowder: ^0.2.0
   #percent_indicator: ^4.2.1
   percent_indicator: ^3.4.0
+  font_awesome_flutter: ^9.2.0
 
 dev_dependencies:
   flutter_launcher_icons: ^0.9.2

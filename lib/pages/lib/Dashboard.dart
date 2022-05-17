@@ -181,7 +181,7 @@ class _DashboardState extends State<Dashboard> {
                                     height: height * 0.02,
                                   ),
                                   Image.asset(
-                                    'assets/chat.png',
+                                    'assets/logicon.png',
                                     height: 60,
                                     width: 60,
                                   ),
@@ -408,7 +408,7 @@ class _DashboardState extends State<Dashboard> {
                                     height: height * 0.02,
                                   ),
                                   Image.asset(
-                                    'assets/logicon.png',
+                                    'assets/chat.png',
                                     height: 60,
                                     width: 60,
                                   ),
