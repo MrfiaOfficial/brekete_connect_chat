@@ -1,0 +1,218 @@
+{
+  "project_info": {
+    "project_number": "781308584265",
+    "project_id": "berekete-connect-23507",
+    "storage_bucket": "berekete-connect-23507.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781308584265:android:a45e8aae6b1b672217ba98",
+        "android_client_info": {
+          "package_name": "com.ittechnologix.bereketeconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781308584265-mmm9l9hjkdca9ke2ivkffrhpvuqf2sj6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ittechnologix.bereketeconnect",
+            "certificate_hash": "44cc9dfee8c8542fef0f9716be579b2ad3a41155"
+          }
+        },
+        {
+          "client_id": "781308584265-k2a7knqihi1of07jircd0lfr2805p3a2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo7e8nGmoZyT8vHgfPzMNSWAz9Rj3_SdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781308584265-k2a7knqihi1of07jircd0lfr2805p3a2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "781308584265-a0mvt7fq2o1shhn1g24mo9181597n31m.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.savadub.bereketeconnect"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781308584265:android:5bcf191da5258d6d17ba98",
+        "android_client_info": {
+          "package_name": "com.kashifapps.bereketeconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781308584265-osg0ivau6jlujviuq4oa4jlup20q5mkh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kashifapps.bereketeconnect",
+            "certificate_hash": "44cc9dfee8c8542fef0f9716be579b2ad3a41155"
+          }
+        },
+        {
+          "client_id": "781308584265-k2a7knqihi1of07jircd0lfr2805p3a2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo7e8nGmoZyT8vHgfPzMNSWAz9Rj3_SdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781308584265-k2a7knqihi1of07jircd0lfr2805p3a2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "781308584265-a0mvt7fq2o1shhn1g24mo9181597n31m.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.savadub.bereketeconnect"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781308584265:android:9632f5934d0d716417ba98",
+        "android_client_info": {
+          "package_name": "com.savadub.breketeconnectapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781308584265-k2a7knqihi1of07jircd0lfr2805p3a2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo7e8nGmoZyT8vHgfPzMNSWAz9Rj3_SdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781308584265-k2a7knqihi1of07jircd0lfr2805p3a2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "781308584265-a0mvt7fq2o1shhn1g24mo9181597n31m.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.savadub.bereketeconnect"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:781308584265:android:86b2fd7b2eaa291217ba98",
+        "android_client_info": {
+          "package_name": "com.tmktechnologies.bereketeconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781308584265-0vnc171ra34p8hfc84ugdg384uhgovg3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tmktechnologies.bereketeconnect",
+            "certificate_hash": "514c46ad784fbf3a5b7046127e261a876b815675"
+          }
+        },
+        {
+          "client_id": "781308584265-2a1b586pcem44sjb13l9gft4ehfapakh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tmktechnologies.bereketeconnect",
+            "certificate_hash": "7022d4f0d3b54ea2118a16d02723f636039a2843"
+          }
+        },
+        {
+          "client_id": "781308584265-7lt75a4t62e62gi81g49283uhbmaqj6a.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tmktechnologies.bereketeconnect",
+            "certificate_hash": "e7dee8235e54b7e9c2e847adb4775794264d5321"
+          }
+        },
+        {
+          "client_id": "781308584265-hbfrfi56v3n4ke46a77t606al3mj0631.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tmktechnologies.bereketeconnect",
+            "certificate_hash": "425877d68b06808501bf29463e1dc4511e2de68e"
+          }
+        },
+        {
+          "client_id": "781308584265-pijmvtqjp6u4medv1ooaeobcc37b6d0l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tmktechnologies.bereketeconnect",
+            "certificate_hash": "44cc9dfee8c8542fef0f9716be579b2ad3a41155"
+          }
+        },
+        {
+          "client_id": "781308584265-t64ct2kphlos5b9ppo71kbei0dkv6jku.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tmktechnologies.bereketeconnect",
+            "certificate_hash": "774a5c456c741cfd94ef410a973ea0383aa29018"
+          }
+        },
+        {
+          "client_id": "781308584265-k2a7knqihi1of07jircd0lfr2805p3a2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCo7e8nGmoZyT8vHgfPzMNSWAz9Rj3_SdE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781308584265-k2a7knqihi1of07jircd0lfr2805p3a2.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "781308584265-a0mvt7fq2o1shhn1g24mo9181597n31m.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.savadub.bereketeconnect"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
