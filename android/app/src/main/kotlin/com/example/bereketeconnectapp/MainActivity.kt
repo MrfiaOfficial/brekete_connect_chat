@@ -1,4 +1,4 @@
-package com.savadub.breketeconnectapp
+package com.tmktechnologies.bereketeconnect
 
 import io.flutter.embedding.android.FlutterActivity
 
