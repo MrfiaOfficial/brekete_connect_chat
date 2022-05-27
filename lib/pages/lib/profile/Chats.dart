@@ -48,7 +48,7 @@ class _ChatsState extends State<Chats> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
         backgroundColor: Colors.white,
         scaffoldBackgroundColor: Colors.blueGrey.shade200,
         dialogBackgroundColor: Colors.blueGrey.shade200,
@@ -113,7 +113,7 @@ class _ChatsState extends State<Chats> {
                   Padding(
                     padding: const EdgeInsets.fromLTRB(30, 0, 30, 0),
                     child: Container(
-                      height: height * 0.4,
+                      height: height * 0.7,
                       child: Card(
                         elevation: 5,
                         shape: RoundedRectangleBorder(
@@ -157,123 +157,131 @@ class _ChatsState extends State<Chats> {
                                     ),
                                   ],
                                 ),
-                                /*SizedBox(
-                                height: height * 0.025,
-                              ),
-                              Row(
-                                children: [
-                                  SizedBox(
-                                    width: width * 0.1,
-                                  ),
-                                  Image.asset(
-                                    'assets/messages1.png',
-                                    height: 40,
-                                    width: 40,
-                                  ),
-                                  SizedBox(
-                                    width: width * 0.1,
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      Navigator.of(context)
-                                          .pushReplacement(MaterialPageRoute(
-                                              builder: (context) => ChatScreen(
-                                                    currentuser: CurrentAppUser
-                                                        .currentUserData,
-                                                  )));
-                                    },
-                                    child: Text(
-                                      'Messages',
-                                      style: TextStyle(
-                                        color: Color.fromARGB(255, 49, 76, 190),
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
+                                SizedBox(
+                                  height: height * 0.025,
+                                ),
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      width: width * 0.1,
+                                    ),
+                                    Image.asset(
+                                      'assets/messages1.png',
+                                      height: 40,
+                                      width: 40,
+                                    ),
+                                    SizedBox(
+                                      width: width * 0.1,
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        Navigator.of(context).pushReplacement(
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ChatScreen(
+                                                      currentuser:
+                                                          CurrentAppUser
+                                                              .currentUserData,
+                                                    )));
+                                      },
+                                      child: Text(
+                                        'Messages',
+                                        style: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 49, 76, 190),
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: height * 0.025,
-                              ),
-                              Row(
-                                children: [
-                                  SizedBox(
-                                    width: width * 0.1,
-                                  ),
-                                  Image.asset(
-                                    'assets/friends.png',
-                                    height: 40,
-                                    width: 40,
-                                  ),
-                                  SizedBox(
-                                    width: width * 0.1,
-                                  ),
-                                  InkWell(
-                                    onTap: () {
-                                      Navigator.of(context)
-                                          .pushReplacement(MaterialPageRoute(
-                                              builder: (context) => FriendsScreen(
-                                                    currentuser: CurrentAppUser
-                                                        .currentUserData,
-                                                  )));
-                                    },
-                                    child: Text(
-                                      'Friends',
-                                      style: TextStyle(
-                                        color: Color.fromARGB(255, 49, 76, 190),
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: height * 0.025,
+                                ),
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      width: width * 0.1,
+                                    ),
+                                    Image.asset(
+                                      'assets/friends.png',
+                                      height: 40,
+                                      width: 40,
+                                    ),
+                                    SizedBox(
+                                      width: width * 0.1,
+                                    ),
+                                    InkWell(
+                                      onTap: () {
+                                        Navigator.of(context).pushReplacement(
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    FriendsScreen(
+                                                      currentuser:
+                                                          CurrentAppUser
+                                                              .currentUserData,
+                                                    )));
+                                      },
+                                      child: Text(
+                                        'Friends',
+                                        style: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 49, 76, 190),
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              SizedBox(
-                                height: height * 0.025,
-                              ),
-                              Row(
-                                children: [
-                                  SizedBox(
-                                    width: width * 0.1,
-                                  ),
-                                  Image.asset(
-                                    'assets/groups.png',
-                                    height: 40,
-                                    width: 40,
-                                  ),
-                                  SizedBox(
-                                    width: width * 0.1,
-                                  ),
-                                  InkWell(
-                                    // This was previously on available group chat
-                                    // onTap: () {
-                                    //   Navigator.push(
-                                    //       context,
-                                    //       MaterialPageRoute(
-                                    //         builder: (context) => GroupChat(),
-                                    //       ));
-                                    // },
-                                    onTap: () {
-                                      Navigator.of(context).pushReplacement(
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  GroupChatScreen(
-                                                    currentuser: CurrentAppUser
-                                                        .currentUserData,
-                                                  )));
-                                    },
-                                    child: Text(
-                                      'Groups',
-                                      style: TextStyle(
-                                        color: Color.fromARGB(255, 49, 76, 190),
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: height * 0.025,
+                                ),
+                                Row(
+                                  children: [
+                                    SizedBox(
+                                      width: width * 0.1,
+                                    ),
+                                    Image.asset(
+                                      'assets/groups.png',
+                                      height: 40,
+                                      width: 40,
+                                    ),
+                                    SizedBox(
+                                      width: width * 0.1,
+                                    ),
+                                    InkWell(
+                                      // This was previously on available group chat
+                                      // onTap: () {
+                                      //   Navigator.push(
+                                      //       context,
+                                      //       MaterialPageRoute(
+                                      //         builder: (context) => GroupChat(),
+                                      //       ));
+                                      // },
+                                      onTap: () {
+                                        Navigator.of(context).pushReplacement(
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    GroupChatScreen(
+                                                      currentuser:
+                                                          CurrentAppUser
+                                                              .currentUserData,
+                                                    )));
+                                      },
+                                      child: Text(
+                                        'Groups',
+                                        style: TextStyle(
+                                          color:
+                                              Color.fromARGB(255, 49, 76, 190),
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                       ),
                                     ),
-                                  ),
-                                ],
-                              ), */
+                                  ],
+                                ),
                                 SizedBox(
                                   height: height * 0.025,
                                 ),

@@ -482,6 +482,45 @@ class _DashboardState extends State<Dashboard> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
+                                      builder: (context) => News()));
+
+                              // Fluttertoast.showToast(
+                              //     msg: 'Feature under development!');
+                            },
+                            child: NeumorphicContainer(
+                              child: Column(
+                                children: [
+                                  SizedBox(
+                                    height: height * 0.02,
+                                  ),
+                                  Image.asset(
+                                    'assets/news.png',
+                                    height: 60,
+                                    width: 60,
+                                  ),
+                                  SizedBox(
+                                    height: height * 0.01,
+                                  ),
+                                  Text(
+                                    '            NEWS             ',
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 49, 76, 190),
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: height * 0.01,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
                                       builder: (context) => Donate1()));
                             },
                             child: NeumorphicContainer(
