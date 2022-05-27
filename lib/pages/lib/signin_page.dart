@@ -377,14 +377,14 @@ class _SignInPageState extends State<SignInPage> {
                                             SizedBox(
                                               height: height * 0.03,
                                             ),
-                                            Text("OR",
+                                            /* Text("OR",
                                                 style: TextStyle(
                                                     color: Colors.black12,
                                                     fontSize: 28)),
                                             SizedBox(
                                               height: height * 0.02,
-                                            ),
-                                            Row(
+                                            ), */
+                                            /* Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment.center,
                                               children: [
@@ -403,35 +403,35 @@ class _SignInPageState extends State<SignInPage> {
                                                   width: 25,
                                                 ),
                                                 GestureDetector(
-                                                    onTap: () async {
-                                                      setState(() {
-                                                        _isLoading = true;
-                                                      });
-                                                      User user =
-                                                          await AuthService()
-                                                              .signInWithGoogle();
-                                                      await CurrentAppUser
-                                                          .currentUserData
-                                                          .getUserData();
-                                                      setState(() {
-                                                        _isLoading = false;
-                                                      });
-                                                      if (user != null) {
-                                                        Fluttertoast.showToast(
-                                                            msg:
-                                                                'User Logged-in!');
-                                                        AppRoutes.makeFirst(
-                                                            context,
-                                                            Dashboard());
-                                                      } else {}
-                                                    },
-                                                    child: Image.asset(
-                                                      "images/google.png",
-                                                      height: 45,
-                                                      width: 45,
-                                                    )),
+                                                  onTap: () async {
+                                                    setState(() {
+                                                      _isLoading = true;
+                                                    });
+                                                    User user =
+                                                        await AuthService()
+                                                            .signInWithGoogle();
+                                                    await CurrentAppUser
+                                                        .currentUserData
+                                                        .getUserData();
+                                                    setState(() {
+                                                      _isLoading = false;
+                                                    });
+                                                    if (user != null) {
+                                                      Fluttertoast.showToast(
+                                                          msg:
+                                                              'User Logged-in!');
+                                                      AppRoutes.makeFirst(
+                                                          context, Dashboard());
+                                                    } else {}
+                                                  },
+                                                  child: Image.asset(
+                                                    "images/google.png",
+                                                    height: 45,
+                                                    width: 45,
+                                                  ),
+                                                ),
                                               ],
-                                            )
+                                            ) */
                                           ],
                                         ),
                                       ),

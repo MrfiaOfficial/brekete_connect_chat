@@ -484,7 +484,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   SizedBox(
                                     height: height * 0.01,
                                   ),
-                                  Text(
+                                  /* Text(
                                     "OR",
                                     style: TextStyle(
                                         color: Colors.black12, fontSize: 28),
@@ -520,7 +520,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                             width: 70,
                                           )),
                                     ],
-                                  ),
+                                  ), */
                                   SizedBox(
                                     height: height * 0.03,
                                   ),
