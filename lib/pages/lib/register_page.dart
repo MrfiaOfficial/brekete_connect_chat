@@ -111,7 +111,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         Padding(
                           padding: const EdgeInsets.fromLTRB(40, 0, 40, 0),
                           child: Container(
-                            height: height * 0.78,
+                            //height: height * 0.78,
                             child: Card(
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(15.0),
@@ -171,7 +171,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                     ],
                                   ),
                                   Container(
-                                    height: height * 0.4,
+                                    height: height * 0.45,
                                     child: ListView(
                                       children: [
                                         Padding(
@@ -466,6 +466,13 @@ class _RegisterPageState extends State<RegisterPage> {
                                     height: height * 0.05,
                                     width: width * 0.4,
                                     child: ElevatedButton(
+                                        style: ElevatedButton.styleFrom(
+                                          primary: Colors.red, // background
+                                          onPrimary: Colors.white, // foreground
+                                          shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(16.0)),
+                                        ),
                                         child: Text('Signup',
                                             style: TextStyle(
                                                 color: Colors.white,

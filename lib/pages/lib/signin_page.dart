@@ -353,6 +353,19 @@ class _SignInPageState extends State<SignInPage> {
                                               height: height * 0.06,
                                               width: width * 0.4,
                                               child: ElevatedButton(
+                                                  style:
+                                                      ElevatedButton.styleFrom(
+                                                    primary: Colors
+                                                        .red, // background
+                                                    onPrimary: Colors
+                                                        .white, // foreground
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        16.0)),
+                                                  ),
                                                   child: Text('Login',
                                                       style: TextStyle(
                                                           color: Colors.white,
