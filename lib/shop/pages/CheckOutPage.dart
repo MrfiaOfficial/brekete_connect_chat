@@ -46,7 +46,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
                 child: Container(
                   width: double.infinity,
                   margin: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-                  child: RaisedButton(
+                  child: ElevatedButton(
                     onPressed: () {
                       /*Navigator.of(context).push(new MaterialPageRoute(
                           builder: (context) => OrderPlacePage()));*/
@@ -59,8 +59,8 @@ class _CheckOutPageState extends State<CheckOutPage> {
                           fontSize: 14,
                           fontWeight: FontWeight.bold),
                     ),
-                    color: Colors.pink,
-                    textColor: Colors.white,
+                    /* color: Colors.pink,
+                    textColor: Colors.white, */
                   ),
                 ),
                 flex: 10,
@@ -113,17 +113,17 @@ class _CheckOutPageState extends State<CheckOutPage> {
                     SizedBox(
                       height: 24,
                     ),
-                    RaisedButton(
+                    ElevatedButton(
                       onPressed: () {},
-                      padding: EdgeInsets.only(left: 48, right: 48),
                       child: Text(
                         "Track Order",
                         style: CustomTextStyle.textFormFieldMedium
                             .copyWith(color: Colors.white),
                       ),
+                      /* padding: EdgeInsets.only(left: 48, right: 48),
                       color: Colors.pink,
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(24))),
+                          borderRadius: BorderRadius.all(Radius.circular(24))), */
                     )
                   ],
                 ),
@@ -238,15 +238,15 @@ class _CheckOutPageState extends State<CheckOutPage> {
           Spacer(
             flex: 2,
           ),
-          FlatButton(
+          TextButton(
             onPressed: () {},
             child: Text(
               "Edit / Change",
               style: CustomTextStyle.textFormFieldSemiBold
                   .copyWith(fontSize: 12, color: Colors.indigo.shade700),
             ),
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
+            /* splashColor: Colors.transparent,
+            highlightColor: Colors.transparent, */
           ),
           Spacer(
             flex: 3,
@@ -259,13 +259,13 @@ class _CheckOutPageState extends State<CheckOutPage> {
           Spacer(
             flex: 3,
           ),
-          FlatButton(
+          TextButton(
             onPressed: () {},
             child: Text("Add New Address",
                 style: CustomTextStyle.textFormFieldSemiBold
                     .copyWith(fontSize: 12, color: Colors.indigo.shade700)),
-            splashColor: Colors.transparent,
-            highlightColor: Colors.transparent,
+            /* splashColor: Colors.transparent,
+            highlightColor: Colors.transparent, */
           ),
           Spacer(
             flex: 2,

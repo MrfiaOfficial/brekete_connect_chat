@@ -58,17 +58,17 @@ class _OrderPlacePageState extends State<OrderPlacePage> {
                       SizedBox(
                         height: 24,
                       ),
-                      RaisedButton(
+                      ElevatedButton(
                         onPressed: () {},
                         child: Text(
                           "View Order",
                           style: CustomTextStyle.textFormFieldMedium
                               .copyWith(color: Colors.white),
                         ),
-                        color: Colors.pink,
+                        /*  color: Colors.pink,
                         shape: RoundedRectangleBorder(
                             borderRadius:
-                                BorderRadius.all(Radius.circular(24))),
+                                BorderRadius.all(Radius.circular(24))), */
                       )
                     ],
                   ),

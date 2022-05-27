@@ -236,14 +236,14 @@ class _HomePageState extends State<GroupChat> {
   }
 
   void _popupDialog(BuildContext context) {
-    Widget cancelButton = FlatButton(
+    Widget cancelButton = TextButton(
       child: Text("Cancel"),
       onPressed: () {
         Navigator.pop(
             context, MaterialPageRoute(builder: (context) => GroupChat()));
       },
     );
-    Widget createButton = FlatButton(
+    Widget createButton = TextButton(
       child: Text("Create"),
       onPressed: () async {
         if (_groupName != null) {

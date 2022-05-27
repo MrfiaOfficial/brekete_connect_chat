@@ -74,14 +74,14 @@ class _InviteFriendsPageState extends State<InviteFriendsPage> {
           Expanded(
             child: Container(
               margin: EdgeInsets.only(left: 4, right: 4, bottom: 4),
-              child: RaisedButton(
-                padding: EdgeInsets.symmetric(vertical: 16),
+              child: ElevatedButton(
+                /* color: Colors.blue,
+                padding: EdgeInsets.symmetric(vertical: 16), */
                 onPressed: () {
                   shareApp();
-                  Scaffold.of(context)
+                  ScaffoldMessenger.of(context)
                       .showSnackBar(SnackBar(content: Text(shareResponse)));
                 },
-                color: Colors.blue,
                 child: Text(
                   "Share Link",
                   style: CustomTextStyle.textFormFieldMedium
@@ -94,14 +94,14 @@ class _InviteFriendsPageState extends State<InviteFriendsPage> {
           Expanded(
             child: Container(
               margin: EdgeInsets.only(right: 4, bottom: 8, top: 6),
-              child: RaisedButton(
-                padding: EdgeInsets.symmetric(vertical: 14),
+              child: ElevatedButton(
+                /* color: Colors.blue,
+                padding: EdgeInsets.symmetric(vertical: 14), */
                 onPressed: () {},
                 child: Image(
                   image: AssetImage("images/ic_qr_code.png"),
                   color: Colors.white,
                 ),
-                color: Colors.blue,
               ),
             ),
             flex: 15,

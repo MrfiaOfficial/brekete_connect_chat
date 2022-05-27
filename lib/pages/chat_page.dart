@@ -115,22 +115,23 @@ class _ChatPageState extends State<ChatPage> {
                     ),
                     Expanded(
                       flex: 2,
-                      child: RaisedButton(
+                      child: ElevatedButton(
                         onPressed: () {
                           //  Navigator.push(
                           //     context,
                           //     MaterialPageRoute(
                           //         builder: (context) => chatHomePage()));
                         },
+
+                        /* elevation: 10,
                         color: Colors.white,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(18.0),
-                            side: BorderSide(color: Colors.white)),
+                            side: BorderSide(color: Colors.white)), */
                         child: Icon(
                           Icons.arrow_back,
                           color: Colors.grey[700],
                         ),
-                        elevation: 10,
                       ),
                     ),
                     Expanded(

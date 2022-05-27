@@ -418,16 +418,16 @@ class _SeeAllProductPageState extends State<SeeAllProductPage> {
           Utils.getSizedBox(height: 8),
           Container(
             width: double.infinity,
-            child: RaisedButton(
+            child: ElevatedButton(
               onPressed: () {},
+              /* color: Colors.indigo,
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(4))),
+                  borderRadius: BorderRadius.all(Radius.circular(4))), */
               child: Text(
                 "Apply Filter",
                 style: CustomTextStyle.textFormFieldMedium
                     .copyWith(color: Colors.white),
               ),
-              color: Colors.indigo,
             ),
           )
         ],

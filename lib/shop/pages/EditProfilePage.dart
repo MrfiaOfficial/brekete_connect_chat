@@ -116,9 +116,9 @@ class _EditProfilePageState extends State<EditProfilePage> {
             Container(
               width: double.infinity,
               margin: EdgeInsets.only(left: 48, right: 48),
-              child: RaisedButton(
-                color: Colors.blue,
-                textColor: Colors.white,
+              child: ElevatedButton(
+                /* color: Colors.blue,
+                textColor: Colors.white, */
                 onPressed: () {},
                 child: Text(
                   "Save",

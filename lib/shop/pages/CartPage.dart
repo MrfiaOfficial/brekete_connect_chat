@@ -75,15 +75,15 @@ class _CartPageState extends State<CartPage> {
             ],
           ),
           Utils.getSizedBox(height: 8),
-          RaisedButton(
+          ElevatedButton(
             onPressed: () {
               Navigator.push(context,
                   new MaterialPageRoute(builder: (context) => CheckOutPage()));
             },
-            color: Colors.green,
+            /* color: Colors.green,
             padding: EdgeInsets.only(top: 12, left: 60, right: 60, bottom: 12),
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.all(Radius.circular(24))),
+                borderRadius: BorderRadius.all(Radius.circular(24))), */
             child: Text(
               "Checkout",
               style: CustomTextStyle.textFormFieldSemiBold

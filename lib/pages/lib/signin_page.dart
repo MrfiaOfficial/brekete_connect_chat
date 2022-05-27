@@ -352,13 +352,7 @@ class _SignInPageState extends State<SignInPage> {
                                             Container(
                                               height: height * 0.06,
                                               width: width * 0.4,
-                                              child: RaisedButton(
-                                                  elevation: 0.0,
-                                                  color: Colors.red,
-                                                  shape: RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              16.0)),
+                                              child: ElevatedButton(
                                                   child: Text('Login',
                                                       style: TextStyle(
                                                           color: Colors.white,
@@ -370,61 +364,61 @@ class _SignInPageState extends State<SignInPage> {
                                             SizedBox(
                                               height: height * 0.03,
                                             ),
-                                            /* Text(
-                                            "OR",
-                                            style: TextStyle(
-                                                color: Colors.black12,
-                                                fontSize: 28),
-                                          ), */
+                                            Text("OR",
+                                                style: TextStyle(
+                                                    color: Colors.black12,
+                                                    fontSize: 28)),
                                             SizedBox(
                                               height: height * 0.02,
                                             ),
-                                            /* Row(
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.center,
-                                            children: [
-                                              GestureDetector(
-                                                  onTap: () {
-                                                    Fluttertoast.showToast(
-                                                        msg:
-                                                            'Login with facebook failed! Facebook app error');
-                                                  },
-                                                  child: Image.asset(
-                                                    "assets/facebook.png",
-                                                    height: 70,
-                                                    width: 70,
-                                                  )),
-                                              SizedBox(
-                                                width: 25,
-                                              ),
-                                              GestureDetector(
-                                                  onTap: () async {
-                                                    setState(() {
-                                                      _isLoading = true;
-                                                    });
-                                                    User user =
-                                                        await AuthService()
-                                                            .signInWithGoogle();
-                                                    await CurrentAppUser
-                                                        .currentUserData
-                                                        .getUserData();
-                                                    setState(() {
-                                                      _isLoading = false;
-                                                    });
-                                                    if (user != null) {
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: [
+                                                GestureDetector(
+                                                    onTap: () {
                                                       Fluttertoast.showToast(
-                                                          msg: 'User Logged-in!');
-                                                      AppRoutes.makeFirst(
-                                                          context, Dashboard());
-                                                    } else {}
-                                                  },
-                                                  child: Image.asset(
-                                                    "images/google.png",
-                                                    height: 45,
-                                                    width: 45,
-                                                  )),
-                                            ],
-                                          ) */
+                                                          msg:
+                                                              'Login with facebook failed! Facebook app error');
+                                                    },
+                                                    child: Image.asset(
+                                                      "assets/facebook.png",
+                                                      height: 70,
+                                                      width: 70,
+                                                    )),
+                                                SizedBox(
+                                                  width: 25,
+                                                ),
+                                                GestureDetector(
+                                                    onTap: () async {
+                                                      setState(() {
+                                                        _isLoading = true;
+                                                      });
+                                                      User user =
+                                                          await AuthService()
+                                                              .signInWithGoogle();
+                                                      await CurrentAppUser
+                                                          .currentUserData
+                                                          .getUserData();
+                                                      setState(() {
+                                                        _isLoading = false;
+                                                      });
+                                                      if (user != null) {
+                                                        Fluttertoast.showToast(
+                                                            msg:
+                                                                'User Logged-in!');
+                                                        AppRoutes.makeFirst(
+                                                            context,
+                                                            Dashboard());
+                                                      } else {}
+                                                    },
+                                                    child: Image.asset(
+                                                      "images/google.png",
+                                                      height: 45,
+                                                      width: 45,
+                                                    )),
+                                              ],
+                                            )
                                           ],
                                         ),
                                       ),
