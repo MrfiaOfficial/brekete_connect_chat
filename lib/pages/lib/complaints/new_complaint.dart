@@ -26,7 +26,15 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
     'Property Estate',
     'Others'
   ];
+
+  List<String> _status = [
+    'Approved',
+    'In-Review',
+    'Disapproved',
+  ];
+
   String _selectedcase = 'Family';
+  String _selectedStatus = 'In-Review';
   String timef;
   String vot = "Time";
   final name = TextEditingController();
@@ -34,6 +42,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
   final time = TextEditingController();
   final subject = TextEditingController();
   final description = TextEditingController();
+  final comment = TextEditingController();
 
   GlobalKey<FormState> fKey = GlobalKey<FormState>();
 
@@ -84,23 +93,26 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
       });
   }
 
-  Future<bool> _quiz_firebase() async {
+  Future<bool> _createComplaint() async {
     try {
-      Map<String, dynamic> chatMessageMap = {
-        'created_at': Timestamp.now(),
+      Map<String, dynamic> complaintDataMap = {
+        //'created_at': Timestamp.now(),
+        'created_at': DateTime.now().toString(),
         'creater_id': CurrentAppUser.currentUserData.userId,
         "name": name.text,
         "phone": phone.text,
         "subject": subject.text,
         "description": description.text,
-        'case_type': _selectedcase
+        'case_type': _selectedcase,
+        'status': _selectedStatus,
+        'comment': '',
         // "sender": widget.userName,
         // 'time': DateTime.now().millisecondsSinceEpoch,
       };
       await FirebaseFirestore.instance
           .collection('complaints')
           .doc()
-          .set(chatMessageMap);
+          .set(complaintDataMap);
 
       //DatabaseService().sendMessage(widget.groupId, chatMessageMap);
 
@@ -109,6 +121,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
         phone.text = "";
         subject.text = "";
         description.text = "";
+        comment.text = "";
         // name.text = "";
       });
       Fluttertoast.showToast(
@@ -492,7 +505,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                             onPressed: () async {
                               print("++++++++++++++++++++++++++++++++++++++++");
                               if (fKey.currentState.validate()) {
-                                await _quiz_firebase();
+                                await _createComplaint();
                                 setState(() {
                                   isLoading = false;
                                 });

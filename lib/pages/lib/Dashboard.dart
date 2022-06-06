@@ -182,17 +182,34 @@ class _DashboardState extends State<Dashboard> {
                                   ),
                                   Image.asset(
                                     'assets/logicon.png',
-                                    height: 60,
-                                    width: 60,
+                                    height: 50,
+                                    width: 50,
                                   ),
                                   Text(
-                                    '        ACCOUNT       ',
+                                    '         FAMILY        ',
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 49, 76, 190),
                                       fontSize: 18,
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
+                                  Text(
+                                    '         NETWORK        ',
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 49, 76, 190),
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  /* Text(
+                                    '         FAMILY \nNETWORK         ',
+                                    style: TextStyle(
+                                      color: Color.fromARGB(255, 49, 76, 190),
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ), */
                                   SizedBox(
                                     height: height * 0.02,
                                   ),
@@ -274,7 +291,7 @@ class _DashboardState extends State<Dashboard> {
                                     height: height * 0.005,
                                   ),
                                   Text(
-                                    '             BOOK             ',
+                                    '              BOOK              ',
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 49, 76, 190),
                                       fontSize: 16,
@@ -282,7 +299,7 @@ class _DashboardState extends State<Dashboard> {
                                     ),
                                   ),
                                   Text(
-                                    '     APPOINTMENT    ',
+                                    '     APPOINTMENT        ',
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 49, 76, 190),
                                       fontSize: 16,

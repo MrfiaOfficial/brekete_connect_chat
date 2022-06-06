@@ -73,25 +73,64 @@ class _SubmittedComplaintsScreenState extends State<SubmittedComplaintsScreen> {
                             document.data() as Map<String, dynamic>;
                         return Card(
                           child: new ListTile(
-                            title: new Text(data['subject'],
-                                style: TextStyle(color: Colors.blue)),
-                            subtitle: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  height: 3,
-                                ),
-                                //new Text('' + data['phone']),
-                                SizedBox(
-                                  height: 5,
-                                ),
-                                new Text(data['description'],
+                              title: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  new Text(
+                                    data['created_at'].toString().split(' ')[0],
+                                    style: TextStyle(color: Colors.blue),
+                                  ),
+                                  new Text(
+                                    data['subject'],
+                                    style: TextStyle(color: Colors.blue),
+                                  ),
+                                ],
+                              ),
+                              subtitle: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  SizedBox(
+                                    height: 3,
+                                  ),
+                                  //new Text('' + data['phone']),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  new Text(
+                                    data['description'],
                                     style: TextStyle(
                                         color: Colors.blue,
-                                        fontWeight: FontWeight.w300)),
-                              ],
-                            ),
-                            /* trailing: Column(
+                                        fontWeight: FontWeight.w300),
+                                  ),
+                                  SizedBox(height: 5),
+                                  new Text(
+                                    '____________',
+                                    style: TextStyle(
+                                        color: Colors.blue,
+                                        fontWeight: FontWeight.w300),
+                                  ),
+                                  SizedBox(height: 5),
+                                  new Text(
+                                    'Status: ' + data['status'] ?? '',
+                                    style: TextStyle(
+                                        color: Colors.blue,
+                                        fontWeight: FontWeight.w300),
+                                  ),
+
+                                  new Text(
+                                    'Admin\'s Comment: ' + data['comment'] ??
+                                        '',
+                                    style: TextStyle(
+                                        color: Colors.blue,
+                                        fontWeight: FontWeight.w300),
+                                  ),
+                                ],
+                              ),
+                              trailing: IconButton(
+                                icon: Icon(Icons.delete),
+                                onPressed: () => deleteComplaint(),
+                              )
+                              /* trailing: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
@@ -109,7 +148,7 @@ class _SubmittedComplaintsScreenState extends State<SubmittedComplaintsScreen> {
                                 ),
                               ],
                             ), */
-                          ),
+                              ),
                         );
                       }).toList(),
                     );
@@ -119,5 +158,17 @@ class _SubmittedComplaintsScreenState extends State<SubmittedComplaintsScreen> {
         ),
       ),
     );
+  }
+
+  Future<void> deleteComplaint({
+    String complaintUid,
+  }) async {
+    DocumentReference documentReferencer =
+        FirebaseFirestore.instance.collection('complaints').doc(complaintUid);
+
+    await documentReferencer
+        .delete()
+        .whenComplete(() => print('broker deleted from the database'))
+        .catchError((e) => print(e));
   }
 }

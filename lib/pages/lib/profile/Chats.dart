@@ -185,7 +185,7 @@ class _ChatsState extends State<Chats> {
                                                     )));
                                       },
                                       child: Text(
-                                        'Messages',
+                                        'Chat',
                                         style: TextStyle(
                                           color:
                                               Color.fromARGB(255, 49, 76, 190),

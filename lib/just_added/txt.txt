@@ -1,0 +1,12 @@
+"tool-version":"5.329.1309","tool-path":"\/Applications\/Xcode-13.3.app\/Contents\/SharedFrameworks\/ContentDeliveryServices.framework\/Versions\/A\/Frameworks\/AppStoreService.framework","os-version":"12.3.1","product-errors":[{"message":"Invalid Version. The build with the version “1.1.2” can’t be imported because a later version has been closed for new build submissions. Choose a different version number. With error code STATE_ERROR.VALIDATION_ERROR.90478 for id 78cbc1ef-ffcb-4c2e-946a-da49d480c67f","userInfo":{"NSLocalizedDescription":"Invalid Version. The build with the version “1.1.2” can’t be imported because a later version has been closed for new build submissions. Choose a different version number. With error code STATE_ERROR.VALIDATION_ERROR.90478 for id 78cbc1ef-ffcb-4c2e-946a-
+
+tdout: (null)
+{"tool-version":"5.329.1309","tool-path":"\/Applications\/Xcode-13.3.app\/Contents\/SharedFrameworks\/ContentDeliveryServices.framework\/Versions\/A\/Frameworks\/AppStoreService.framework","os-version":"12.3.1","product-errors":[{"message":"Invalid Version. The build with the version “1.1.2” can’t be imported because a later version has been closed for new build submissions. Choose a different version number. With error code STATE_ERROR.VALIDATION_ERROR.90478 for id 78cbc1ef-ffcb-4c2e-946a-da49d480c67f","userInfo":{"NSLocalizedDescription":"Invalid Version. The build with the version “1.1.2” can’t be imported because a later version has been closed for new build submissions. Choose a different version number. With error code STATE_ERROR.VALIDATION_ERROR.90478 for id 78cbc1ef-ffcb-4c2e-946a-da49d480c67f","NSLocalizedFailureReason":"Asset validation failed"},"code":-19208}]}
+
+
+Failed to upload archive at "/Users/builder/clone/build/ios/ipa/bereketeconnectapp.ipa"
+Failed to publish /Users/builder/clone/build/ios/ipa/bereketeconnectapp.ipa
+
+Failed to publish bereketeconnectapp.ipa to App Store Connect.
+
+Build failed :|
