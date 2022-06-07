@@ -53,6 +53,7 @@ class _BookedAppointmentsState extends State<BookedAppointments> {
                 child: StreamBuilder<QuerySnapshot>(
                   stream: FirebaseFirestore.instance
                       .collection('Booked_Appointment')
+                      .orderBy('created_at', descending: true)
                       .where('creater_id',
                           isEqualTo: CurrentAppUser.currentUserData.userId)
                       .snapshots(),
@@ -84,28 +85,68 @@ class _BookedAppointmentsState extends State<BookedAppointments> {
                                 SizedBox(
                                   height: 5,
                                 ),
-                                new Text(data['description'],
-                                    style: TextStyle(
-                                        color: Colors.blue,
-                                        fontWeight: FontWeight.w300)),
+                                new Text(
+                                  data['description'],
+                                  style: TextStyle(
+                                      color: Colors.blue,
+                                      fontWeight: FontWeight.w300),
+                                ),
+                                SizedBox(height: 5),
+                                new Text(
+                                  '____________',
+                                  style: TextStyle(
+                                      color: Colors.blue,
+                                      fontWeight: FontWeight.w300),
+                                ),
+                                SizedBox(height: 5),
+                                new Text(
+                                  'Status: ' +
+                                      '${data['status'] ?? 'In-Review'}',
+                                  style: TextStyle(
+                                      color: Colors.blue,
+                                      fontWeight: FontWeight.w300),
+                                ),
+                                SizedBox(height: 5),
+                                new Text(
+                                  'Admin\'s Comment: ' +
+                                      '${data['comment'] ?? ''}',
+                                  style: TextStyle(
+                                      color: Colors.blue,
+                                      fontWeight: FontWeight.w300),
+                                ),
                               ],
                             ),
-                            trailing: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                            trailing: Row(
+                              mainAxisSize: MainAxisSize.min,
                               children: [
-                                Container(
-                                  child: Text(
-                                      data['date'].toString().substring(0, 10),
-                                      style: TextStyle(
-                                          color: Colors.blue,
-                                          fontWeight: FontWeight.w300)),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Container(
+                                      child: Text(
+                                          data['date']
+                                              .toString()
+                                              .substring(0, 10),
+                                          style: TextStyle(
+                                              color: Colors.blue,
+                                              fontWeight: FontWeight.w300)),
+                                    ),
+                                    Container(
+                                      child: Text(data['time'],
+                                          style: TextStyle(
+                                              color: Colors.blue,
+                                              fontWeight: FontWeight.w300)),
+                                    ),
+                                  ],
                                 ),
-                                Container(
-                                  child: Text(data['time'],
-                                      style: TextStyle(
-                                          color: Colors.blue,
-                                          fontWeight: FontWeight.w300)),
-                                ),
+                                SizedBox(width: 5),
+                                IconButton(
+                                  icon: Icon(Icons.delete),
+                                  alignment: Alignment.topCenter,
+                                  color: Colors.red,
+                                  onPressed: () => deleteAppointment(
+                                      appointmentUid: document.id),
+                                )
                               ],
                             ),
                           ),
@@ -118,5 +159,16 @@ class _BookedAppointmentsState extends State<BookedAppointments> {
         ),
       ),
     );
+  }
+
+  Future<void> deleteAppointment({String appointmentUid}) async {
+    DocumentReference documentReferencer = FirebaseFirestore.instance
+        .collection('Booked_Appointment')
+        .doc(appointmentUid);
+
+    await documentReferencer
+        .delete()
+        .whenComplete(() => print('Appointment deleted successfully'))
+        .catchError((e) => print(e));
   }
 }

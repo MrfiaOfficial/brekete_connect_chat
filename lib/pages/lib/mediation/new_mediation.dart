@@ -27,9 +27,16 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
     'Others'
   ];
 
+  List<String> _status = [
+    'Approved',
+    'In-Review',
+    'Disapproved',
+  ];
+
   List<String> _gender = ['Male', 'Female'];
   bool checked;
   String _selectedcase = 'Family';
+  String _selectedStatus = 'In-Review';
   String _fpgender = 'Male';
   String _spgender = 'Male';
 
@@ -48,6 +55,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
   final time = TextEditingController();
   final subject = TextEditingController();
   final description = TextEditingController();
+  final comment = TextEditingController();
 
   GlobalKey<FormState> fKey = GlobalKey<FormState>();
 
@@ -98,7 +106,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
       });
   }
 
-  Future<bool> _quiz_firebase() async {
+  Future<bool> _createMediation() async {
     try {
       Map<String, dynamic> formDataMap = {
         'created_at': Timestamp.now(),
@@ -116,7 +124,9 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
 
         "subject": subject.text,
         "description": description.text,
-        'case_type': _selectedcase
+        'case_type': _selectedcase,
+        'status': _selectedStatus,
+        'comment': '',
         // "sender": widget.userName,
         // 'time': DateTime.now().millisecondsSinceEpoch,
       };
@@ -140,6 +150,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
 
         subject.text = "";
         description.text = "";
+        comment.text = "";
       });
       Fluttertoast.showToast(
           msg: 'Mediation Successfully Requested!',
@@ -840,7 +851,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
                             onPressed: () async {
                               print("++++++++++++++++++++++++++++++++++++++++");
                               if (fKey.currentState.validate()) {
-                                await _quiz_firebase();
+                                await _createMediation();
                                 setState(() {
                                   isLoading = false;
                                 });

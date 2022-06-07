@@ -54,6 +54,7 @@ class _SubmittedComplaintsScreenState extends State<SubmittedComplaintsScreen> {
                 child: StreamBuilder<QuerySnapshot>(
                   stream: FirebaseFirestore.instance
                       .collection('complaints')
+                      .orderBy('created_at', descending: true)
                       .where('creater_id',
                           isEqualTo: CurrentAppUser.currentUserData.userId)
                       .snapshots(),
@@ -109,7 +110,8 @@ class _SubmittedComplaintsScreenState extends State<SubmittedComplaintsScreen> {
                                   ),
                                   SizedBox(height: 5),
                                   new Text(
-                                    'Status: ' + '${data['status'] ?? ''}',
+                                    'Status: ' +
+                                        '${data['status'] ?? 'In-Review'}',
                                     style: TextStyle(
                                         color: Colors.blue,
                                         fontWeight: FontWeight.w300),

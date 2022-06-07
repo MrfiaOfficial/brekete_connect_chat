@@ -14,12 +14,20 @@ class Book extends StatefulWidget {
 }
 
 class _ChatsState extends State<Book> {
+  List<String> _status = [
+    'Approved',
+    'In-Review',
+    'Disapproved',
+  ];
+
+  String _selectedStatus = 'In-Review';
   String timef;
   String vot = "Time";
   final name = TextEditingController();
   final phone = TextEditingController();
   final time = TextEditingController();
   final description = TextEditingController();
+  final comment = TextEditingController();
 
   GlobalKey<FormState> fKey = GlobalKey<FormState>();
 
@@ -70,7 +78,7 @@ class _ChatsState extends State<Book> {
       });
   }
 
-  Future<bool> _quiz_firebase() async {
+  Future<bool> _createAppointment() async {
     try {
       Map<String, dynamic> chatMessageMap = {
         'created_at': Timestamp.now(),
@@ -80,6 +88,8 @@ class _ChatsState extends State<Book> {
         "date": selectedDate.toString(),
         "time": vot,
         "description": description.text,
+        'status': _selectedStatus,
+        'comment': '',
         // "sender": widget.userName,
         // 'time': DateTime.now().millisecondsSinceEpoch,
       };
@@ -94,6 +104,7 @@ class _ChatsState extends State<Book> {
         name.text = "";
         phone.text = "";
         description.text = "";
+        comment.text = "";
         // name.text = "";
       });
       Fluttertoast.showToast(
@@ -353,7 +364,7 @@ class _ChatsState extends State<Book> {
                                     setState(() {
                                       isLoading = true;
                                     });
-                                    await _quiz_firebase();
+                                    await _createAppointment();
                                     setState(() {
                                       isLoading = false;
                                     });
