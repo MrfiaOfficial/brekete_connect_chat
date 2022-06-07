@@ -75,63 +75,64 @@ class _SubmittedComplaintsScreenState extends State<SubmittedComplaintsScreen> {
                         //String complaintUid = data['id'];
                         return Card(
                           child: new ListTile(
-                              title: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  new Text(
-                                    data['created_at'].toString().split(' ')[0],
-                                    style: TextStyle(color: Colors.blue),
-                                  ),
-                                  new Text(
-                                    data['subject'],
-                                    style: TextStyle(color: Colors.blue),
-                                  ),
-                                ],
-                              ),
-                              subtitle: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  SizedBox(height: 3),
-                                  //new Text('' + data['phone']),
-                                  SizedBox(height: 5),
-                                  new Text(
-                                    data['description'],
-                                    style: TextStyle(
-                                        color: Colors.blue,
-                                        fontWeight: FontWeight.w300),
-                                  ),
-                                  SizedBox(height: 5),
-                                  new Text(
-                                    '____________',
-                                    style: TextStyle(
-                                        color: Colors.blue,
-                                        fontWeight: FontWeight.w300),
-                                  ),
-                                  SizedBox(height: 5),
-                                  new Text(
-                                    'Status: ' + '${data['status'] ?? ''}',
-                                    style: TextStyle(
-                                        color: Colors.blue,
-                                        fontWeight: FontWeight.w300),
-                                  ),
-                                  SizedBox(height: 5),
+                            title: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                new Text(
+                                  data['created_at'].toString().split(' ')[0],
+                                  style: TextStyle(color: Colors.blue),
+                                ),
+                                new Text(
+                                  data['subject'],
+                                  style: TextStyle(color: Colors.blue),
+                                ),
+                              ],
+                            ),
+                            subtitle: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                SizedBox(
+                                  height: 3,
+                                ),
+                                //new Text('' + data['phone']),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                new Text(
+                                  data['description'],
+                                  style: TextStyle(
+                                      color: Colors.blue,
+                                      fontWeight: FontWeight.w300),
+                                ),
+                                SizedBox(height: 5),
+                                new Text(
+                                  '____________',
+                                  style: TextStyle(
+                                      color: Colors.blue,
+                                      fontWeight: FontWeight.w300),
+                                ),
+                                SizedBox(height: 5),
+                                new Text(
+                                  'Status: ' + data['status'] ?? '',
+                                  style: TextStyle(
+                                      color: Colors.blue,
+                                      fontWeight: FontWeight.w300),
+                                ),
 
-                                  new Text(
-                                    'Admin\'s Comment: ' +
-                                        '${data['comment'] ?? ''}',
-                                    style: TextStyle(
-                                        color: Colors.blue,
-                                        fontWeight: FontWeight.w300),
-                                  ),
-                                ],
-                              ),
-                              trailing: IconButton(
+                                new Text(
+                                  'Admin\'s Comment: ' + data['comment'] ?? '',
+                                  style: TextStyle(
+                                      color: Colors.blue,
+                                      fontWeight: FontWeight.w300),
+                                ),
+                              ],
+                            ),
+                            /* trailing: IconButton(
                                 icon: Icon(Icons.delete),
-                                color: Colors.red,
                                 onPressed: () =>
-                                    deleteComplaint(complaintUid: document.id),
-                              )
-                              /* trailing: Column(
+                                    deleteComplaint(complaintUid: complaintUid),
+                              ) */
+                            /* trailing: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Container(
@@ -149,7 +150,7 @@ class _SubmittedComplaintsScreenState extends State<SubmittedComplaintsScreen> {
                                 ),
                               ],
                             ), */
-                              ),
+                          ),
                         );
                       }).toList(),
                     );
