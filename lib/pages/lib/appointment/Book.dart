@@ -31,6 +31,7 @@ class _ChatsState extends State<Book> {
 
   GlobalKey<FormState> fKey = GlobalKey<FormState>();
 
+  String _formattedDate;
   DateTime selectedDate; // = DateTime.now();
   TimeOfDay selectedTime; // = TimeOfDay.now();
   bool isLoading;
@@ -56,6 +57,7 @@ class _ChatsState extends State<Book> {
     if (picked != null && picked != selectedDate)
       setState(() {
         selectedDate = picked;
+        _formattedDate = selectedDate.toLocal().toString().split(' ')[0];
       });
   }
 
@@ -85,7 +87,7 @@ class _ChatsState extends State<Book> {
         'creater_id': CurrentAppUser.currentUserData.userId,
         "name": name.text,
         "phone": phone.text,
-        "date": selectedDate.toString(),
+        "date": _formattedDate,
         "time": vot,
         "description": description.text,
         'status': _selectedStatus,
