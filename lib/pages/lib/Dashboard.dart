@@ -66,9 +66,9 @@ class _DashboardState extends State<Dashboard> {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                SizedBox(height: 40),
+                SizedBox(height: 20),
                 Container(
-                  height: height * .20,
+                  height: height * .15,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -145,7 +145,7 @@ class _DashboardState extends State<Dashboard> {
                   ),
                 ),
                 Container(
-                  height: height * .80,
+                  height: height * .85,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -494,7 +494,7 @@ class _DashboardState extends State<Dashboard> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          /* InkWell(
+                          InkWell(
                             onTap: () {
                               Navigator.push(
                                   context,
@@ -532,7 +532,7 @@ class _DashboardState extends State<Dashboard> {
                                 ],
                               ),
                             ),
-                          ), */
+                          ),
                           InkWell(
                             onTap: () {
                               Navigator.push(
