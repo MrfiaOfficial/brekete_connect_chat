@@ -212,28 +212,23 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
             ),
             child: SafeArea(
               child: Padding(
-                padding: EdgeInsets.fromLTRB(2, height * 0.081, 30, 0),
+                padding: EdgeInsets.fromLTRB(30, 5, 30, 0),
                 child: SingleChildScrollView(
                   child: Form(
                     key: fKey,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Center(
-                              child: Text(
-                                'REQUEST MEDIATION',
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 49, 76, 190),
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
+                        Center(
+                          child: Text(
+                            'REQUEST MEDIATION',
+                            style: TextStyle(
+                              color: Color.fromARGB(255, 49, 76, 190),
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
                             ),
-                          ],
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                         Center(
                           child: Row(
@@ -290,6 +285,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
                               fontSize: 20,
                               fontWeight: FontWeight.w300,
                             ),
+                            textAlign: TextAlign.center,
                           ),
                         ),
                         SizedBox(
@@ -308,7 +304,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
                             ),
                             Container(
                               height: height * 0.05,
-                              width: width * 0.4,
+                              //width: width * 0.4,
                               decoration: BoxDecoration(
                                   color: Color(0XFFEFF3F6),
                                   borderRadius: BorderRadius.circular(20.0),
@@ -693,143 +689,6 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
                           ),
                         ),
 
-                        /* GestureDetector(
-                          onTap: () {
-                            _selectDate(context);
-                          },
-                          child: Container(
-                            width: width,
-                            // height: ,
-                            child: Text(
-                              selectedDate == null
-                                  ? 'Select Date'
-                                  : "${selectedDate.toLocal()}".split(' ')[0],
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 18,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Divider(
-                          color: Colors.grey,
-                          thickness: 1,
-                        ),
-                        SizedBox(
-                          height: height * 0.03,
-                        ),
-                        // Row(
-                        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //   children: [
-                        GestureDetector(
-                          onTap: () {
-                            _selectTime(context);
-                          },
-                          child: Container(
-                            width: width,
-                            child: Text(
-                              "${vot}",
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontSize: 18,
-                              ),
-                            ),
-                          ),
-                        ), */
-                        // ElevatedButton(
-                        //   child: Text(
-                        //       "Select Time",
-                        //       style: TextStyle(fontSize: 20)
-                        //   ),
-                        //   style: ButtonStyle(
-                        //       foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                        //       backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                        //       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        //           RoundedRectangleBorder(
-                        //               borderRadius: BorderRadius.circular(12.0),
-                        //               side: BorderSide(color: Colors.red)
-                        //           )
-                        //       )
-                        //   ),
-                        //   onPressed: (){
-                        //     _selectTime(context);
-                        //   },
-                        // ),
-
-                        //   ],
-                        // ),
-                        /*  Divider(
-                          color: Colors.grey,
-                          thickness: 1,
-                        ), */
-                        /* SizedBox(
-                          height: height * 0.03,
-                        ),
-
-                        SizedBox(
-                          child: Container(
-                            // width: width,
-                            padding: EdgeInsets.all(4),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(15),
-                                    topRight: Radius.circular(15)),
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.grey,
-                                      blurRadius: 4,
-                                      offset: Offset(1, 1))
-                                ]),
-                            child: TextFormField(
-                              controller: subject,
-                              // minLines: 5,
-                              //maxLines: 3,
-                              keyboardType: TextInputType.multiline,
-                              decoration: InputDecoration(
-                                hintText: 'Subject Of Complaint',
-                                hintStyle: TextStyle(color: Colors.grey),
-                                border: InputBorder.none,
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: height * 0.03,
-                        ),
-
-                        SizedBox(
-                          child: Container(
-                            // width: width,
-                            padding: EdgeInsets.all(4),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.only(
-                                    topLeft: Radius.circular(15),
-                                    topRight: Radius.circular(15)),
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.grey,
-                                      blurRadius: 4,
-                                      offset: Offset(1, 1))
-                                ]),
-                            child: TextFormField(
-                              controller: description,
-                              // minLines: 5,
-                              maxLines: 5,
-                              keyboardType: TextInputType.multiline,
-                              decoration: InputDecoration(
-                                hintText: 'Brief Description',
-                                hintStyle: TextStyle(color: Colors.grey),
-                                border: InputBorder.none,
-                              ),
-                            ),
-                          ),
-                        ), */
-                        // ),
-                        /* SizedBox(
-                          height: height * 0.04,
-                        ), */
                         Container(
                           height: height * 0.06,
                           child: ElevatedButton(

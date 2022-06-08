@@ -168,24 +168,21 @@ class _ChatsState extends State<Book> {
             ),
             child: SafeArea(
               child: Padding(
-                padding: EdgeInsets.fromLTRB(30, height * 0.081, 30, 0),
+                padding: EdgeInsets.fromLTRB(30, 5, 30, 0),
                 child: SingleChildScrollView(
                   child: Form(
                     key: fKey,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Row(
-                          children: [
-                            Text(
-                              'BOOK APPOINTMENT',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 49, 76, 190),
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
+                        Text(
+                          'BOOK APPOINTMENT',
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 49, 76, 190),
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          textAlign: TextAlign.center,
                         ),
                         SizedBox(
                           height: height * 0.02,

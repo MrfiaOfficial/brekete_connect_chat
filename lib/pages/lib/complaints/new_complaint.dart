@@ -183,24 +183,21 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
             ),
             child: SafeArea(
               child: Padding(
-                padding: EdgeInsets.fromLTRB(30, height * 0.081, 30, 0),
+                padding: EdgeInsets.fromLTRB(30, 5, 30, 0),
                 child: SingleChildScrollView(
                   child: Form(
                     key: fKey,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Row(
-                          children: [
-                            Text(
-                              'NEW COMPLAINT',
-                              style: TextStyle(
-                                color: Color.fromARGB(255, 49, 76, 190),
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
+                        Text(
+                          'NEW COMPLAINT',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 49, 76, 190),
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                         SizedBox(
                           height: height * 0.02,
@@ -229,7 +226,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                             ),
                             Container(
                               height: height * 0.05,
-                              width: width * 0.4,
+                              //width: width * 0.4,
                               decoration: BoxDecoration(
                                   color: Color(0XFFEFF3F6),
                                   borderRadius: BorderRadius.circular(20.0),

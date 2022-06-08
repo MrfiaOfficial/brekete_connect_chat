@@ -155,7 +155,7 @@ class MessageTile extends StatelessWidget {
                             : DateFormat('dd MMM, hh:mm a  ')
                                 .format(DateTime.parse(message.createdAt)),
                         style: TextStyle(
-                            fontSize: size.width * 0.02,
+                            fontSize: size.width * 0.03,
                             color: const Color(0xff6B6B6B)),
                       ),
                     ),
@@ -181,13 +181,13 @@ class MessageTile extends StatelessWidget {
                       children: [
                         Container(
                           width: MediaQuery.of(context).size.width * 0.5,
-                          padding: EdgeInsets.all(7),
+                          padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(8),
                               color: Color(0xffEFEDED)),
                           child: Text(
                             message.message,
-                            style: TextStyle(fontSize: size.width * 0.04),
+                            style: TextStyle(fontSize: size.width * 0.05),
                           ),
                         ),
                         if (currentUser.userId != message.ownerId)
