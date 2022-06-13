@@ -394,7 +394,7 @@ class _DashboardState extends State<Dashboard> {
                                     ),
                                   ),
                                   Text(
-                                    'MEDITATION',
+                                    'MEDIATION',
                                     style: TextStyle(
                                       color: Color.fromARGB(255, 49, 76, 190),
                                       fontSize: 18,
