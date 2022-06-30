@@ -110,7 +110,7 @@ class _ChatsState extends State<Donate1> {
   }
 
   void _launchURL() async {
-    if (!await launch('https://www.paystack.com/pay/mdonate'))
-      throw 'Could not launch https://www.paystack.com/pay/mdonate';
+    if (!await launch('https://www.breketefamily.com/donation'))
+      throw 'Could not launch https://www.breketefamily.com/donation';
   }
 }
