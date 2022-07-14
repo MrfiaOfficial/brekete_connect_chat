@@ -37,7 +37,7 @@ class _NewsState extends State<News> {
           children: <Widget>[
             WebView(
               key: _key,
-              initialUrl: 'https://breketeconnect.com.ng/',
+              initialUrl: 'https://breketefamily.com/blog/',
               javascriptMode: JavascriptMode.unrestricted,
               onPageFinished: (finish) {
                 setState(() {

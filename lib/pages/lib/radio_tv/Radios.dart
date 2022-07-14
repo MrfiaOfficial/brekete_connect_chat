@@ -16,8 +16,8 @@ class Radios extends StatefulWidget {
 
 class _MyAppState extends State<Radios> {
   String url = "https://humanrig.radioca.st/stream?type=http&nocache=887";
-  bool isPlaying;
-  bool isLoading;
+  late bool isPlaying;
+  late bool isLoading;
   @override
   void initState() {
     // isPlaying=false;

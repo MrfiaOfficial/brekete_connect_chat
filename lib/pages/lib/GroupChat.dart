@@ -206,7 +206,7 @@ class _HomePageState extends State<GroupChat> {
 
   // functions
   _getUserAuthAndJoinedGroups() async {
-    _user = await FA.FirebaseAuth.instance.currentUser;
+    _user = (await FA.FirebaseAuth.instance.currentUser)!;
     await HelperFunctions.getUserNameSharedPreference().then((value) {
       setState(() {
         _userName = value;

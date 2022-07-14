@@ -494,7 +494,7 @@ class _DashboardState extends State<Dashboard> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          /* InkWell(
+                          InkWell(
                             onTap: () {
                               Navigator.push(
                                   context,
@@ -532,7 +532,7 @@ class _DashboardState extends State<Dashboard> {
                                 ],
                               ),
                             ),
-                          ), */
+                          ),
                           InkWell(
                             onTap: () {
                               Navigator.push(
