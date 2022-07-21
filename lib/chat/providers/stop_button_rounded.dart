@@ -1,4 +1,4 @@
-import 'package:connect_chat/Widgets/rounded_loading_button.dart';
+import 'package:brekete_connect/chat/Widgets/rounded_loading_button.dart';
 import 'package:flutter/cupertino.dart';
 
 class StopAndStartButtonRounded with ChangeNotifier {

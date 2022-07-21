@@ -1,4 +1,4 @@
-import 'package:connect_chat/constants/strings.dart';
+import 'package:brekete_connect/chat/constants/strings.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'reply_message.g.dart';

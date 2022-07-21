@@ -2,11 +2,11 @@ import 'dart:async';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:connect_chat/constants/strings.dart';
-import 'package:connect_chat/models/user_model.dart';
-import 'package:connect_chat/pages/contacts_screen/contact_details.dart';
-import 'package:connect_chat/utility/call_utilities.dart';
-import 'package:connect_chat/utility/permissions.dart';
+import 'package:brekete_connect/chat/constants/strings.dart';
+import 'package:brekete_connect/chat/models/user_model.dart';
+import 'package:brekete_connect/chat/pages/contacts_screen/contact_details.dart';
+import 'package:brekete_connect/chat/utility/call_utilities.dart';
+import 'package:brekete_connect/chat/utility/permissions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:brekete_connect/models/user.dart';
 import 'package:brekete_connect/utils/routes.dart';
-import 'package:modal_progress_hud/modal_progress_hud.dart';
+import 'package:modal_progress_hud_alt/modal_progress_hud_alt.dart';
 
 class NewMediationScreen extends StatefulWidget {
   const NewMediationScreen({Key? key}) : super(key: key);
@@ -61,7 +61,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
 
   DateTime? selectedDate; // = DateTime.now();
   TimeOfDay? selectedTime; // = TimeOfDay.now();
-  bool? isLoading;
+  late bool isLoading;
 
   Future<Null> _selectDate(BuildContext context) async {
     final DateTime? picked = await showDatePicker(

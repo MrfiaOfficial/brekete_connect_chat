@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:connect_chat/Widgets/video_player.dart';
-import 'package:connect_chat/constants/strings.dart';
+import 'package:brekete_connect/chat/Widgets/video_player.dart';
+import 'package:brekete_connect/chat/constants/strings.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

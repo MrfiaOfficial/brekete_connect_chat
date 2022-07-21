@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:connect_chat/database/interface/log_interface.dart';
-import 'package:connect_chat/models/log.dart';
+import 'package:brekete_connect/chat/database/interface/log_interface.dart';
+import 'package:brekete_connect/chat/models/log.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';

@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:connect_chat/enum/user_state.dart';
-import 'package:connect_chat/models/user_model.dart';
-import 'package:connect_chat/services/auth_firebase.dart';
-import 'package:connect_chat/utility/utilityStatus.dart';
+import 'package:brekete_connect/chat/enum/user_state.dart';
+import 'package:brekete_connect/chat/models/user_model.dart';
+import 'package:brekete_connect/chat/services/auth_firebase.dart';
+import 'package:brekete_connect/chat/utility/utilityStatus.dart';
 import 'package:flutter/material.dart';
 
 class OnlineDotIndicator extends StatelessWidget {

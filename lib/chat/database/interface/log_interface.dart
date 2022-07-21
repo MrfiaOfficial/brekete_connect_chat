@@ -1,4 +1,4 @@
-import 'package:connect_chat/models/log.dart';
+import 'package:brekete_connect/chat/models/log.dart';
 
 abstract class LogInterface {
   openDb(dbName);

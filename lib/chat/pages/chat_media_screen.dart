@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:connect_chat/services/db.dart';
+import 'package:brekete_connect/chat/services/db.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

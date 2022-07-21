@@ -2,10 +2,10 @@ import 'dart:math';
 
 import 'package:another_flushbar/flushbar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:connect_chat/constants/strings.dart';
-import 'package:connect_chat/models/loading.dart';
-import 'package:connect_chat/models/modal_progress_hub.dart';
-import 'package:connect_chat/models/story_model.dart';
+import 'package:brekete_connect/chat/constants/strings.dart';
+import 'package:brekete_connect/chat/models/loading.dart';
+import 'package:brekete_connect/chat/models/modal_progress_hub.dart';
+import 'package:brekete_connect/chat/models/story_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:connect_chat/constants/strings.dart';
-import 'package:connect_chat/models/message.dart';
-import 'package:connect_chat/models/user_model.dart';
+import 'package:brekete_connect/chat/constants/strings.dart';
+import 'package:brekete_connect/chat/models/message.dart';
+import 'package:brekete_connect/chat/models/user_model.dart';
 import 'package:flutter/material.dart';
 
 class ReplyMessageBubble extends StatelessWidget {

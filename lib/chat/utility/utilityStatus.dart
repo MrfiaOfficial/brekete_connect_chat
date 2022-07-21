@@ -1,4 +1,4 @@
-import 'package:connect_chat/enum/user_state.dart';
+import 'package:brekete_connect/chat/enum/user_state.dart';
 
 class UtilityStatus {
   static int stateToNum(UserState userState) {

@@ -1,6 +1,6 @@
-import 'package:connect_chat/database/db/hive_methode.dart';
-import 'package:connect_chat/database/db/sqlite_methode.dart';
-import 'package:connect_chat/models/log.dart';
+import 'package:brekete_connect/chat/database/db/hive_methode.dart';
+import 'package:brekete_connect/chat/database/db/sqlite_methode.dart';
+import 'package:brekete_connect/chat/models/log.dart';
 
 class LogRepository {
   static var dbObject;

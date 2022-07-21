@@ -1,6 +1,6 @@
-import 'package:connect_chat/enum/user_state.dart';
-import 'package:connect_chat/providers/ConnectivityChangeNotifier.dart';
-import 'package:connect_chat/utility/utilityStatus.dart';
+import 'package:brekete_connect/chat/enum/user_state.dart';
+import 'package:brekete_connect/chat/providers/ConnectivityChangeNotifier.dart';
+import 'package:brekete_connect/chat/utility/utilityStatus.dart';
 import 'package:connectivity/connectivity.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

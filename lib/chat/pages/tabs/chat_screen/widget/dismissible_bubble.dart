@@ -1,4 +1,4 @@
-import 'package:connect_chat/models/message.dart';
+import 'package:brekete_connect/chat/models/message.dart';
 import 'package:flutter/material.dart';
 
 class DismssibleBubble extends StatelessWidget {

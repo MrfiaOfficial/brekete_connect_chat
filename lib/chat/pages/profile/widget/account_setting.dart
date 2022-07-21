@@ -1,8 +1,8 @@
 import 'package:another_flushbar/flushbar.dart';
-import 'package:connect_chat/Widgets/rounded_loading_button.dart';
-import 'package:connect_chat/providers/stop_button_rounded.dart';
-import 'package:connect_chat/providers/user_provider.dart';
-import 'package:connect_chat/styles/style.dart';
+import 'package:brekete_connect/chat/Widgets/rounded_loading_button.dart';
+import 'package:brekete_connect/chat/providers/stop_button_rounded.dart';
+import 'package:brekete_connect/chat/providers/user_provider.dart';
+import 'package:brekete_connect/chat/styles/style.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

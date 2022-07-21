@@ -1,4 +1,4 @@
-import 'package:connect_chat/enum/view_state.dart';
+import 'package:brekete_connect/chat/enum/view_state.dart';
 import 'package:flutter/widgets.dart';
 
 class ImageUploadProvider with ChangeNotifier {

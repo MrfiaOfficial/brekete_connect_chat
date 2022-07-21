@@ -1,13 +1,13 @@
 import 'dart:math';
 
-import 'package:connect_chat/constants/strings.dart';
-import 'package:connect_chat/database/repository/log_repository.dart';
-import 'package:connect_chat/models/call.dart';
-import 'package:connect_chat/models/log.dart';
-import 'package:connect_chat/models/user_model.dart';
-import 'package:connect_chat/pages/callScreen/call_screen.dart';
-import 'package:connect_chat/pages/dialScreen/dial_screen.dart';
-import 'package:connect_chat/services/call_firebase.dart';
+import 'package:brekete_connect/chat/constants/strings.dart';
+import 'package:brekete_connect/chat/database/repository/log_repository.dart';
+import 'package:brekete_connect/chat/models/call.dart';
+import 'package:brekete_connect/chat/models/log.dart';
+import 'package:brekete_connect/chat/models/user_model.dart';
+import 'package:brekete_connect/chat/pages/callScreen/call_screen.dart';
+import 'package:brekete_connect/chat/pages/dialScreen/dial_screen.dart';
+import 'package:brekete_connect/chat/services/call_firebase.dart';
 import 'package:flutter/material.dart';
 import 'package:page_transition/page_transition.dart';
 

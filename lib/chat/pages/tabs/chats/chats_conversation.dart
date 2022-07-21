@@ -1,13 +1,13 @@
 import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:connect_chat/Widgets/app_bar_widget.dart';
-import 'package:connect_chat/Widgets/pop_box.dart';
-import 'package:connect_chat/constants/strings.dart';
-import 'package:connect_chat/models/ChatData.dart';
-import 'package:connect_chat/providers/chat.dart';
-import 'package:connect_chat/services/db.dart';
-import 'package:connect_chat/utility/utils.dart';
+import 'package:brekete_connect/chat/Widgets/app_bar_widget.dart';
+import 'package:brekete_connect/chat/Widgets/pop_box.dart';
+import 'package:brekete_connect/chat/constants/strings.dart';
+import 'package:brekete_connect/chat/models/ChatData.dart';
+import 'package:brekete_connect/chat/providers/chat.dart';
+import 'package:brekete_connect/chat/services/db.dart';
+import 'package:brekete_connect/chat/utility/utils.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

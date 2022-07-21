@@ -1,10 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:connect_chat/Widgets/media_view.dart';
-import 'package:connect_chat/constants/strings.dart';
-import 'package:connect_chat/models/user_model.dart';
-import 'package:connect_chat/pages/tabs/chat_screen/widget/app_bar.dart';
-import 'package:connect_chat/services/db.dart';
+import 'package:brekete_connect/chat/Widgets/media_view.dart';
+import 'package:brekete_connect/chat/constants/strings.dart';
+import 'package:brekete_connect/chat/models/user_model.dart';
+import 'package:brekete_connect/chat/pages/tabs/chat_screen/widget/app_bar.dart';
+import 'package:brekete_connect/chat/services/db.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

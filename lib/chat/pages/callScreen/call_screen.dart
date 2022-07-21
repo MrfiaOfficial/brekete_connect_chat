@@ -3,12 +3,12 @@ import 'dart:developer';
 
 import 'package:agora_rtc_engine/rtc_engine.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:connect_chat/configs/agora_configs.dart';
+import 'package:brekete_connect/chat/configs/agora_configs.dart';
 import 'package:agora_rtc_engine/rtc_local_view.dart' as RtcLocalView;
 import 'package:agora_rtc_engine/rtc_remote_view.dart' as RtcRemoteView;
-import 'package:connect_chat/models/call.dart';
-import 'package:connect_chat/providers/user_provider.dart';
-import 'package:connect_chat/services/call_firebase.dart';
+import 'package:brekete_connect/chat/models/call.dart';
+import 'package:brekete_connect/chat/providers/user_provider.dart';
+import 'package:brekete_connect/chat/services/call_firebase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:provider/provider.dart';

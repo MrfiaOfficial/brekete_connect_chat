@@ -1,11 +1,11 @@
-import 'package:connect_chat/constants/strings.dart';
-import 'package:connect_chat/database/repository/log_repository.dart';
-import 'package:connect_chat/models/call.dart';
-import 'package:connect_chat/models/log.dart';
-import 'package:connect_chat/pages/dialScreen/dial_screen.dart';
-import 'package:connect_chat/pages/tabs/chats/widget/cached_image.dart';
-import 'package:connect_chat/services/call_firebase.dart';
-import 'package:connect_chat/utility/permissions.dart';
+import 'package:brekete_connect/chat/constants/strings.dart';
+import 'package:brekete_connect/chat/database/repository/log_repository.dart';
+import 'package:brekete_connect/chat/models/call.dart';
+import 'package:brekete_connect/chat/models/log.dart';
+import 'package:brekete_connect/chat/pages/dialScreen/dial_screen.dart';
+import 'package:brekete_connect/chat/pages/tabs/chats/widget/cached_image.dart';
+import 'package:brekete_connect/chat/services/call_firebase.dart';
+import 'package:brekete_connect/chat/utility/permissions.dart';
 import 'package:flutter/material.dart';
 
 import '../call_screen.dart';

@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:connect_chat/models/call.dart';
-import 'package:connect_chat/pages/callScreen/pickup/pickup_screen.dart';
-import 'package:connect_chat/providers/user_provider.dart';
-import 'package:connect_chat/services/call_firebase.dart';
+import 'package:brekete_connect/chat/models/call.dart';
+import 'package:brekete_connect/chat/pages/callScreen/pickup/pickup_screen.dart';
+import 'package:brekete_connect/chat/providers/user_provider.dart';
+import 'package:brekete_connect/chat/services/call_firebase.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

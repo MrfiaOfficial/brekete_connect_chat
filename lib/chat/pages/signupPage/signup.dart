@@ -1,9 +1,9 @@
 import 'package:another_flushbar/flushbar.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:connect_chat/Widgets/rounded_loading_button.dart';
-import 'package:connect_chat/models/user_model.dart';
-import 'package:connect_chat/pages/tabs/home.dart';
-import 'package:connect_chat/services/auth_firebase.dart';
+import 'package:brekete_connect/chat/Widgets/rounded_loading_button.dart';
+import 'package:brekete_connect/chat/models/user_model.dart';
+import 'package:brekete_connect/chat/pages/tabs/home.dart';
+import 'package:brekete_connect/chat/services/auth_firebase.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

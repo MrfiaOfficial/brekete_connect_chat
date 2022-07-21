@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:connect_chat/constants/strings.dart';
-import 'package:connect_chat/models/call.dart';
+import 'package:brekete_connect/chat/constants/strings.dart';
+import 'package:brekete_connect/chat/models/call.dart';
 
 class CallFirebase {
   final CollectionReference callCollection =

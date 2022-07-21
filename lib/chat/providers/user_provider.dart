@@ -1,5 +1,5 @@
-import 'package:connect_chat/models/user_model.dart';
-import 'package:connect_chat/services/auth_firebase.dart';
+import 'package:brekete_connect/chat/models/user_model.dart';
+import 'package:brekete_connect/chat/services/auth_firebase.dart';
 import 'package:flutter/material.dart';
 
 class UserProvider with ChangeNotifier {

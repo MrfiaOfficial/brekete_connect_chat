@@ -1,10 +1,10 @@
 import 'dart:io';
 import 'dart:math';
 
-import 'package:connect_chat/Widgets/video_player.dart';
-import 'package:connect_chat/constants/strings.dart';
-import 'package:connect_chat/models/message.dart';
-import 'package:connect_chat/services/storage_firebase.dart';
+import 'package:brekete_connect/chat/Widgets/video_player.dart';
+import 'package:brekete_connect/chat/constants/strings.dart';
+import 'package:brekete_connect/chat/models/message.dart';
+import 'package:brekete_connect/chat/services/storage_firebase.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:timeago/timeago.dart' as timeago;
 

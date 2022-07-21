@@ -1,6 +1,6 @@
-import 'package:connect_chat/Widgets/page_header.dart';
-import 'package:connect_chat/Widgets/page_profile_image.dart';
-import 'package:connect_chat/providers/user_provider.dart';
+import 'package:brekete_connect/chat/Widgets/page_header.dart';
+import 'package:brekete_connect/chat/Widgets/page_profile_image.dart';
+import 'package:brekete_connect/chat/providers/user_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

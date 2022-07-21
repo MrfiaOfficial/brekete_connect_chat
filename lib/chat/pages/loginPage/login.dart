@@ -1,6 +1,6 @@
 import 'package:another_flushbar/flushbar.dart';
-import 'package:connect_chat/Widgets/rounded_loading_button.dart';
-import 'package:connect_chat/pages/tabs/home.dart';
+import 'package:brekete_connect/chat/Widgets/rounded_loading_button.dart';
+import 'package:brekete_connect/chat/pages/tabs/home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
