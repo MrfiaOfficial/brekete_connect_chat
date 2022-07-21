@@ -40,7 +40,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
   String _fpgender = 'Male';
   String _spgender = 'Male';
 
-  String? timef;
+  late String timef;
   String vot = "Time";
   final firstPersonName = TextEditingController();
   final firstPersonPhone = TextEditingController();
@@ -69,7 +69,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
       initialDate: DateTime.now(),
       firstDate: DateTime.now(),
       lastDate: DateTime(2101),
-      builder: (BuildContext context, Widget child) {
+      /* builder: (BuildContext context, Widget child) {
         return Theme(
           data: ThemeData.light().copyWith(
             primaryColor: Colors.red,
@@ -79,7 +79,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
           ),
           child: child,
         );
-      },
+      }, */
     );
     if (picked != null && picked != selectedDate)
       setState(() {
@@ -88,21 +88,22 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
   }
 
   Future<void> _selectTime(BuildContext context) async {
-    final TimeOfDay picked_s = await showTimePicker(
-        context: context,
-        initialTime: TimeOfDay.now(),
-        builder: (BuildContext context, Widget child) {
-          return MediaQuery(
-            data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: false),
-            child: child,
-          );
-        });
+    final TimeOfDay? picked_s = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+      /* builder: (BuildContext context, Widget child) {
+        return MediaQuery(
+          data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: false),
+          child: child,
+        );
+      }, */
+    );
 
     if (picked_s != null && picked_s != selectedTime)
       setState(() {
         selectedTime = picked_s;
         timef = selectedTime.toString();
-        vot = timef.substring(10, 15);
+        vot = timef!.substring(10, 15);
       });
   }
 

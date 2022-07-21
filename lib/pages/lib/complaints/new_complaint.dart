@@ -7,7 +7,7 @@ import 'package:brekete_connect/utils/routes.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class NewComplaintScreen extends StatefulWidget {
-  const NewComplaintScreen({Key key}) : super(key: key);
+  const NewComplaintScreen({Key? key}) : super(key: key);
 
   @override
   _NewComplaintScreenState createState() => _NewComplaintScreenState();
@@ -35,7 +35,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
 
   String _selectedcase = 'Family';
   String _selectedStatus = 'In-Review';
-  String timef;
+  late String timef;
   String vot = "Time";
   final name = TextEditingController();
   final phone = TextEditingController();
@@ -46,17 +46,17 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
 
   GlobalKey<FormState> fKey = GlobalKey<FormState>();
 
-  DateTime selectedDate; // = DateTime.now();
-  TimeOfDay selectedTime; // = TimeOfDay.now();
-  bool isLoading;
+  DateTime? selectedDate; // = DateTime.now();
+  TimeOfDay? selectedTime; // = TimeOfDay.now();
+  bool? isLoading;
 
   Future<Null> _selectDate(BuildContext context) async {
-    final DateTime picked = await showDatePicker(
+    final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime.now(),
       lastDate: DateTime(2101),
-      builder: (BuildContext context, Widget child) {
+      /* builder: (BuildContext context, Widget child) {
         return Theme(
           data: ThemeData.light().copyWith(
             primaryColor: Colors.red,
@@ -66,7 +66,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
           ),
           child: child,
         );
-      },
+      }, */
     );
     if (picked != null && picked != selectedDate)
       setState(() {
@@ -75,15 +75,16 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
   }
 
   Future<void> _selectTime(BuildContext context) async {
-    final TimeOfDay picked_s = await showTimePicker(
-        context: context,
-        initialTime: TimeOfDay.now(),
-        builder: (BuildContext context, Widget child) {
-          return MediaQuery(
-            data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: false),
-            child: child,
-          );
-        });
+    final TimeOfDay? picked_s = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+      /* builder: (BuildContext context, Widget child) {
+        return MediaQuery(
+          data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: false),
+          child: child,
+        );
+      }, */
+    );
 
     if (picked_s != null && picked_s != selectedTime)
       setState(() {
@@ -254,7 +255,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                                     value: _selectedcase,
                                     onChanged: (newValue) {
                                       setState(() {
-                                        _selectedcase = newValue;
+                                        _selectedcase = newValue.toString();
                                       });
                                     },
                                     items: _case.map((location) {
@@ -273,7 +274,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                           height: height * 0.04,
                         ),
                         TextFormField(
-                          validator: (v) => v.isEmpty ? 'Insert Name!' : null,
+                          validator: (v) => v!.isEmpty ? 'Insert Name!' : null,
                           cursorColor: Colors.black,
                           keyboardType: TextInputType.text,
                           controller: name,
@@ -291,7 +292,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                         ),
                         TextFormField(
                           controller: phone,
-                          validator: (v) => v.isEmpty ? 'Insert Phone!' : null,
+                          validator: (v) => v!.isEmpty ? 'Insert Phone!' : null,
                           cursorColor: Colors.black,
                           keyboardType: TextInputType.phone,
                           style: TextStyle(color: Colors.black),
@@ -309,7 +310,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                         TextFormField(
                           controller: subject,
                           validator: (v) =>
-                              v.isEmpty ? 'Insert Subject!' : null,
+                              v!.isEmpty ? 'Insert Subject!' : null,
                           cursorColor: Colors.black,
                           keyboardType: TextInputType.multiline,
                           style: TextStyle(color: Colors.black),
@@ -328,7 +329,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                           controller: description,
                           maxLines: 5,
                           validator: (v) =>
-                              v.isEmpty ? 'Insert brief description!' : null,
+                              v!.isEmpty ? 'Insert brief description!' : null,
                           cursorColor: Colors.black,
                           keyboardType: TextInputType.multiline,
                           style: TextStyle(color: Colors.black),
@@ -501,7 +502,7 @@ class _NewComplaintScreenState extends State<NewComplaintScreen> {
                                         side: BorderSide(color: Colors.red)))),
                             onPressed: () async {
                               print("++++++++++++++++++++++++++++++++++++++++");
-                              if (fKey.currentState.validate()) {
+                              if (fKey.currentState!.validate()) {
                                 await _createComplaint();
                                 setState(() {
                                   isLoading = false;

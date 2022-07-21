@@ -7,7 +7,7 @@ import 'package:brekete_connect/utils/routes.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class Book extends StatefulWidget {
-  const Book({Key key}) : super(key: key);
+  const Book({Key? key}) : super(key: key);
 
   @override
   _ChatsState createState() => _ChatsState();
@@ -21,7 +21,7 @@ class _ChatsState extends State<Book> {
   ];
 
   String _selectedStatus = 'In-Review';
-  String timef;
+  late String timef;
   String vot = "Time";
   final name = TextEditingController();
   final phone = TextEditingController();
@@ -31,18 +31,18 @@ class _ChatsState extends State<Book> {
 
   GlobalKey<FormState> fKey = GlobalKey<FormState>();
 
-  String _formattedDate;
-  DateTime selectedDate; // = DateTime.now();
-  TimeOfDay selectedTime; // = TimeOfDay.now();
-  bool isLoading;
+  late String _formattedDate;
+  late DateTime selectedDate; // = DateTime.now();
+  late TimeOfDay selectedTime; // = TimeOfDay.now();
+  late bool isLoading;
 
   Future<Null> _selectDate(BuildContext context) async {
-    final DateTime picked = await showDatePicker(
+    final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime.now(),
       lastDate: DateTime(2101),
-      builder: (BuildContext context, Widget child) {
+      /* builder: (BuildContext context, Widget child) {
         return Theme(
           data: ThemeData.light().copyWith(
             primaryColor: Colors.red,
@@ -52,7 +52,7 @@ class _ChatsState extends State<Book> {
           ),
           child: child,
         );
-      },
+      }, */
     );
     if (picked != null && picked != selectedDate)
       setState(() {
@@ -62,15 +62,16 @@ class _ChatsState extends State<Book> {
   }
 
   Future<void> _selectTime(BuildContext context) async {
-    final TimeOfDay picked_s = await showTimePicker(
-        context: context,
-        initialTime: TimeOfDay.now(),
-        builder: (BuildContext context, Widget child) {
-          return MediaQuery(
-            data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: false),
-            child: child,
-          );
-        });
+    final TimeOfDay? picked_s = await showTimePicker(
+      context: context,
+      initialTime: TimeOfDay.now(),
+      /* builder: (BuildContext context, Widget child) {
+        return MediaQuery(
+          data: MediaQuery.of(context).copyWith(alwaysUse24HourFormat: false),
+          child: child,
+        );
+      }, */
+    );
 
     if (picked_s != null && picked_s != selectedTime)
       setState(() {
@@ -199,7 +200,7 @@ class _ChatsState extends State<Book> {
                           height: height * 0.03,
                         ),
                         TextFormField(
-                          validator: (v) => v.isEmpty ? 'Insert Name!' : null,
+                          validator: (v) => v!.isEmpty ? 'Insert Name!' : null,
                           cursorColor: Colors.black,
                           keyboardType: TextInputType.text,
                           controller: name,
@@ -217,7 +218,7 @@ class _ChatsState extends State<Book> {
                         ),
                         TextFormField(
                           controller: phone,
-                          validator: (v) => v.isEmpty ? 'Insert Phone!' : null,
+                          validator: (v) => v!.isEmpty ? 'Insert Phone!' : null,
                           cursorColor: Colors.black,
                           keyboardType: TextInputType.phone,
                           style: TextStyle(color: Colors.black),
@@ -357,7 +358,7 @@ class _ChatsState extends State<Book> {
                                         side: BorderSide(color: Colors.red)))),
                             onPressed: () async {
                               print("++++++++++++++++++++++++++++++++++++++++");
-                              if (fKey.currentState.validate()) {
+                              if (fKey.currentState!.validate()) {
                                 if (selectedDate != null) {
                                   if (selectedTime != null) {
                                     setState(() {
