@@ -26,10 +26,10 @@ class HelperFunctions {
   }
 
   // fetching data from sharedpreference
-  static Future<bool> getUserLoggedInSharedPreference() async {
+  static Future<bool?> getUserLoggedInSharedPreference() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     CurrentAppUser.currentUserData.userId =
-        FirebaseAuth.instance.currentUser.uid;
+        FirebaseAuth.instance.currentUser!.uid;
     return await preferences.getBool(sharedPreferenceUserLoggedInKey);
   }
 
@@ -40,12 +40,12 @@ class HelperFunctions {
     return preferences.remove(sharedPreferenceUserLoggedInKey);
   }
 
-  static Future<String> getUserNameSharedPreference() async {
+  static Future<String?> getUserNameSharedPreference() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     return await preferences.getString(sharedPreferenceUserNameKey);
   }
 
-  static Future<String> getUserEmailSharedPreference() async {
+  static Future<String?> getUserEmailSharedPreference() async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     return await preferences.getString(sharedPreferenceUserEmailKey);
   }

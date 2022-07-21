@@ -68,7 +68,7 @@ class _BookedAppointmentsState extends State<BookedAppointments> {
                     }
                     return new ListView(
                       children:
-                          snapshot.data.docs.map((DocumentSnapshot document) {
+                          snapshot.data!.docs.map((DocumentSnapshot document) {
                         Map<String, dynamic> data =
                             document.data() as Map<String, dynamic>;
                         return Card(
@@ -161,7 +161,7 @@ class _BookedAppointmentsState extends State<BookedAppointments> {
     );
   }
 
-  Future<void> deleteAppointment({String appointmentUid}) async {
+  Future<void> deleteAppointment({required String appointmentUid}) async {
     DocumentReference documentReferencer = FirebaseFirestore.instance
         .collection('Booked_Appointment')
         .doc(appointmentUid);

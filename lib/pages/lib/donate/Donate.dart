@@ -6,7 +6,7 @@ import 'package:webview_flutter/platform_interface.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class Donate extends StatefulWidget {
-  const Donate({Key key}) : super(key: key);
+  const Donate({Key? key}) : super(key: key);
 
   @override
   _ChatsState createState() => _ChatsState();

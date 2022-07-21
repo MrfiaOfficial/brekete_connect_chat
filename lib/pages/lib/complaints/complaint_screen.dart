@@ -11,7 +11,7 @@ import 'package:brekete_connect/utils/routes.dart';
 import 'new_complaint.dart';
 
 class ComplaintScreen extends StatefulWidget {
-  const ComplaintScreen({Key key}) : super(key: key);
+  const ComplaintScreen({Key? key}) : super(key: key);
 
   @override
   _ComplaintState createState() => _ComplaintState();

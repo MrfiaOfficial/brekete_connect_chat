@@ -3,13 +3,13 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class CustomElevatedButton extends StatelessWidget {
   final onPressed;
-  final String text;
-  final Color bgColor;
-  final Color textColor;
-  final IconData socialIcon;
+  final String? text;
+  final Color? bgColor;
+  final Color? textColor;
+  final IconData? socialIcon;
 
   CustomElevatedButton({
-    Key key,
+    Key? key,
     this.onPressed,
     this.text,
     this.bgColor,
@@ -42,7 +42,7 @@ class CustomElevatedButton extends StatelessWidget {
               FaIcon(socialIcon),
               SizedBox(width: 10),
               Text(
-                text,
+                text.toString(),
                 style: TextStyle(
                   fontSize: 20,
                   //fontWeight: FontWeight.normal,

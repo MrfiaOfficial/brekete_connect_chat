@@ -69,7 +69,7 @@ class _SubmittedMediationsScreenState extends State<SubmittedMediationsScreen> {
                     }
                     return new ListView(
                       children:
-                          snapshot.data.docs.map((DocumentSnapshot document) {
+                          snapshot.data!.docs.map((DocumentSnapshot document) {
                         Map<String, dynamic> data =
                             document.data() as Map<String, dynamic>;
                         return Card(
@@ -161,7 +161,7 @@ class _SubmittedMediationsScreenState extends State<SubmittedMediationsScreen> {
     );
   }
 
-  Future<void> deleteMediation({String mediationUid}) async {
+  Future<void> deleteMediation({required String mediationUid}) async {
     DocumentReference documentReferencer =
         FirebaseFirestore.instance.collection('mediations').doc(mediationUid);
 

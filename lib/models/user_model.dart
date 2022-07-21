@@ -1,14 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class AppUser {
-  String email;
-  String userId;
-  String name;
-  String phone;
-  String address;
-  List<String> groups = [];
-  Timestamp createdAt;
-  List<dynamic> messages;
+  String? email;
+  String? userId;
+  String? name;
+  String? phone;
+  String? address;
+  List<String>? groups = [];
+  Timestamp? createdAt;
+  List<dynamic>? messages;
   AppUser(
       {this.email,
       this.userId,

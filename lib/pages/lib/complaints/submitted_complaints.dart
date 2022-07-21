@@ -70,7 +70,7 @@ class _SubmittedComplaintsScreenState extends State<SubmittedComplaintsScreen> {
 
                     return new ListView(
                       children:
-                          snapshot.data.docs.map((DocumentSnapshot document) {
+                          snapshot.data!.docs.map((DocumentSnapshot document) {
                         Map<String, dynamic> data =
                             document.data() as Map<String, dynamic>;
                         //String complaintUid = data['id'];
@@ -163,7 +163,7 @@ class _SubmittedComplaintsScreenState extends State<SubmittedComplaintsScreen> {
     );
   }
 
-  Future<void> deleteComplaint({String complaintUid}) async {
+  Future<void> deleteComplaint({required String complaintUid}) async {
     DocumentReference documentReferencer =
         FirebaseFirestore.instance.collection('complaints').doc(complaintUid);
 

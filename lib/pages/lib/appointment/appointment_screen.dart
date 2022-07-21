@@ -10,7 +10,7 @@ import 'package:brekete_connect/utils/routes.dart';
 import 'Book.dart';
 
 class AppointmentScreen extends StatefulWidget {
-  const AppointmentScreen({Key key}) : super(key: key);
+  const AppointmentScreen({Key? key}) : super(key: key);
 
   @override
   _ChatsState createState() => _ChatsState();

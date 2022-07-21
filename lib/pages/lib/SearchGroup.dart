@@ -31,7 +31,7 @@ class _SearchPageState extends State<SearchPage> {
   // functions
   _getCurrentUserNameAndUid() async {
     await HelperFunctions.getUserNameSharedPreference().then((value) {
-      _userName = value;
+      _userName = value!;
     });
     _user = FA.FirebaseAuth.instance.currentUser!;
   }

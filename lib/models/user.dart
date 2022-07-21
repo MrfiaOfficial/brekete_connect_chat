@@ -6,14 +6,14 @@ class CurrentAppUser with ChangeNotifier {
   factory CurrentAppUser() => _singleton;
   CurrentAppUser._internal();
   static CurrentAppUser get currentUserData => _singleton;
-  String email;
-  String userId;
-  String name;
-  String phone;
-  String address;
-  String photo;
-  List<String> groups = [];
-  List<dynamic> messages;
+  late String email;
+  late String userId;
+  late String name;
+  late String phone;
+  late String address;
+  late String photo;
+  late List<String> groups = [];
+  late List<dynamic> messages;
 
   Future<bool> getUserData() async {
     // print(
@@ -24,7 +24,7 @@ class CurrentAppUser with ChangeNotifier {
         .doc('${CurrentAppUser.currentUserData.userId}')
         .snapshots()
         .listen((event) {
-      Map<String, dynamic> data = event.data();
+      Map<String, dynamic> data = event.data() as Map<String, dynamic>;
       CurrentAppUser.currentUserData.email = data['email'];
       CurrentAppUser.currentUserData.name = data['fullName'];
       CurrentAppUser.currentUserData.address = data['address'];
@@ -41,5 +41,5 @@ class CurrentAppUser with ChangeNotifier {
 class User {
   final String uid;
 
-  User({this.uid});
+  User({required this.uid});
 }

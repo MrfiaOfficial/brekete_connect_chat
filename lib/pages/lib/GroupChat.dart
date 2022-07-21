@@ -210,7 +210,7 @@ class _HomePageState extends State<GroupChat> {
     _user = (await FA.FirebaseAuth.instance.currentUser)!;
     await HelperFunctions.getUserNameSharedPreference().then((value) {
       setState(() {
-        _userName = value;
+        _userName = value!;
       });
     });
     DatabaseService(uid: _user.uid).getUserGroups().then((snapshots) {
@@ -221,7 +221,7 @@ class _HomePageState extends State<GroupChat> {
     });
     await HelperFunctions.getUserEmailSharedPreference().then((value) {
       setState(() {
-        _email = value;
+        _email = value!;
       });
     });
   }
@@ -249,7 +249,7 @@ class _HomePageState extends State<GroupChat> {
       onPressed: () async {
         if (_groupName != null) {
           await HelperFunctions.getUserNameSharedPreference().then((val) {
-            DatabaseService(uid: _user.uid).createGroup(val, _groupName);
+            DatabaseService(uid: _user.uid).createGroup(val!, _groupName);
           });
           Navigator.of(context).pop();
         }

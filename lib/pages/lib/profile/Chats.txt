@@ -178,7 +178,11 @@ class _ChatsState extends State<Chats> {
                                         Navigator.of(context).pushReplacement(
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Dashboard()));
+                                                    ChatScreen(
+                                                      currentuser:
+                                                          CurrentAppUser
+                                                              .currentUserData,
+                                                    )));
                                       },
                                       child: Text(
                                         'Chat',
@@ -213,7 +217,11 @@ class _ChatsState extends State<Chats> {
                                         Navigator.of(context).pushReplacement(
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Dashboard()));
+                                                    FriendsScreen(
+                                                      currentuser:
+                                                          CurrentAppUser
+                                                              .currentUserData,
+                                                    )));
                                       },
                                       child: Text(
                                         'Friends',
@@ -256,7 +264,11 @@ class _ChatsState extends State<Chats> {
                                         Navigator.of(context).pushReplacement(
                                             MaterialPageRoute(
                                                 builder: (context) =>
-                                                    Dashboard()));
+                                                    GroupChatScreen(
+                                                      currentuser:
+                                                          CurrentAppUser
+                                                              .currentUserData,
+                                                    )));
                                       },
                                       child: Text(
                                         'Groups',

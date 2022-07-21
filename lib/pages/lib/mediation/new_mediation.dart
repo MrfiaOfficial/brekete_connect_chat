@@ -34,13 +34,13 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
   ];
 
   List<String> _gender = ['Male', 'Female'];
-  bool checked;
+  bool? checked;
   String _selectedcase = 'Family';
   String _selectedStatus = 'In-Review';
   String _fpgender = 'Male';
   String _spgender = 'Male';
 
-  String timef;
+  String? timef;
   String vot = "Time";
   final firstPersonName = TextEditingController();
   final firstPersonPhone = TextEditingController();
@@ -242,7 +242,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
                                   fillColor: MaterialStateProperty.all<Color>(
                                       Colors.blue),
                                   onChanged: (v) {
-                                    checked = v;
+                                    checked = v!;
                                     setState(() {});
                                   },
                                 ),
@@ -332,7 +332,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
                                     value: _selectedcase,
                                     onChanged: (newValue) {
                                       setState(() {
-                                        _selectedcase = newValue;
+                                        _selectedcase = newValue.toString();
                                       });
                                     },
                                     items: _case.map((location) {
@@ -371,7 +371,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
                               ),
                               TextFormField(
                                 validator: (v) =>
-                                    v.isEmpty ? 'Insert Full Name!' : null,
+                                    v!.isEmpty ? 'Insert Full Name!' : null,
                                 cursorColor: Colors.black,
                                 keyboardType: TextInputType.text,
                                 controller: firstPersonName,
@@ -390,7 +390,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
                               TextFormField(
                                 controller: firstPersonPhone,
                                 validator: (v) =>
-                                    v.isEmpty ? 'Insert Phone!' : null,
+                                    v!.isEmpty ? 'Insert Phone!' : null,
                                 cursorColor: Colors.black,
                                 keyboardType: TextInputType.phone,
                                 style: TextStyle(color: Colors.black),
@@ -407,7 +407,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
                               ),
                               TextFormField(
                                 validator: (v) =>
-                                    v.isEmpty ? 'Insert Address!' : null,
+                                    v!.isEmpty ? 'Insert Address!' : null,
                                 cursorColor: Colors.black,
                                 keyboardType: TextInputType.text,
                                 controller: firstPersonAddress,
@@ -467,7 +467,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
                                           value: _fpgender,
                                           onChanged: (newValue) {
                                             setState(() {
-                                              _fpgender = newValue;
+                                              _fpgender = newValue.toString();
                                             });
                                           },
                                           items: _gender.map((location) {
@@ -512,7 +512,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
                               ),
                               TextFormField(
                                 validator: (v) =>
-                                    v.isEmpty ? 'Insert Full Name!' : null,
+                                    v!.isEmpty ? 'Insert Full Name!' : null,
                                 cursorColor: Colors.black,
                                 keyboardType: TextInputType.text,
                                 controller: secondPersonName,
@@ -531,7 +531,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
                               TextFormField(
                                 controller: secondPersonPhone,
                                 validator: (v) =>
-                                    v.isEmpty ? 'Insert Phone!' : null,
+                                    v!.isEmpty ? 'Insert Phone!' : null,
                                 cursorColor: Colors.black,
                                 keyboardType: TextInputType.phone,
                                 style: TextStyle(color: Colors.black),
@@ -548,7 +548,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
                               ),
                               TextFormField(
                                 validator: (v) =>
-                                    v.isEmpty ? 'Insert Address!' : null,
+                                    v!.isEmpty ? 'Insert Address!' : null,
                                 cursorColor: Colors.black,
                                 keyboardType: TextInputType.text,
                                 controller: secondPersonAddress,
@@ -608,7 +608,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
                                           value: _spgender,
                                           onChanged: (newValue) {
                                             setState(() {
-                                              _spgender = newValue;
+                                              _spgender = newValue.toString();
                                             });
                                           },
                                           items: _gender.map((location) {
@@ -650,7 +650,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
                               TextFormField(
                                 controller: subject,
                                 validator: (v) =>
-                                    v.isEmpty ? 'Insert Subject!' : null,
+                                    v!.isEmpty ? 'Insert Subject!' : null,
                                 cursorColor: Colors.black,
                                 keyboardType: TextInputType.multiline,
                                 style: TextStyle(color: Colors.black),
@@ -668,7 +668,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
                               TextFormField(
                                 controller: description,
                                 maxLines: 5,
-                                validator: (v) => v.isEmpty
+                                validator: (v) => v!.isEmpty
                                     ? 'Insert brief description!'
                                     : null,
                                 cursorColor: Colors.black,
@@ -709,7 +709,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
                                         side: BorderSide(color: Colors.red)))),
                             onPressed: () async {
                               print("++++++++++++++++++++++++++++++++++++++++");
-                              if (fKey.currentState.validate()) {
+                              if (fKey.currentState!.validate()) {
                                 await _createMediation();
                                 setState(() {
                                   isLoading = false;

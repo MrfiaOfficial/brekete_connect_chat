@@ -5,7 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'Donate.dart';
 
 class Donate1 extends StatefulWidget {
-  const Donate1({Key key}) : super(key: key);
+  const Donate1({Key? key}) : super(key: key);
 
   @override
   _ChatsState createState() => _ChatsState();

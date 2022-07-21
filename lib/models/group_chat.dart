@@ -1,14 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class GroupChat {
-  String id;
-  String name;
-  String createdby;
-  Timestamp createdAt;
-  Timestamp lastMessageTime;
-  String lastMessage;
-  String lastMessageby;
-  List<dynamic> members;
+  String? id;
+  String? name;
+  String? createdby;
+  Timestamp? createdAt;
+  Timestamp? lastMessageTime;
+  String? lastMessage;
+  String? lastMessageby;
+  List<dynamic>? members;
   GroupChat({
     this.id,
     this.name,
