@@ -8,7 +8,7 @@ import 'Dashboard.dart';
 import 'SignUp.dart';
 
 class Signin extends StatelessWidget {
-  const Signin({Key key}) : super(key: key);
+  const Signin({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class Signin extends StatelessWidget {
 }
 
 class Home extends StatefulWidget {
-  const Home({Key key}) : super(key: key);
+  const Home({Key? key}) : super(key: key);
 
   @override
   _HomeState createState() => _HomeState();

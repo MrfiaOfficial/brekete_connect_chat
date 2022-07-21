@@ -13,12 +13,12 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   // data
   TextEditingController searchEditingController = new TextEditingController();
-  QuerySnapshot searchResultSnapshot;
+  late QuerySnapshot searchResultSnapshot;
   bool isLoading = false;
   bool hasUserSearched = false;
   bool _isJoined = false;
   String _userName = '';
-  FA.User _user;
+  late FA.User _user;
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
   // initState()
@@ -33,7 +33,7 @@ class _SearchPageState extends State<SearchPage> {
     await HelperFunctions.getUserNameSharedPreference().then((value) {
       _userName = value;
     });
-    _user = FA.FirebaseAuth.instance.currentUser;
+    _user = FA.FirebaseAuth.instance.currentUser!;
   }
 
   _initiateSearch() async {

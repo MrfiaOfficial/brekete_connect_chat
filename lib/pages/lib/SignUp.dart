@@ -5,7 +5,7 @@ import 'package:brekete_connect/utils/routes.dart';
 import 'Signin.dart';
 
 class SignUp extends StatefulWidget {
-  const SignUp({Key key}) : super(key: key);
+  const SignUp({Key? key}) : super(key: key);
 
   @override
   _SignUpState createState() => _SignUpState();

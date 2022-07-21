@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:brekete_connect/models/user.dart';
 
 class DatabaseService {
-  final String uid;
+  final String? uid;
   DatabaseService({this.uid});
 
   // Collection reference
@@ -53,7 +53,7 @@ class DatabaseService {
     });
 
     await groupDocRef.update({
-      'members': FieldValue.arrayUnion([uid + '_' + userName]),
+      'members': FieldValue.arrayUnion([uid! + '_' + userName]),
       'groupId': groupDocRef.id
     });
 
@@ -80,7 +80,7 @@ class DatabaseService {
       });
 
       await groupDocRef.update({
-        'members': FieldValue.arrayRemove([uid + '_' + userName])
+        'members': FieldValue.arrayRemove([uid! + '_' + userName])
       });
     } else {
       //print('nay');
@@ -89,7 +89,7 @@ class DatabaseService {
       });
 
       await groupDocRef.update({
-        'members': FieldValue.arrayUnion([uid + '_' + userName])
+        'members': FieldValue.arrayUnion([uid! + '_' + userName])
       });
     }
   }

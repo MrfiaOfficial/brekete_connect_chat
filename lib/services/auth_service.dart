@@ -10,7 +10,7 @@ class AuthService {
   final FA.FirebaseAuth _auth = FA.FirebaseAuth.instance;
 
   // create user object based on FA.User
-  User _userFromFirebaseUser(FA.User user) {
+  User? _userFromFirebaseUser(FA.User user) {
     CurrentAppUser.currentUserData.userId = user.uid;
     var currentUserUid = user.uid;
     return (user != null) ? User(uid: user.uid) : null;
@@ -21,9 +21,9 @@ class AuthService {
     try {
       FA.UserCredential result = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
-      FA.User user = result.user;
-      CurrentAppUser.currentUserData.userId = result.user.uid;
-      return _userFromFirebaseUser(user);
+      FA.User? user = result.user;
+      CurrentAppUser.currentUserData.userId = result.user!.uid;
+      return _userFromFirebaseUser(user!);
     } catch (e) {
       print(e.toString());
       // Fluttertoast.showToast(msg: 'User Not found!', gravity: ToastGravity.TOP);
@@ -52,10 +52,10 @@ class AuthService {
     try {
       FA.UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
-      FA.User user = result.user;
+      FA.User? user = result.user;
 
       // Create a new document for the user with uid
-      await DatabaseService(uid: user.uid).updateUserData(fullName, user.uid,
+      await DatabaseService(uid: user!.uid).updateUserData(fullName, user.uid,
           email, password, state, lga, sex, phone, username, address);
       return _userFromFirebaseUser(user);
     } catch (e) {
@@ -65,7 +65,7 @@ class AuthService {
   }
 
   //lOGIN WITH GOOGLE
-  Future<User> signInWithGoogle() async {
+  Future<User?> signInWithGoogle() async {
     GoogleSignIn _googleSignIn = GoogleSignIn(
       scopes: [
         'email',
@@ -73,13 +73,13 @@ class AuthService {
       ],
     );
     try {
-      final GoogleSignInAccount account = await _googleSignIn.signIn();
-      final GoogleSignInAuthentication _auth = await account.authentication;
+      final GoogleSignInAccount? account = await _googleSignIn.signIn();
+      final GoogleSignInAuthentication _auth = await account!.authentication;
       final FA.AuthCredential credential = FA.GoogleAuthProvider.credential(
         accessToken: _auth.accessToken,
         idToken: _auth.idToken,
       );
-      FA.User user =
+      FA.User? user =
           (await FA.FirebaseAuth.instance.signInWithCredential(credential))
               .user;
       if (user != null) {
@@ -98,7 +98,7 @@ class AuthService {
               '-',
               '-',
               '-',
-              user.email.split('@')[0],
+              user.email!.split('@')[0],
               '-');
         }
         await HelperFunctions.saveUserLoggedInSharedPreference(true);

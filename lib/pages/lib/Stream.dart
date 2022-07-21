@@ -4,7 +4,7 @@ import 'package:brekete_connect/utils/routes.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class Streams extends StatefulWidget {
-  const Streams({Key key}) : super(key: key);
+  const Streams({Key? key}) : super(key: key);
 
   @override
   _ChatsState createState() => _ChatsState();

@@ -13,7 +13,7 @@ import 'package:brekete_connect/shared/loading.dart';
 import 'Dashboard.dart';
 
 class SignInPage extends StatefulWidget {
-  final Function toggleView;
+  final Function? toggleView;
   SignInPage({this.toggleView});
 
   @override
@@ -34,7 +34,7 @@ class _SignInPageState extends State<SignInPage> {
   TextEditingController passwordController = TextEditingController();
 
   _onSignIn() async {
-    if (_formKey.currentState.validate()) {
+    if (_formKey.currentState!.validate()) {
       setState(() {
         _isLoading = true;
       });
@@ -255,7 +255,7 @@ class _SignInPageState extends State<SignInPage> {
                                                   validator: (val) {
                                                     return RegExp(
                                                                 r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                                            .hasMatch(val)
+                                                            .hasMatch(val!)
                                                         ? null
                                                         : "Please enter a valid email";
                                                   },
@@ -315,7 +315,7 @@ class _SignInPageState extends State<SignInPage> {
                                                                   top: 11,
                                                                   right: 15),
                                                           hintText: "Password"),
-                                                  validator: (val) => val
+                                                  validator: (val) => val!
                                                               .length <
                                                           6
                                                       ? 'Password not strong enough'

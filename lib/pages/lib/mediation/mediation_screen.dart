@@ -12,7 +12,7 @@ import 'package:brekete_connect/utils/routes.dart';
 import 'new_mediation.dart';
 
 class MediationScreen extends StatefulWidget {
-  const MediationScreen({Key key}) : super(key: key);
+  const MediationScreen({Key? key}) : super(key: key);
 
   @override
   _MediationState createState() => _MediationState();

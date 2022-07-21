@@ -7,7 +7,7 @@ import 'package:brekete_connect/utils/routes.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class NewMediationScreen extends StatefulWidget {
-  const NewMediationScreen({Key key}) : super(key: key);
+  const NewMediationScreen({Key? key}) : super(key: key);
 
   @override
   _NewMediationScreenState createState() => _NewMediationScreenState();
@@ -59,12 +59,12 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
 
   GlobalKey<FormState> fKey = GlobalKey<FormState>();
 
-  DateTime selectedDate; // = DateTime.now();
-  TimeOfDay selectedTime; // = TimeOfDay.now();
-  bool isLoading;
+  DateTime? selectedDate; // = DateTime.now();
+  TimeOfDay? selectedTime; // = TimeOfDay.now();
+  bool? isLoading;
 
   Future<Null> _selectDate(BuildContext context) async {
-    final DateTime picked = await showDatePicker(
+    final DateTime? picked = await showDatePicker(
       context: context,
       initialDate: DateTime.now(),
       firstDate: DateTime.now(),

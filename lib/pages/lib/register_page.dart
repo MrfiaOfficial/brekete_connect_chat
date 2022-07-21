@@ -11,7 +11,7 @@ import 'package:brekete_connect/shared/constants.dart';
 import 'package:brekete_connect/shared/loading.dart';
 
 class RegisterPage extends StatefulWidget {
-  final Function toggleView;
+  final Function? toggleView;
   RegisterPage({this.toggleView});
 
   @override
@@ -37,7 +37,7 @@ class _RegisterPageState extends State<RegisterPage> {
   String address = '';
 
   _onRegister() async {
-    if (_formKey.currentState.validate()) {
+    if (_formKey.currentState!.validate()) {
       setState(() {
         _isLoading = true;
       });
@@ -251,7 +251,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                               validator: (val) {
                                                 return RegExp(
                                                             r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
-                                                        .hasMatch(val)
+                                                        .hasMatch(val!)
                                                     ? null
                                                     : "Please enter a valid email";
                                               },
@@ -378,7 +378,8 @@ class _RegisterPageState extends State<RegisterPage> {
                                                           top: 11,
                                                           right: 15),
                                                   hintText: "Password"),
-                                              validator: (val) => val.length < 6
+                                              validator: (val) => val!.length <
+                                                      6
                                                   ? 'Password not strong enough'
                                                   : null,
                                               obscureText: true,

@@ -12,7 +12,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:modal_progress_hud/modal_progress_hud.dart';
 
 class EditProfile extends StatefulWidget {
-  const EditProfile({Key key}) : super(key: key);
+  const EditProfile({Key? key}) : super(key: key);
 
   @override
   _EditProfileState createState() => _EditProfileState();
@@ -25,7 +25,7 @@ class _EditProfileState extends State<EditProfile> {
   final TextEditingController _address = TextEditingController();
   bool isLoading = false;
   final ImagePicker _picker = ImagePicker();
-  File image;
+  File? image;
   @override
   void initState() {
     _name.text = CurrentAppUser.currentUserData.name;
@@ -88,12 +88,12 @@ class _EditProfileState extends State<EditProfile> {
                             ),
                             InkWell(
                                 onTap: () async {
-                                  File img = await pickImage();
+                                  File? img = await pickImage();
                                   if (img != null) {
                                     setState(() {
                                       isLoading = true;
                                     });
-                                    String url = await updateUserImage(
+                                    String? url = await updateUserImage(
                                         CurrentAppUser.currentUserData.userId,
                                         img);
 
@@ -292,7 +292,7 @@ class _EditProfileState extends State<EditProfile> {
     );
   }
 
-  Future<File> pickImage() async {
+  Future<File?> pickImage() async {
     final img = await _picker.pickImage(
         source: ImageSource.gallery,
         maxHeight: 720,
@@ -304,7 +304,7 @@ class _EditProfileState extends State<EditProfile> {
     return image;
   }
 
-  static Future<String> updateUserImage(String userId, File image) async {
+  static Future<String?> updateUserImage(String userId, File image) async {
     try {
       TaskSnapshot task = await FirebaseStorage.instance
           .ref('images/${userId.toString()}.png')
@@ -332,7 +332,8 @@ class _EditProfileState extends State<EditProfile> {
       );
       return true;
     } catch (e) {
-      Fluttertoast.showToast(msg: 'Unexpected Error, Something went wrong' + e);
+      Fluttertoast.showToast(
+          msg: 'Unexpected Error, Something went wrong' + e.toString());
       print(e);
       return false;
     }

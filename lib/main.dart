@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:brekete_connect/helper/helper_functions.dart';
 import 'package:brekete_connect/models/user.dart';
 import 'package:brekete_connect/pages/lib/Dashboard.dart';
-import 'package:brekete_connect/pages/lib/News-old.dart';
 import 'package:brekete_connect/pages/lib/authenticate_page.dart';
 
 //void main() => runApp(MyApp());

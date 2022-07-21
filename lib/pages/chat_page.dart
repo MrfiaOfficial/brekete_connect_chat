@@ -5,9 +5,9 @@ import 'package:brekete_connect/utils/routes.dart';
 import 'package:brekete_connect/widgets/message_tile.dart';
 
 class ChatPage extends StatefulWidget {
-  final String groupId;
-  final String userName;
-  final String groupName;
+  final String? groupId;
+  final String? userName;
+  final String? groupName;
 
   ChatPage({this.groupId, this.userName, this.groupName});
 
@@ -16,11 +16,11 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
-  Stream<QuerySnapshot> _chats;
+  late Stream<QuerySnapshot> _chats;
   TextEditingController messageEditingController = new TextEditingController();
 
   Widget _chatMessages() {
-    return StreamBuilder(
+    return StreamBuilder<dynamic>(
       stream: _chats,
       builder: (context, snapshot) {
         return snapshot.hasData
@@ -33,7 +33,8 @@ class _ChatPageState extends State<ChatPage> {
                     sentByMe: widget.userName ==
                         snapshot.data.documents[index].data["sender"],
                   );
-                })
+                },
+              )
             : Container();
       },
     );
@@ -47,7 +48,7 @@ class _ChatPageState extends State<ChatPage> {
         'time': DateTime.now().millisecondsSinceEpoch,
       };
 
-      DatabaseService().sendMessage(widget.groupId, chatMessageMap);
+      DatabaseService().sendMessage(widget.groupId.toString(), chatMessageMap);
 
       setState(() {
         messageEditingController.text = "";
@@ -58,7 +59,7 @@ class _ChatPageState extends State<ChatPage> {
   @override
   void initState() {
     super.initState();
-    DatabaseService().getChats(widget.groupId).then((val) {
+    DatabaseService().getChats(widget.groupId.toString()).then((val) {
       // print(val);
       setState(() {
         _chats = val;
@@ -152,7 +153,7 @@ class _ChatPageState extends State<ChatPage> {
                         child: Icon(Icons.perm_identity_outlined),
                       ),
                     ),
-                    Text(widget.groupName,
+                    Text(widget.groupName.toString(),
                         style: TextStyle(color: Colors.black)),
                   ],
                 ),

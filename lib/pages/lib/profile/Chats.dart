@@ -15,7 +15,7 @@ import 'package:brekete_connect/utils/routes.dart';
 import '../GroupChat.dart';
 
 class Chats extends StatefulWidget {
-  const Chats({Key key}) : super(key: key);
+  const Chats({Key? key}) : super(key: key);
 
   @override
   _ChatsState createState() => _ChatsState();
@@ -24,7 +24,7 @@ class Chats extends StatefulWidget {
 class _ChatsState extends State<Chats> {
   String _userName = '';
   String _email = '';
-  String _userLoggedIn = null;
+  String? _userLoggedIn;
 
   //
   @override
