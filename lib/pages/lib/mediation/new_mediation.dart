@@ -103,7 +103,7 @@ class _NewMediationScreenState extends State<NewMediationScreen> {
       setState(() {
         selectedTime = picked_s;
         timef = selectedTime.toString();
-        vot = timef!.substring(10, 15);
+        vot = timef.substring(10, 15);
       });
   }
 

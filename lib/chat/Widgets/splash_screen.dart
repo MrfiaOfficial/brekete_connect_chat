@@ -57,7 +57,7 @@ class _SplashScreenState extends State<SplashScreen> {
                       padding: EdgeInsets.only(top: 20.0),
                     ),
                     Text(
-                      "Power by Pagas",
+                      "Powered By Savadub",
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 24.0,

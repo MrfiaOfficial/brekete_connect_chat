@@ -1,26 +1,19 @@
 import 'package:brekete_connect/pages/lib/mediation/mediation_screen.dart';
+import 'package:brekete_connect/pages/lib/profile/Chats.dart';
 import 'package:brekete_connect/pages/lib/social_screen.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:brekete_connect/helper/helper_functions.dart';
 import 'package:brekete_connect/just_added/login_register_page.dart';
 import 'package:brekete_connect/models/user.dart';
 import 'package:brekete_connect/pages/lib/News.dart';
 import 'package:brekete_connect/pages/lib/appointment/appointment_screen.dart';
 import 'package:brekete_connect/pages/lib/complaints/complaint_screen.dart';
 import 'package:brekete_connect/pages/lib/donate/donate1.dart';
-import 'package:brekete_connect/pages/lib/profile/Chats.txt';
-import 'package:brekete_connect/pages/lib/profile/user_profile.dart';
 import 'package:brekete_connect/pages/lib/radio_tv/radio_tv.dart';
 import 'package:brekete_connect/utils/routes.dart';
 import 'package:url_launcher/url_launcher.dart';
-
-import 'Meditation.txt';
-import 'donate/Donate.dart';
-
-import 'Signin.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -664,7 +657,7 @@ class _NeumorphicContainerState extends State<NeumorphicContainer> {
                   BoxShadow(
                     blurRadius: widget.bevel,
                     offset: -widget.blurOffset,
-                    color: color!.mix(Colors.white, .6),
+                    color: color.mix(Colors.white, .6),
                   ),
                   BoxShadow(
                     blurRadius: widget.bevel,
