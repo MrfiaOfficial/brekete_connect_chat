@@ -32,8 +32,8 @@ class _ChatsState extends State<Book> {
   GlobalKey<FormState> fKey = GlobalKey<FormState>();
 
   late String _formattedDate;
-  late DateTime selectedDate; // = DateTime.now();
-  late TimeOfDay selectedTime; // = TimeOfDay.now();
+  DateTime? selectedDate; // = DateTime.now();
+  TimeOfDay? selectedTime; // = TimeOfDay.now();
   late bool isLoading;
 
   Future<Null> _selectDate(BuildContext context) async {
@@ -57,7 +57,7 @@ class _ChatsState extends State<Book> {
     if (picked != null && picked != selectedDate)
       setState(() {
         selectedDate = picked;
-        _formattedDate = selectedDate.toLocal().toString().split(' ')[0];
+        _formattedDate = selectedDate!.toLocal().toString().split(' ')[0];
       });
   }
 
@@ -243,7 +243,7 @@ class _ChatsState extends State<Book> {
                             child: Text(
                               selectedDate == null
                                   ? 'Select Date'
-                                  : "${selectedDate.toLocal()}".split(' ')[0],
+                                  : "${selectedDate!.toLocal()}".split(' ')[0],
                               style: TextStyle(
                                 color: Colors.grey,
                                 fontSize: 18,
