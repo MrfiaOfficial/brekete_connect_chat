@@ -26,7 +26,7 @@ import 'donate/Donate.dart';
 import 'Signin.dart';
 
 class Dashboard extends StatefulWidget {
-  const Dashboard({Key key}) : super(key: key);
+  const Dashboard({Key? key}) : super(key: key);
 
   @override
   _DashboardState createState() => _DashboardState();
@@ -175,6 +175,8 @@ class _DashboardState extends State<Dashboard> {
                                     );
                                   },
                             child: NeumorphicContainer(
+                              // Color just added to remove error
+                              color: Colors.red,
                               child: Column(
                                 children: [
                                   SizedBox(
@@ -226,6 +228,8 @@ class _DashboardState extends State<Dashboard> {
                                   ));
                             },
                             child: NeumorphicContainer(
+                              // Color just added to remove error
+                              color: Colors.red,
                               child: Column(
                                 children: [
                                   SizedBox(
@@ -277,6 +281,8 @@ class _DashboardState extends State<Dashboard> {
                               );
                             },
                             child: NeumorphicContainer(
+                              // Color just added to remove error
+                              color: Colors.red,
                               child: Column(
                                 children: [
                                   SizedBox(
@@ -321,6 +327,8 @@ class _DashboardState extends State<Dashboard> {
                                       builder: (context) => RadioTV()));
                             },
                             child: NeumorphicContainer(
+                              // Color just added to remove error
+                              color: Colors.red,
                               child: Column(
                                 children: [
                                   SizedBox(
@@ -372,6 +380,8 @@ class _DashboardState extends State<Dashboard> {
                                     );
                                   },
                             child: NeumorphicContainer(
+                              // Color just added to remove error
+                              color: Colors.red,
                               child: Column(
                                 children: [
                                   SizedBox(
@@ -419,6 +429,8 @@ class _DashboardState extends State<Dashboard> {
                               //     msg: 'Feature under development!');
                             },
                             child: NeumorphicContainer(
+                              // Color just added to remove error
+                              color: Colors.red,
                               child: Column(
                                 children: [
                                   SizedBox(
@@ -505,6 +517,8 @@ class _DashboardState extends State<Dashboard> {
                               //     msg: 'Feature under development!');
                             },
                             child: NeumorphicContainer(
+                              // Color just added to remove error
+                              color: Colors.red,
                               child: Column(
                                 children: [
                                   SizedBox(
@@ -541,6 +555,8 @@ class _DashboardState extends State<Dashboard> {
                                       builder: (context) => Donate1()));
                             },
                             child: NeumorphicContainer(
+                              // Color just added to remove error
+                              color: Colors.red,
                               child: Column(
                                 children: [
                                   SizedBox(
@@ -592,10 +608,10 @@ class NeumorphicContainer extends StatefulWidget {
   final Color color;
 
   NeumorphicContainer({
-    Key key,
-    this.child,
+    Key? key,
+    required this.child,
     this.bevel = 10.0,
-    this.color,
+    required this.color,
   })  : this.blurOffset = Offset(bevel / 2, bevel / 2),
         super(key: key);
 
@@ -620,7 +636,7 @@ class _NeumorphicContainerState extends State<NeumorphicContainer> {
 
   @override
   Widget build(BuildContext context) {
-    final color = this.widget.color ?? Theme.of(context).backgroundColor;
+    final color = this.widget.color;
 
     return Listener(
       onPointerDown: _onPointerDown,
@@ -651,7 +667,7 @@ class _NeumorphicContainerState extends State<NeumorphicContainer> {
                   BoxShadow(
                     blurRadius: widget.bevel,
                     offset: -widget.blurOffset,
-                    color: color.mix(Colors.white, .6),
+                    color: color!.mix(Colors.white, .6),
                   ),
                   BoxShadow(
                     blurRadius: widget.bevel,
@@ -668,6 +684,6 @@ class _NeumorphicContainerState extends State<NeumorphicContainer> {
 
 extension ColorUtils on Color {
   Color mix(Color another, double amount) {
-    return Color.lerp(this, another, amount);
+    return Color.lerp(this, another, amount) as Color;
   }
 }

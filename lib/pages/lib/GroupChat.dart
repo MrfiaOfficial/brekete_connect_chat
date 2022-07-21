@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as FA;
 import 'package:flutter/material.dart';
 import 'package:brekete_connect/helper/helper_functions.dart';
@@ -14,11 +15,11 @@ class GroupChat extends StatefulWidget {
 class _HomePageState extends State<GroupChat> {
   // data
   final AuthService _auth = AuthService();
-  FA.User _user;
-  String _groupName;
+  late FA.User _user;
+  late String _groupName;
   String _userName = '';
   String _email = '';
-  Stream _groups;
+  late Stream _groups;
 
   // initState
   @override
@@ -56,7 +57,7 @@ class _HomePageState extends State<GroupChat> {
   Widget groupsList() {
     final height = MediaQuery.of(context).size.height;
     final width = MediaQuery.of(context).size.width;
-    return StreamBuilder(
+    return StreamBuilder<dynamic>(
       stream: _groups,
       builder: (context, snapshot) {
         if (snapshot.hasData) {

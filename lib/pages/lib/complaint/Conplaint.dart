@@ -16,7 +16,7 @@ import 'package:permission_handler/permission_handler.dart';
 import '../Meditation.dart';
 
 class Conplaint extends StatefulWidget {
-  const Conplaint({Key key}) : super(key: key);
+  const Conplaint({required Key key}) : super(key: key);
 
   @override
   _ChatsState createState() => _ChatsState();
@@ -26,7 +26,7 @@ class _ChatsState extends State<Conplaint> {
   List<String> _case = ['Family', 'Government', 'Corporate'];
   String _selectedcase = 'Family';
   List<File> files = [];
-  bool isLoading;
+  late bool isLoading;
 
   @override
   void initState() {
@@ -117,7 +117,7 @@ class _ChatsState extends State<Conplaint> {
                               value: _selectedcase,
                               onChanged: (newValue) {
                                 setState(() {
-                                  _selectedcase = newValue;
+                                  _selectedcase = newValue.toString();
                                 });
                               },
                               items: _case.map((location) {
@@ -154,11 +154,11 @@ class _ChatsState extends State<Conplaint> {
                       onPressed: () async {
                         if (await Permission.storage.request().isGranted) {
                           final ImagePicker _picker = ImagePicker();
-                          final XFile image = await _picker.pickImage(
+                          final XFile? image = await _picker.pickImage(
                               source: ImageSource.gallery);
                           files.length > 0
-                              ? files[0] = File(image.path)
-                              : files.add(File(image.path));
+                              ? files[0] = File(image!.path)
+                              : files.add(File(image!.path));
                           setState(() {});
                           print('-======================> ${image.path}');
                         } else {
@@ -195,7 +195,7 @@ class _ChatsState extends State<Conplaint> {
                         setState(() {
                           isLoading = true;
                         });
-                        String url = await uploadImage(files[0]);
+                        String? url = await uploadImage(files[0]);
                         if (url != null) {
                           bool res = await _uploadComplaint(url);
                           // Fluttertoast.showToast(msg: 'New Complaint submitted!');
@@ -257,7 +257,7 @@ class _ChatsState extends State<Conplaint> {
     );
   }
 
-  Future<String> uploadImage(File file) async {
+  Future<String?> uploadImage(File file) async {
     try {
       final Reference storageReference = FirebaseStorage.instance
           .ref()
