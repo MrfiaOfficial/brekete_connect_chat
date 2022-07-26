@@ -8,6 +8,30 @@ import 'package:brekete_connect/models/user.dart';
 import 'package:brekete_connect/pages/lib/Dashboard.dart';
 import 'package:brekete_connect/pages/lib/authenticate_page.dart';
 
+// From Chat Code
+import 'package:brekete_connect/chat/pages/loginPage/login.dart';
+import 'package:brekete_connect/chat/pages/loginPage/login_option.dart';
+import 'package:brekete_connect/chat/pages/profile/profile.dart';
+import 'package:brekete_connect/chat/pages/signupPage/signup.dart';
+import 'package:brekete_connect/chat/pages/signupPage/signup_option.dart';
+import 'package:brekete_connect/chat/pages/tabs/home.dart';
+import 'package:brekete_connect/chat/providers/ConnectivityChangeNotifier.dart';
+import 'package:brekete_connect/chat/providers/image_upload_provider.dart';
+import 'package:brekete_connect/chat/providers/stop_button_rounded.dart';
+import 'package:brekete_connect/chat/providers/user_provider.dart';
+import 'package:brekete_connect/chat/themes/theme.dart';
+import 'package:brekete_connect/chat/themes/theme_notifier.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_statusbarcolor_ns/flutter_statusbarcolor_ns.dart';
+import 'package:page_transition/page_transition.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_downloader/flutter_downloader.dart';
+import 'package:brekete_connect/chat/providers/chat.dart';
+
 //void main() => runApp(MyApp());
 
 Future<void> main() async {
@@ -20,8 +44,20 @@ Future<void> main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  FirebaseAnalytics;
 
-  runApp(MyApp());
+  //runApp(MyApp());
+  SharedPreferences.getInstance().then((prefs) {
+    var darkModeOn = prefs.getBool('darkMode') ?? true;
+    // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light
+    //     .copyWith(statusBarColor: darkModeOn ? Colors.black : Colors.white));
+    runApp(ChangeNotifierProvider<ThemeNotifier>(
+      create: (BuildContext context) {
+        return ThemeNotifier(darkModeOn ? darkTheme : lightTheme);
+      },
+      child: MyApp(),
+    ));
+  });
 }
 
 class MyApp extends StatefulWidget {
@@ -55,19 +91,35 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Brekete Connect',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData.light(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => Chat()),
+        ChangeNotifierProvider(create: (_) => ImageUploadProvider()),
+        ChangeNotifierProvider(create: (_) => UserProvider()),
+        ChangeNotifierProvider(create: (_) => StopAndStartButtonRounded()),
+        ChangeNotifierProvider(create: (_) {
+          ConnectivityChangeNotifier changeNotifier =
+              ConnectivityChangeNotifier();
+          //Inital load is an async function, can use FutureBuilder to show loading
+          //screen while this function running. This is not covered in this tutorial
+          changeNotifier.initialLoad();
+          return changeNotifier;
+        }),
+      ],
+      child: MaterialApp(
+        title: 'Brekete Connect',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData.light(),
 
-      //home: _isLoggedIn != null ? _isLoggedIn ? HomePage() : AuthenticatePage() : Center(child: CircularProgressIndicator()),
+        //home: _isLoggedIn != null ? _isLoggedIn ? HomePage() : AuthenticatePage() : Center(child: CircularProgressIndicator()),
 
-      home: SplashScreen(),
-      /* routes: <String, WidgetBuilder>{
+        home: SplashScreen(),
+        /* routes: <String, WidgetBuilder>{
         "login": (BuildContext context) =>
             _isLoggedIn ? Dashboard() : AuthenticatePage(),
         //home: HomePage(),
       }, */
+      ),
     );
   }
 }

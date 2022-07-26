@@ -43,8 +43,73 @@ class ChatItemList extends StatelessWidget {
     return InkWell(
       onTap: () => onpressed!(context, receiver),
       child: Slidable(
-        actionPane: SlidableDrawerActionPane(),
-        actionExtentRatio: 0.15,
+        startActionPane: ActionPane(
+          key: const ValueKey(0),
+          dismissible: DismissiblePane(onDismissed: () {}),
+          motion: DrawerMotion(),
+          children: [
+            Container(
+              padding: const EdgeInsets.only(right: 8.0),
+              decoration: BoxDecoration(
+                color: Colors.grey.shade300,
+                shape: BoxShape.circle,
+              ),
+              child: SlidableAction(
+                //borderRadius: BorderRadius.all(Radius.circular(50)),
+                backgroundColor: Color(0xFFFE4A49),
+                foregroundColor: Colors.white,
+                icon: Icons.phone,
+                //label: 'Phone',
+                onPressed: (value) async {
+                  UserData? userData = await _authFirebase.getUserDetails();
+                  UserData? sender = UserData(
+                    userId: userData.userId,
+                    username: userData.username,
+                    img: userData.img,
+                  );
+                  await Permissions.cameraAndMicrophonePermissionsGranted()
+                      ? CallUtils.dialAudio(
+                          from: sender,
+                          to: receiver,
+                          context: context,
+                        )
+                      // ignore: unnecessary_statements
+                      : {};
+                },
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(right: 8.0),
+              decoration: BoxDecoration(
+                color: Colors.grey.shade300,
+                shape: BoxShape.circle,
+              ),
+              child: SlidableAction(
+                //borderRadius: BorderRadius.all(Radius.circular(50)),
+                backgroundColor: Color(0xFFFE4A49),
+                foregroundColor: Colors.white,
+                icon: Icons.videocam,
+                //label: 'Phone',
+                onPressed: (value) async {
+                  UserData? userData = await _authFirebase.getUserDetails();
+                  UserData? sender = UserData(
+                    userId: userData.userId,
+                    username: userData.username,
+                    img: userData.img,
+                  );
+                  await Permissions.cameraAndMicrophonePermissionsGranted()
+                      ? CallUtils.dialVideo(
+                          from: sender,
+                          to: receiver,
+                          context: context,
+                        )
+                      // ignore: unnecessary_statements
+                      : {};
+                },
+              ),
+            ),
+          ],
+        ),
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15.0),
           child: Row(
@@ -54,92 +119,35 @@ class ChatItemList extends StatelessWidget {
             ],
           ),
         ),
-        actions: <Widget>[
-          Container(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: SlideAction(
-              onTap: () async {
-                UserData? userData = await _authFirebase.getUserDetails();
-                UserData? sender = UserData(
-                  userId: userData.userId,
-                  username: userData.username,
-                  img: userData.img,
-                );
-                await Permissions.cameraAndMicrophonePermissionsGranted()
-                    ? CallUtils.dialAudio(
-                        from: sender,
-                        to: receiver,
-                        context: context,
-                      )
-                    // ignore: unnecessary_statements
-                    : {};
-              },
-              decoration: BoxDecoration(
-                color: Colors.grey.shade300,
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Icons.phone,
-                color: Color(0xFF4bd8a4),
-                size: 20.0,
-              ),
-            ),
-          ),
-          Container(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: SlideAction(
-              onTap: () async {
-                UserData? userData = await _authFirebase.getUserDetails();
-                UserData? sender = UserData(
-                  userId: userData.userId,
-                  username: userData.username,
-                  img: userData.img,
-                );
-                await Permissions.cameraAndMicrophonePermissionsGranted()
-                    ? CallUtils.dialVideo(
-                        from: sender,
-                        to: receiver,
-                        context: context,
-                      )
-                    // ignore: unnecessary_statements
-                    : {};
-              },
-              decoration: BoxDecoration(
-                color: Colors.grey.shade300,
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Icons.videocam,
-                color: Color(0xFF4bd8a4),
-                size: 20.0,
-              ),
-            ),
-          ),
-        ],
-        secondaryActions: <Widget>[
-          if (delete == true)
-            Container(
-              padding: EdgeInsets.only(right: 8.0),
-              child: SlidableAction(
-                onTap: () {
-                  _userCollection
-                      .doc(_auth.currentUser!.uid)
-                      .collection(CONVERSATION_COLLECTION)
-                      .doc(receiver!.userId)
-                      .delete();
-                },
+        endActionPane: ActionPane(
+          key: const ValueKey(0),
+          dismissible: DismissiblePane(onDismissed: () {}),
+          motion: DrawerMotion(),
+          children: <Widget>[
+            if (delete == true)
+              Container(
+                padding: const EdgeInsets.only(right: 8.0),
                 decoration: BoxDecoration(
-                  color: Colors.red,
+                  color: Colors.grey.shade300,
                   shape: BoxShape.circle,
                 ),
-                child: Icon(
-                  Icons.restore_from_trash,
-                  color: Colors.white,
-                  size: 20.0,
+                child: SlidableAction(
+                  //borderRadius: BorderRadius.all(Radius.circular(50)),
+                  backgroundColor: Color(0xFFFE4A49),
+                  foregroundColor: Colors.white,
+                  icon: Icons.phone,
+                  //label: 'Phone',
+                  onPressed: (value) {
+                    _userCollection
+                        .doc(_auth.currentUser!.uid)
+                        .collection(CONVERSATION_COLLECTION)
+                        .doc(receiver!.userId)
+                        .delete();
+                  },
                 ),
               ),
-            ),
-        ],
+          ],
+        ),
       ),
     );
   }

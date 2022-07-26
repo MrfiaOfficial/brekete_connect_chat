@@ -1,3 +1,4 @@
+import 'package:brekete_connect/chat/chat_entry.dart';
 import 'package:brekete_connect/pages/lib/mediation/mediation_screen.dart';
 import 'package:brekete_connect/pages/lib/profile/Chats.dart';
 import 'package:brekete_connect/pages/lib/social_screen.dart';
@@ -151,7 +152,7 @@ class _DashboardState extends State<Dashboard> {
                                     Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => Chats(),
+                                        builder: (context) => ChatEntry(),
                                       ),
                                     );
                                   }
