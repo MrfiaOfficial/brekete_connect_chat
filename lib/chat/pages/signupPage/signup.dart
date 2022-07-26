@@ -49,7 +49,7 @@ class _SignUpState extends State<SignUp> {
             userId: auth.currentUser!.uid,
             img: '',
             timeCreated: DateTime.now().toString(),
-            description: "Hey there! I am using Connect Chat");
+            description: "Hey there! I am using Brekete Connect");
         users.doc(_userData.userId).set(_userData.toJson()).then((_) {
           _btnController.stop();
           _pressHome();
@@ -135,7 +135,7 @@ class _SignUpState extends State<SignUp> {
           ),
         ),
         Text(
-          "CONNECT CHAT",
+          "BREKETE CONNECT",
           style: TextStyle(
             fontSize: 36,
             fontWeight: FontWeight.bold,

@@ -60,7 +60,7 @@ class _LoginState extends State<Login> {
           ),
         ),
         Text(
-          "CONNECT CHAT",
+          "FAMILY CONNECT",
           style: TextStyle(
             fontSize: 36,
             fontWeight: FontWeight.bold,
