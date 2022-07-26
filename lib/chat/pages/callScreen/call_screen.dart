@@ -182,6 +182,8 @@ class _CallScreenState extends State<CallScreen> {
                       height: 120,
                       child: RtcRemoteView.SurfaceView(
                         uid: e,
+                        // channelId is just added and it's supposed not to be an empty string
+                        channelId: "",
                       ),
                     ),
                   ),

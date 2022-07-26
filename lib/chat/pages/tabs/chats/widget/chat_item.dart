@@ -120,7 +120,7 @@ class ChatItemList extends StatelessWidget {
           if (delete == true)
             Container(
               padding: EdgeInsets.only(right: 8.0),
-              child: SlideAction(
+              child: SlidableAction(
                 onTap: () {
                   _userCollection
                       .doc(_auth.currentUser!.uid)

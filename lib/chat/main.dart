@@ -23,7 +23,8 @@ import 'package:flutter_downloader/flutter_downloader.dart';
 import 'providers/chat.dart';
 
 void main() async {
-  FirebaseAnalytics();
+  //FirebaseAnalytics(); was used before
+  FirebaseAnalytics;
   WidgetsFlutterBinding.ensureInitialized();
   await FlutterDownloader.initialize(
       debug: true // optional: set false to disable printing logs to console
